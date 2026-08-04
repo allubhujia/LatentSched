@@ -1,0 +1,96 @@
+{
+  "run_id": 31,
+  "variant": "deadlock",
+  "timestamp_utc": "2026-07-28T05:12:50.796035+00:00",
+  "initial_balance": 1000.0,
+  "expected_balance": null,
+  "actual_balance": null,
+  "correct": null,
+  "num_threads": 5,
+  "ops_per_thread": 15,
+  "total_events": 9,
+  "events": [
+    {
+      "seq": 1,
+      "timestamp_ns": 2390973784373,
+      "thread_name": "Deadlock-Run31-AtoB",
+      "event_type": "DEPOSIT_START",
+      "value": 100.0,
+      "meta": {
+        "from": "Account A",
+        "to": "Account B"
+      }
+    },
+    {
+      "seq": 2,
+      "timestamp_ns": 2390973798188,
+      "thread_name": "Deadlock-Run31-AtoB",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 3,
+      "timestamp_ns": 2390973804130,
+      "thread_name": "Deadlock-Run31-AtoB",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 4,
+      "timestamp_ns": 2390974508890,
+      "thread_name": "Deadlock-Run31-BtoA",
+      "event_type": "DEPOSIT_START",
+      "value": 200.0,
+      "meta": {
+        "from": "Account B",
+        "to": "Account A"
+      }
+    },
+    {
+      "seq": 5,
+      "timestamp_ns": 2390974522964,
+      "thread_name": "Deadlock-Run31-BtoA",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 6,
+      "timestamp_ns": 2390974528863,
+      "thread_name": "Deadlock-Run31-BtoA",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 7,
+      "timestamp_ns": 2391074858538,
+      "thread_name": "Deadlock-Run31-BtoA",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 8,
+      "timestamp_ns": 2391074978312,
+      "thread_name": "Deadlock-Run31-AtoB",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 9,
+      "timestamp_ns": 2394986915776,
+      "thread_name": "MainThread",
+      "event_type": "DEADLOCK_DETECTED",
+      "value": null,
+      "meta": {
+        "t1_alive": true,
+        "t2_alive": true
+      }
+    }
+  ],
+  "deadlock_detected": true
+}

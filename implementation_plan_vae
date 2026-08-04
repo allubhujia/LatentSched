@@ -1,0 +1,115 @@
+# Encoding, VAE Architecture & Training for LatentSched
+
+## Context
+Building a VAE pipeline for concurrency bug detection from execution traces. The traces come from 3 scenarios (safe, race_condition, deadlock) and contain structured event sequences with fields: `seq`, `timestamp_ns`, `thread_name`, `event_type`, `value`, `meta`.
+
+## Design Decisions
+
+### 1. Encoding — Feature Engineering
+
+**Event type encoding**: Map the 11 unique event types to integer IDs (0–10), plus a padding token (0). This is a categorical feature.
+
+**Thread name encoding**: Extract a *relative thread index* (1, 2, 3...) based on order of first appearance in each trace. This generalizes across runs since raw thread names like `Safe-Run01-T1` are run-specific. The `MainThread` gets index 0.
+
+**Value encoding**: Use log-scale normalization — values range from ~5 to ~2000+ (balance amounts). Null values → 0.0, with a separate binary `has_value` indicator feature.
+
+**Per-event feature vector** (5 features):
+- `event_type_id` (int, 0–11)
+- `thread_index` (int, 0–N)
+- `value_normalized` (float, log-scaled)
+- `has_value` (binary, 0 or 1)
+- `delta_time_normalized` (float, normalized inter-event time gap — captures timing patterns like deadlock stalls)
+
+**Fixed sequence length: 300**
+- Safe traces average ~529 events (truncate to 300, capturing the critical early interleaving)
+- Race condition traces average ~301 events (fits naturally)
+- Deadlock traces have only ~9 events (pad to 300)
+- 300 is a reasonable compromise that captures the distinguishing patterns without excessive padding
+
+> [!IMPORTANT]
+> The extreme length difference between deadlock (~9 events) and safe (~529 events) is itself a strong signal. The VAE will learn this from the padding pattern, which is desirable — deadlock traces really are fundamentally different in structure.
+
+### 2. VAE Architecture — Bidirectional LSTM
+
+**Architecture choice: LSTM encoder / LSTM decoder**
+
+Why LSTM over alternatives:
+- **vs. Fully-connected VAE**: Traces are *ordered sequences* where temporal patterns (lock acquire → lock release, interleaving reads/writes) are the key signal. FC layers destroy this ordering.
+- **vs. 1D-CNN**: CNNs capture local patterns well, but concurrency bugs involve *long-range dependencies* (e.g., a lock acquired 100 events ago that never gets released). LSTMs handle this naturally.
+- **vs. Transformer**: Would work well, but for 30 traces total (current data), an LSTM is simpler, faster, and less prone to overfitting.
+
+**Architecture details**:
+```
+Encoder:
+  Input (batch, 300, 5) → Bidirectional LSTM (hidden=128) → final hidden state → FC → μ (latent_dim=16), log_σ² (latent_dim=16)
+
+Decoder:
+  z (latent_dim=16) → FC → repeat to (batch, 300, hidden) → LSTM (hidden=128) → FC → output (batch, 300, 5)
+```
+
+**Latent dim = 16**: With 3 classes and ~30 traces (currently), 16 dimensions provides enough capacity for separation without overfitting. Can tune later.
+
+### 3. Training Script
+
+- Combine all traces (safe + race + deadlock) unlabeled
+- Adam optimizer, lr=1e-3
+- Reconstruction loss: MSE (for continuous features) + CrossEntropy (for categorical event_type)
+- KL divergence with β-annealing (start β=0, warm up over 20 epochs to β=1) to prevent posterior collapse
+- MLflow logging of hyperparams and per-epoch metrics
+- Save checkpoint after training
+
+---
+
+## Proposed Changes
+
+### Encoding Module
+
+#### [NEW] [trace_encoder.py](file:///c:/VIT_CHENNAI/Computer_science/Machine%20Learning/Projects/LatentSched/trace_encoder.py)
+- `EVENT_TYPE_VOCAB`: Dict mapping event type strings to integer IDs
+- `encode_trace(trace_json) → np.ndarray`: Converts a single trace's events list into a `(300, 5)` array
+- `load_all_traces(traces_base) → tuple[np.ndarray, list[str]]`: Loads all JSON files across all 3 variant folders, returns `(num_traces, 300, 5)` array and list of variant labels
+- Thread name → relative index mapping per trace
+- Log-scale value normalization
+- Delta-time normalization (ns → ms, then min-max scaled)
+- Pad/truncate to fixed length 300
+
+---
+
+### VAE Architecture Module
+
+#### [NEW] [vae_model.py](file:///c:/VIT_CHENNAI/Computer_science/Machine%20Learning/Projects/LatentSched/vae_model.py)
+- `TraceVAE(nn.Module)`: Bidirectional LSTM encoder, LSTM decoder
+  - `encode(x) → (mu, log_var)`
+  - `reparameterize(mu, log_var) → z`
+  - `decode(z, seq_len) → x_recon`
+  - `forward(x) → (x_recon, mu, log_var)`
+- `vae_loss(recon_x, x, mu, log_var, beta)`: Combined reconstruction + KL loss
+
+---
+
+### Training Script
+
+#### [NEW] [train_vae.py](file:///c:/VIT_CHENNAI/Computer_science/Machine%20Learning/Projects/LatentSched/train_vae.py)
+- Load and encode all traces using `trace_encoder.py`
+- Create PyTorch Dataset/DataLoader
+- Train VAE with β-annealing
+- Log to MLflow: hyperparams (latent_dim, lr, epochs, hidden_dim, architecture) + per-epoch metrics (total_loss, recon_loss, kl_loss)
+- Save model checkpoint to `checkpoints/`
+
+#### [DELETE] [analyze_traces.py](file:///c:/VIT_CHENNAI/Computer_science/Machine%20Learning/Projects/LatentSched/analyze_traces.py)
+Temporary analysis script, no longer needed.
+
+---
+
+## Verification Plan
+
+### Automated Tests
+- Run `train_vae.py` for a small number of epochs and verify:
+  - Loss decreases over epochs
+  - No NaN/Inf in losses
+  - Model checkpoint is saved
+  - MLflow run is logged
+
+### Manual Verification
+- Inspect encoded tensor shapes to confirm `(num_traces, 300, 5)`
+- Review loss curves in MLflow UI
