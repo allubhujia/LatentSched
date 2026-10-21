@@ -39,15 +39,54 @@ it. Any bug that surfaces becomes the bandit's reward.
 
 ## How it works
 
-```mermaid
-flowchart LR
-    A["concurrency_problems/<br/>safe · race · deadlock"] --> B["trace_harness/<br/>instrument & record<br/>300 traces"]
-    B --> C["vae/<br/>BiLSTM VAE<br/>16-d latent space"]
-    C --> D["evaluation/<br/>k-means regions<br/>latent_regions.npz"]
-    D --> E["scheduler/<br/>bandit picks region"]
-    E --> F["generate schedule<br/>in region's style"]
-    F --> G["force interleaving<br/>& detect bug"]
-    G -- reward --> E
+```
+ ┌─────────────────────────────────────────────┐
+ │  1. CONCURRENCY PROGRAMS                    │
+ │     safe  ·  race_condition  ·  deadlock    │
+ └──────────────────────┬──────────────────────┘
+                        │
+                        ▼
+ ┌─────────────────────────────────────────────┐
+ │  2. TRACE HARNESS                           │
+ │     instrument locks & balance access       │
+ │     record 300 execution traces (JSON)      │
+ └──────────────────────┬──────────────────────┘
+                        │
+                        ▼
+ ┌─────────────────────────────────────────────┐
+ │  3. VAE                                     │
+ │     trace → (300 × 5) tensor                │
+ │     BiLSTM encoder → 16-d latent space      │
+ └──────────────────────┬──────────────────────┘
+                        │
+                        ▼
+ ┌─────────────────────────────────────────────┐
+ │  4. LATENT REGIONS                          │
+ │     k-means partition → latent_regions.npz  │
+ │     centroids = arms · bug rate = prior     │
+ └──────────────────────┬──────────────────────┘
+                        │
+     ╔══════════════════╪═══ SEARCH LOOP ═══════════╗
+     ║                  ▼                           ║
+     ║   ┌─────────────────────────────────┐        ║
+     ║   │  5a. BANDIT                     │◄───┐   ║
+     ║   │      Thompson sampling          │    │   ║
+     ║   │      picks a latent region      │    │   ║
+     ║   └────────────────┬────────────────┘    │   ║
+     ║                    ▼                     │   ║
+     ║   ┌─────────────────────────────────┐    │   ║
+     ║   │  5b. SCHEDULE GENERATOR         │    │   ║
+     ║   │      sample a thread schedule   │    │   ║
+     ║   │      in the region's style      │    │   ║
+     ║   └────────────────┬────────────────┘    │   ║
+     ║                    ▼                     │   ║
+     ║   ┌─────────────────────────────────┐    │   ║
+     ║   │  5c. DETERMINISTIC CONTROLLER   │    │   ║
+     ║   │      force the interleaving     │    │   ║
+     ║   │      detect race / deadlock     │    │   ║
+     ║   └────────────────┬────────────────┘    │   ║
+     ║                    └──── reward ─────────┘   ║
+     ╚══════════════════════════════════════════════╝
 ```
 
 | Stage | What happens |
