@@ -1,10 +1,10 @@
 {
   "run_id": 37,
   "variant": "race_condition",
-  "timestamp_utc": "2026-07-28T05:10:50.057769+00:00",
+  "timestamp_utc": "2026-09-19T10:16:00.657249+00:00",
   "initial_balance": 1000.0,
-  "expected_balance": 750.36,
-  "actual_balance": 713.88,
+  "expected_balance": 1605.31,
+  "actual_balance": 983.73,
   "correct": false,
   "num_threads": 5,
   "ops_per_thread": 15,
@@ -12,15 +12,15 @@
   "events": [
     {
       "seq": 1,
-      "timestamp_ns": 2264930279689,
+      "timestamp_ns": 89102843574,
       "thread_name": "Race-Run37-T1",
       "event_type": "WITHDRAW_START",
-      "value": 65.59,
+      "value": 15.88,
       "meta": {}
     },
     {
       "seq": 2,
-      "timestamp_ns": 2264930288985,
+      "timestamp_ns": 89102850708,
       "thread_name": "Race-Run37-T1",
       "event_type": "READ_BALANCE",
       "value": 1000.0,
@@ -28,15 +28,15 @@
     },
     {
       "seq": 3,
-      "timestamp_ns": 2264930701805,
+      "timestamp_ns": 89103227942,
       "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 9.43,
+      "event_type": "DEPOSIT_START",
+      "value": 46.35,
       "meta": {}
     },
     {
       "seq": 4,
-      "timestamp_ns": 2264930710698,
+      "timestamp_ns": 89103233433,
       "thread_name": "Race-Run37-T2",
       "event_type": "READ_BALANCE",
       "value": 1000.0,
@@ -44,2792 +44,2786 @@
     },
     {
       "seq": 5,
-      "timestamp_ns": 2264930769788,
+      "timestamp_ns": 89103293915,
       "thread_name": "Race-Run37-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 934.41,
+      "value": 984.12,
       "meta": {
         "operation": "withdraw",
-        "amount": 65.59
+        "amount": 15.88
       }
     },
     {
       "seq": 6,
-      "timestamp_ns": 2264930779923,
+      "timestamp_ns": 89103302662,
       "thread_name": "Race-Run37-T1",
       "event_type": "WITHDRAW_END",
-      "value": 65.59,
+      "value": 15.88,
       "meta": {
         "success": true,
-        "requested": 65.59
+        "requested": 15.88
       }
     },
     {
       "seq": 7,
-      "timestamp_ns": 2264931336322,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 25.48,
-      "meta": {}
+      "timestamp_ns": 89103544999,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 1046.35,
+      "meta": {
+        "operation": "deposit",
+        "amount": 46.35
+      }
     },
     {
       "seq": 8,
-      "timestamp_ns": 2264931343420,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 934.41,
-      "meta": {}
+      "timestamp_ns": 89103552774,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 46.35,
+      "meta": {
+        "new_balance": 1046.35
+      }
     },
     {
       "seq": 9,
-      "timestamp_ns": 2264931418956,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 990.57,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 9.43
-      }
+      "timestamp_ns": 89103661575,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 25.98,
+      "meta": {}
     },
     {
       "seq": 10,
-      "timestamp_ns": 2264931429199,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 9.43,
-      "meta": {
-        "success": true,
-        "requested": 9.43
-      }
+      "timestamp_ns": 89103692976,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 1046.35,
+      "meta": {}
     },
     {
       "seq": 11,
-      "timestamp_ns": 2264931829446,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 43.98,
+      "timestamp_ns": 89103953133,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 30.5,
       "meta": {}
     },
     {
       "seq": 12,
-      "timestamp_ns": 2264931836325,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89103964836,
+      "thread_name": "Race-Run37-T1",
       "event_type": "READ_BALANCE",
-      "value": 990.57,
+      "value": 1046.35,
       "meta": {}
     },
     {
       "seq": 13,
-      "timestamp_ns": 2264931918110,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 959.89,
-      "meta": {
-        "operation": "deposit",
-        "amount": 25.48
-      }
+      "timestamp_ns": 89104195355,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 12.31,
+      "meta": {}
     },
     {
       "seq": 14,
-      "timestamp_ns": 2264931929181,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 25.48,
-      "meta": {
-        "new_balance": 959.89
-      }
+      "timestamp_ns": 89104199604,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 1046.35,
+      "meta": {}
     },
     {
       "seq": 15,
-      "timestamp_ns": 2264931984537,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 49.44,
-      "meta": {}
+      "timestamp_ns": 89104259308,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 1072.33,
+      "meta": {
+        "operation": "deposit",
+        "amount": 25.98
+      }
     },
     {
       "seq": 16,
-      "timestamp_ns": 2264931996664,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 959.89,
-      "meta": {}
+      "timestamp_ns": 89104266933,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 25.98,
+      "meta": {
+        "new_balance": 1072.33
+      }
     },
     {
       "seq": 17,
-      "timestamp_ns": 2264932021938,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 32.25,
+      "timestamp_ns": 89104333517,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 13.04,
       "meta": {}
     },
     {
       "seq": 18,
-      "timestamp_ns": 2264932032389,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89104343226,
+      "thread_name": "Race-Run37-T2",
       "event_type": "READ_BALANCE",
-      "value": 959.89,
+      "value": 1072.33,
       "meta": {}
     },
     {
       "seq": 19,
-      "timestamp_ns": 2264932568108,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89104642385,
+      "thread_name": "Race-Run37-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 946.59,
+      "value": 1076.85,
       "meta": {
-        "operation": "withdraw",
-        "amount": 43.98
+        "operation": "deposit",
+        "amount": 30.5
       }
     },
     {
       "seq": 20,
-      "timestamp_ns": 2264932585198,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 43.98,
+      "timestamp_ns": 89104651142,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 30.5,
       "meta": {
-        "success": true,
-        "requested": 43.98
+        "new_balance": 1076.85
       }
     },
     {
       "seq": 21,
-      "timestamp_ns": 2264932639888,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 62.69,
-      "meta": {}
+      "timestamp_ns": 89104716398,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 1034.04,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 12.31
+      }
     },
     {
       "seq": 22,
-      "timestamp_ns": 2264932651046,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 946.59,
-      "meta": {}
+      "timestamp_ns": 89104724153,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 12.31,
+      "meta": {
+        "success": true,
+        "requested": 12.31
+      }
     },
     {
       "seq": 23,
-      "timestamp_ns": 2264932983792,
+      "timestamp_ns": 89104911888,
       "thread_name": "Race-Run37-T5",
       "event_type": "WITHDRAW_START",
-      "value": 77.31,
+      "value": 69.62,
       "meta": {}
     },
     {
       "seq": 24,
-      "timestamp_ns": 2264932989268,
+      "timestamp_ns": 89104915976,
       "thread_name": "Race-Run37-T5",
       "event_type": "READ_BALANCE",
-      "value": 946.59,
+      "value": 1034.04,
       "meta": {}
     },
     {
       "seq": 25,
-      "timestamp_ns": 2264933063332,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89104987590,
+      "thread_name": "Race-Run37-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 927.64,
+      "value": 1085.37,
       "meta": {
-        "operation": "withdraw",
-        "amount": 32.25
+        "operation": "deposit",
+        "amount": 13.04
       }
     },
     {
       "seq": 26,
-      "timestamp_ns": 2264933077875,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 32.25,
+      "timestamp_ns": 89104996828,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 13.04,
       "meta": {
-        "success": true,
-        "requested": 32.25
+        "new_balance": 1085.37
       }
     },
     {
       "seq": 27,
-      "timestamp_ns": 2264933167008,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1009.3299999999999,
-      "meta": {
-        "operation": "deposit",
-        "amount": 49.44
-      }
+      "timestamp_ns": 89105098571,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 41.58,
+      "meta": {}
     },
     {
       "seq": 28,
-      "timestamp_ns": 2264933177643,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 49.44,
-      "meta": {
-        "new_balance": 1009.3299999999999
-      }
+      "timestamp_ns": 89105127728,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 1085.37,
+      "meta": {}
     },
     {
       "seq": 29,
-      "timestamp_ns": 2264933290149,
+      "timestamp_ns": 89105141595,
       "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 883.9000000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 62.69
-      }
+      "event_type": "WITHDRAW_START",
+      "value": 94.76,
+      "meta": {}
     },
     {
       "seq": 30,
-      "timestamp_ns": 2264933300686,
+      "timestamp_ns": 89105149320,
       "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 62.69,
-      "meta": {
-        "success": true,
-        "requested": 62.69
-      }
+      "event_type": "READ_BALANCE",
+      "value": 1085.37,
+      "meta": {}
     },
     {
       "seq": 31,
-      "timestamp_ns": 2264933362199,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 869.28,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 77.31
-      }
+      "timestamp_ns": 89105162836,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 58.13,
+      "meta": {}
     },
     {
       "seq": 32,
-      "timestamp_ns": 2264933374032,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 77.31,
-      "meta": {
-        "success": true,
-        "requested": 77.31
-      }
+      "timestamp_ns": 89105166534,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 1085.37,
+      "meta": {}
     },
     {
       "seq": 33,
-      "timestamp_ns": 2264933448610,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 54.67,
-      "meta": {}
+      "timestamp_ns": 89105235332,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 964.42,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 69.62
+      }
     },
     {
       "seq": 34,
-      "timestamp_ns": 2264933457863,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 869.28,
-      "meta": {}
+      "timestamp_ns": 89105244770,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 69.62,
+      "meta": {
+        "success": true,
+        "requested": 69.62
+      }
     },
     {
       "seq": 35,
-      "timestamp_ns": 2264933625547,
+      "timestamp_ns": 89105373230,
       "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 60.5,
+      "event_type": "WITHDRAW_START",
+      "value": 17.89,
       "meta": {}
     },
     {
       "seq": 36,
-      "timestamp_ns": 2264933634560,
+      "timestamp_ns": 89105380925,
       "thread_name": "Race-Run37-T2",
       "event_type": "READ_BALANCE",
-      "value": 869.28,
+      "value": 964.42,
       "meta": {}
     },
     {
       "seq": 37,
-      "timestamp_ns": 2264933743409,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 91.65,
-      "meta": {}
+      "timestamp_ns": 89105456492,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 990.6099999999999,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 94.76
+      }
     },
     {
       "seq": 38,
-      "timestamp_ns": 2264933751257,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 869.28,
-      "meta": {}
+      "timestamp_ns": 89105464407,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 94.76,
+      "meta": {
+        "success": true,
+        "requested": 94.76
+      }
     },
     {
       "seq": 39,
-      "timestamp_ns": 2264933774311,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89105473851,
+      "thread_name": "Race-Run37-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 814.61,
+      "value": 1126.9499999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 54.67
+        "operation": "deposit",
+        "amount": 41.58
       }
     },
     {
       "seq": 40,
-      "timestamp_ns": 2264933781844,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 54.67,
+      "timestamp_ns": 89105481115,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 41.58,
       "meta": {
-        "success": true,
-        "requested": 54.67
+        "new_balance": 1126.9499999999998
       }
     },
     {
       "seq": 41,
-      "timestamp_ns": 2264933864317,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 98.17,
-      "meta": {}
+      "timestamp_ns": 89105555925,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 1143.5,
+      "meta": {
+        "operation": "deposit",
+        "amount": 58.13
+      }
     },
     {
       "seq": 42,
-      "timestamp_ns": 2264933872307,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 814.61,
-      "meta": {}
+      "timestamp_ns": 89105565093,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 58.13,
+      "meta": {
+        "new_balance": 1143.5
+      }
     },
     {
       "seq": 43,
-      "timestamp_ns": 2264933937782,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 33.98,
-      "meta": {}
+      "timestamp_ns": 89105686329,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 946.53,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 17.89
+      }
     },
     {
       "seq": 44,
-      "timestamp_ns": 2264933946175,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 814.61,
-      "meta": {}
+      "timestamp_ns": 89105693132,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 17.89,
+      "meta": {
+        "success": true,
+        "requested": 17.89
+      }
     },
     {
       "seq": 45,
-      "timestamp_ns": 2264933990036,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 929.78,
-      "meta": {
-        "operation": "deposit",
-        "amount": 60.5
-      }
+      "timestamp_ns": 89105784465,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 56.31,
+      "meta": {}
     },
     {
       "seq": 46,
-      "timestamp_ns": 2264933998059,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 60.5,
-      "meta": {
-        "new_balance": 929.78
-      }
+      "timestamp_ns": 89105791830,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 946.53,
+      "meta": {}
     },
     {
       "seq": 47,
-      "timestamp_ns": 2264934078656,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 777.63,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 91.65
-      }
+      "timestamp_ns": 89105810696,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 56.41,
+      "meta": {}
     },
     {
       "seq": 48,
-      "timestamp_ns": 2264934085928,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 91.65,
-      "meta": {
-        "success": true,
-        "requested": 91.65
-      }
+      "timestamp_ns": 89105817520,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 946.53,
+      "meta": {}
     },
     {
       "seq": 49,
-      "timestamp_ns": 2264934216293,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 912.78,
-      "meta": {
-        "operation": "deposit",
-        "amount": 98.17
-      }
+      "timestamp_ns": 89105905295,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 67.88,
+      "meta": {}
     },
     {
       "seq": 50,
-      "timestamp_ns": 2264934259520,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 98.17,
-      "meta": {
-        "new_balance": 912.78
-      }
+      "timestamp_ns": 89105912158,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 946.53,
+      "meta": {}
     },
     {
       "seq": 51,
-      "timestamp_ns": 2264934273358,
+      "timestamp_ns": 89106014323,
       "thread_name": "Race-Run37-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 71.32,
+      "event_type": "WITHDRAW_START",
+      "value": 46.89,
       "meta": {}
     },
     {
       "seq": 52,
-      "timestamp_ns": 2264934279977,
+      "timestamp_ns": 89106020805,
       "thread_name": "Race-Run37-T1",
       "event_type": "READ_BALANCE",
-      "value": 912.78,
+      "value": 946.53,
       "meta": {}
     },
     {
       "seq": 53,
-      "timestamp_ns": 2264934298154,
-      "thread_name": "Race-Run37-T5",
+      "timestamp_ns": 89106089278,
+      "thread_name": "Race-Run37-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 780.63,
+      "value": 890.22,
       "meta": {
         "operation": "withdraw",
-        "amount": 33.98
+        "amount": 56.31
       }
     },
     {
       "seq": 54,
-      "timestamp_ns": 2264934309246,
-      "thread_name": "Race-Run37-T5",
+      "timestamp_ns": 89106095821,
+      "thread_name": "Race-Run37-T3",
       "event_type": "WITHDRAW_END",
-      "value": 33.98,
+      "value": 56.31,
       "meta": {
         "success": true,
-        "requested": 33.98
+        "requested": 56.31
       }
     },
     {
       "seq": 55,
-      "timestamp_ns": 2264934370958,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89106121511,
+      "thread_name": "Race-Run37-T2",
       "event_type": "WITHDRAW_START",
-      "value": 84.39,
+      "value": 65.94,
       "meta": {}
     },
     {
       "seq": 56,
-      "timestamp_ns": 2264934380788,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89106128505,
+      "thread_name": "Race-Run37-T2",
       "event_type": "READ_BALANCE",
-      "value": 780.63,
+      "value": 890.22,
       "meta": {}
     },
     {
       "seq": 57,
-      "timestamp_ns": 2264934403462,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 40.48,
-      "meta": {}
+      "timestamp_ns": 89106139608,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 1002.9399999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 56.41
+      }
     },
     {
       "seq": 58,
-      "timestamp_ns": 2264934411518,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 780.63,
-      "meta": {}
+      "timestamp_ns": 89106146722,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 56.41,
+      "meta": {
+        "new_balance": 1002.9399999999999
+      }
     },
     {
       "seq": 59,
-      "timestamp_ns": 2264934606168,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89106221697,
+      "thread_name": "Race-Run37-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 984.0999999999999,
+      "value": 1014.41,
       "meta": {
         "operation": "deposit",
-        "amount": 71.32
+        "amount": 67.88
       }
     },
     {
       "seq": 60,
-      "timestamp_ns": 2264934612275,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89106228771,
+      "thread_name": "Race-Run37-T4",
       "event_type": "DEPOSIT_END",
-      "value": 71.32,
+      "value": 67.88,
       "meta": {
-        "new_balance": 984.0999999999999
+        "new_balance": 1014.41
       }
     },
     {
       "seq": 61,
-      "timestamp_ns": 2264934695540,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 61.42,
-      "meta": {}
+      "timestamp_ns": 89106349907,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 899.64,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 46.89
+      }
     },
     {
       "seq": 62,
-      "timestamp_ns": 2264934703497,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 984.0999999999999,
-      "meta": {}
+      "timestamp_ns": 89106357121,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 46.89,
+      "meta": {
+        "success": true,
+        "requested": 46.89
+      }
     },
     {
       "seq": 63,
-      "timestamp_ns": 2264934780054,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 696.24,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 84.39
-      }
+      "timestamp_ns": 89106370345,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 17.61,
+      "meta": {}
     },
     {
       "seq": 64,
-      "timestamp_ns": 2264934788284,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 84.39,
-      "meta": {
-        "success": true,
-        "requested": 84.39
-      }
+      "timestamp_ns": 89106377629,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 899.64,
+      "meta": {}
     },
     {
       "seq": 65,
-      "timestamp_ns": 2264934865747,
+      "timestamp_ns": 89106427177,
       "thread_name": "Race-Run37-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 821.11,
+      "value": 824.28,
       "meta": {
-        "operation": "deposit",
-        "amount": 40.48
+        "operation": "withdraw",
+        "amount": 65.94
       }
     },
     {
       "seq": 66,
-      "timestamp_ns": 2264934878374,
+      "timestamp_ns": 89106435884,
       "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 40.48,
+      "event_type": "WITHDRAW_END",
+      "value": 65.94,
       "meta": {
-        "new_balance": 821.11
+        "success": true,
+        "requested": 65.94
       }
     },
     {
       "seq": 67,
-      "timestamp_ns": 2264935011465,
+      "timestamp_ns": 89106548253,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 46.67,
+      "meta": {}
+    },
+    {
+      "seq": 68,
+      "timestamp_ns": 89106554044,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 824.28,
+      "meta": {}
+    },
+    {
+      "seq": 69,
+      "timestamp_ns": 89106684999,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 63.59,
+      "meta": {}
+    },
+    {
+      "seq": 70,
+      "timestamp_ns": 89106692363,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 824.28,
+      "meta": {}
+    },
+    {
+      "seq": 71,
+      "timestamp_ns": 89106775183,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 82.51,
+      "meta": {}
+    },
+    {
+      "seq": 72,
+      "timestamp_ns": 89106782457,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 824.28,
+      "meta": {}
+    },
+    {
+      "seq": 73,
+      "timestamp_ns": 89106797346,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 917.25,
+      "meta": {
+        "operation": "deposit",
+        "amount": 17.61
+      }
+    },
+    {
+      "seq": 74,
+      "timestamp_ns": 89106804600,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 17.61,
+      "meta": {
+        "new_balance": 917.25
+      }
+    },
+    {
+      "seq": 75,
+      "timestamp_ns": 89106850310,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 870.9499999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 46.67
+      }
+    },
+    {
+      "seq": 76,
+      "timestamp_ns": 89106856562,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 46.67,
+      "meta": {
+        "new_balance": 870.9499999999999
+      }
+    },
+    {
+      "seq": 77,
+      "timestamp_ns": 89107000210,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 887.87,
+      "meta": {
+        "operation": "deposit",
+        "amount": 63.59
+      }
+    },
+    {
+      "seq": 78,
+      "timestamp_ns": 89107008356,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 63.59,
+      "meta": {
+        "new_balance": 887.87
+      }
+    },
+    {
+      "seq": 79,
+      "timestamp_ns": 89107065289,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 60.17,
+      "meta": {}
+    },
+    {
+      "seq": 80,
+      "timestamp_ns": 89107070950,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 887.87,
+      "meta": {}
+    },
+    {
+      "seq": 81,
+      "timestamp_ns": 89107086468,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 741.77,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 82.51
+      }
+    },
+    {
+      "seq": 82,
+      "timestamp_ns": 89107093702,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 82.51,
+      "meta": {
+        "success": true,
+        "requested": 82.51
+      }
+    },
+    {
+      "seq": 83,
+      "timestamp_ns": 89107255327,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 54.67,
+      "meta": {}
+    },
+    {
+      "seq": 84,
+      "timestamp_ns": 89107261709,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 741.77,
+      "meta": {}
+    },
+    {
+      "seq": 85,
+      "timestamp_ns": 89107286598,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 65.14,
+      "meta": {}
+    },
+    {
+      "seq": 86,
+      "timestamp_ns": 89107293902,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 741.77,
+      "meta": {}
+    },
+    {
+      "seq": 87,
+      "timestamp_ns": 89107406821,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 827.7,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 60.17
+      }
+    },
+    {
+      "seq": 88,
+      "timestamp_ns": 89107413965,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 60.17,
+      "meta": {
+        "success": true,
+        "requested": 60.17
+      }
+    },
+    {
+      "seq": 89,
+      "timestamp_ns": 89107460676,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 68.15,
+      "meta": {}
+    },
+    {
+      "seq": 90,
+      "timestamp_ns": 89107467830,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 827.7,
+      "meta": {}
+    },
+    {
+      "seq": 91,
+      "timestamp_ns": 89107476689,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 42.69,
+      "meta": {}
+    },
+    {
+      "seq": 92,
+      "timestamp_ns": 89107483843,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 827.7,
+      "meta": {}
+    },
+    {
+      "seq": 93,
+      "timestamp_ns": 89107584577,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 796.4399999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 54.67
+      }
+    },
+    {
+      "seq": 94,
+      "timestamp_ns": 89107591611,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 54.67,
+      "meta": {
+        "new_balance": 796.4399999999999
+      }
+    },
+    {
+      "seq": 95,
+      "timestamp_ns": 89107600099,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 676.63,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 65.14
+      }
+    },
+    {
+      "seq": 96,
+      "timestamp_ns": 89107607323,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 65.14,
+      "meta": {
+        "success": true,
+        "requested": 65.14
+      }
+    },
+    {
+      "seq": 97,
+      "timestamp_ns": 89107798053,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 785.01,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 42.69
+      }
+    },
+    {
+      "seq": 98,
+      "timestamp_ns": 89107805186,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 42.69,
+      "meta": {
+        "success": true,
+        "requested": 42.69
+      }
+    },
+    {
+      "seq": 99,
+      "timestamp_ns": 89107883220,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 759.5500000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 68.15
+      }
+    },
+    {
+      "seq": 100,
+      "timestamp_ns": 89107890213,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 68.15,
+      "meta": {
+        "success": true,
+        "requested": 68.15
+      }
+    },
+    {
+      "seq": 101,
+      "timestamp_ns": 89107944357,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 19.48,
+      "meta": {}
+    },
+    {
+      "seq": 102,
+      "timestamp_ns": 89107951621,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 759.5500000000001,
+      "meta": {}
+    },
+    {
+      "seq": 103,
+      "timestamp_ns": 89108077407,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 97.38,
+      "meta": {}
+    },
+    {
+      "seq": 104,
+      "timestamp_ns": 89108086205,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 759.5500000000001,
+      "meta": {}
+    },
+    {
+      "seq": 105,
+      "timestamp_ns": 89108099409,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 60.36,
+      "meta": {}
+    },
+    {
+      "seq": 106,
+      "timestamp_ns": 89108108346,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 759.5500000000001,
+      "meta": {}
+    },
+    {
+      "seq": 107,
+      "timestamp_ns": 89108119598,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 10.33,
+      "meta": {}
+    },
+    {
+      "seq": 108,
+      "timestamp_ns": 89108130109,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 759.5500000000001,
+      "meta": {}
+    },
+    {
+      "seq": 109,
+      "timestamp_ns": 89108290943,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 779.0300000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 19.48
+      }
+    },
+    {
+      "seq": 110,
+      "timestamp_ns": 89108298447,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 19.48,
+      "meta": {
+        "new_balance": 779.0300000000001
+      }
+    },
+    {
+      "seq": 111,
+      "timestamp_ns": 89108395445,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 856.9300000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 97.38
+      }
+    },
+    {
+      "seq": 112,
+      "timestamp_ns": 89108402398,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 97.38,
+      "meta": {
+        "new_balance": 856.9300000000001
+      }
+    },
+    {
+      "seq": 113,
+      "timestamp_ns": 89108412809,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 88.75,
+      "meta": {}
+    },
+    {
+      "seq": 114,
+      "timestamp_ns": 89108420373,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 856.9300000000001,
+      "meta": {}
+    },
+    {
+      "seq": 115,
+      "timestamp_ns": 89108435577,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 819.9100000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 60.36
+      }
+    },
+    {
+      "seq": 116,
+      "timestamp_ns": 89108446198,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 60.36,
+      "meta": {
+        "new_balance": 819.9100000000001
+      }
+    },
+    {
+      "seq": 117,
+      "timestamp_ns": 89108460902,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 769.8800000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 10.33
+      }
+    },
+    {
+      "seq": 118,
+      "timestamp_ns": 89108470621,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 10.33,
+      "meta": {
+        "new_balance": 769.8800000000001
+      }
+    },
+    {
+      "seq": 119,
+      "timestamp_ns": 89108601921,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 6.1,
+      "meta": {}
+    },
+    {
+      "seq": 120,
+      "timestamp_ns": 89108607682,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 769.8800000000001,
+      "meta": {}
+    },
+    {
+      "seq": 121,
+      "timestamp_ns": 89108719154,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 49.61,
+      "meta": {}
+    },
+    {
+      "seq": 122,
+      "timestamp_ns": 89108724715,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 769.8800000000001,
+      "meta": {}
+    },
+    {
+      "seq": 123,
+      "timestamp_ns": 89108745315,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 945.6800000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 88.75
+      }
+    },
+    {
+      "seq": 124,
+      "timestamp_ns": 89108752169,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 88.75,
+      "meta": {
+        "new_balance": 945.6800000000001
+      }
+    },
+    {
+      "seq": 125,
+      "timestamp_ns": 89108873760,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 25.25,
+      "meta": {}
+    },
+    {
+      "seq": 126,
+      "timestamp_ns": 89108879531,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 945.6800000000001,
+      "meta": {}
+    },
+    {
+      "seq": 127,
+      "timestamp_ns": 89108894766,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 763.7800000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 6.1
+      }
+    },
+    {
+      "seq": 128,
+      "timestamp_ns": 89108903443,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 6.1,
+      "meta": {
+        "success": true,
+        "requested": 6.1
+      }
+    },
+    {
+      "seq": 129,
+      "timestamp_ns": 89108969396,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 20.79,
+      "meta": {}
+    },
+    {
+      "seq": 130,
+      "timestamp_ns": 89108977121,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 763.7800000000001,
+      "meta": {}
+    },
+    {
+      "seq": 131,
+      "timestamp_ns": 89109019829,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 40.81,
+      "meta": {}
+    },
+    {
+      "seq": 132,
+      "timestamp_ns": 89109027625,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 763.7800000000001,
+      "meta": {}
+    },
+    {
+      "seq": 133,
+      "timestamp_ns": 89109080748,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 720.2700000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 49.61
+      }
+    },
+    {
+      "seq": 134,
+      "timestamp_ns": 89109087882,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 49.61,
+      "meta": {
+        "success": true,
+        "requested": 49.61
+      }
+    },
+    {
+      "seq": 135,
+      "timestamp_ns": 89109113542,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 54.07,
+      "meta": {}
+    },
+    {
+      "seq": 136,
+      "timestamp_ns": 89109115816,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 720.2700000000001,
+      "meta": {}
+    },
+    {
+      "seq": 137,
+      "timestamp_ns": 89109177330,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 970.9300000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 25.25
+      }
+    },
+    {
+      "seq": 138,
+      "timestamp_ns": 89109183472,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 25.25,
+      "meta": {
+        "new_balance": 970.9300000000001
+      }
+    },
+    {
+      "seq": 139,
+      "timestamp_ns": 89109273397,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 784.57,
+      "meta": {
+        "operation": "deposit",
+        "amount": 20.79
+      }
+    },
+    {
+      "seq": 140,
+      "timestamp_ns": 89109279639,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 20.79,
+      "meta": {
+        "new_balance": 784.57
+      }
+    },
+    {
+      "seq": 141,
+      "timestamp_ns": 89109337638,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 804.5900000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 40.81
+      }
+    },
+    {
+      "seq": 142,
+      "timestamp_ns": 89109344501,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 40.81,
+      "meta": {
+        "new_balance": 804.5900000000001
+      }
+    },
+    {
+      "seq": 143,
+      "timestamp_ns": 89109419136,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 666.2,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 54.07
+      }
+    },
+    {
+      "seq": 144,
+      "timestamp_ns": 89109425739,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 54.07,
+      "meta": {
+        "success": true,
+        "requested": 54.07
+      }
+    },
+    {
+      "seq": 145,
+      "timestamp_ns": 89109521420,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 94.15,
+      "meta": {}
+    },
+    {
+      "seq": 146,
+      "timestamp_ns": 89109527542,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 666.2,
+      "meta": {}
+    },
+    {
+      "seq": 147,
+      "timestamp_ns": 89109542707,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 66.65,
+      "meta": {}
+    },
+    {
+      "seq": 148,
+      "timestamp_ns": 89109548558,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 666.2,
+      "meta": {}
+    },
+    {
+      "seq": 149,
+      "timestamp_ns": 89109694432,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 95.55,
+      "meta": {}
+    },
+    {
+      "seq": 150,
+      "timestamp_ns": 89109701746,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 666.2,
+      "meta": {}
+    },
+    {
+      "seq": 151,
+      "timestamp_ns": 89109714641,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 52.98,
+      "meta": {}
+    },
+    {
+      "seq": 152,
+      "timestamp_ns": 89109722055,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 666.2,
+      "meta": {}
+    },
+    {
+      "seq": 153,
+      "timestamp_ns": 89109837961,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 41.49,
+      "meta": {}
+    },
+    {
+      "seq": 154,
+      "timestamp_ns": 89109844965,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 666.2,
+      "meta": {}
+    },
+    {
+      "seq": 155,
+      "timestamp_ns": 89109858270,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 572.0500000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 94.15
+      }
+    },
+    {
+      "seq": 156,
+      "timestamp_ns": 89109865645,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 94.15,
+      "meta": {
+        "success": true,
+        "requested": 94.15
+      }
+    },
+    {
+      "seq": 157,
+      "timestamp_ns": 89109877369,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 732.85,
+      "meta": {
+        "operation": "deposit",
+        "amount": 66.65
+      }
+    },
+    {
+      "seq": 158,
+      "timestamp_ns": 89109884433,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 66.65,
+      "meta": {
+        "new_balance": 732.85
+      }
+    },
+    {
+      "seq": 159,
+      "timestamp_ns": 89110013001,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 570.6500000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 95.55
+      }
+    },
+    {
+      "seq": 160,
+      "timestamp_ns": 89110020015,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 95.55,
+      "meta": {
+        "success": true,
+        "requested": 95.55
+      }
+    },
+    {
+      "seq": 161,
+      "timestamp_ns": 89110074953,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 719.1800000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 52.98
+      }
+    },
+    {
+      "seq": 162,
+      "timestamp_ns": 89110080845,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 52.98,
+      "meta": {
+        "new_balance": 719.1800000000001
+      }
+    },
+    {
+      "seq": 163,
+      "timestamp_ns": 89110150190,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 624.71,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 41.49
+      }
+    },
+    {
+      "seq": 164,
+      "timestamp_ns": 89110157374,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 41.49,
+      "meta": {
+        "success": true,
+        "requested": 41.49
+      }
+    },
+    {
+      "seq": 165,
+      "timestamp_ns": 89110213141,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 33.25,
+      "meta": {}
+    },
+    {
+      "seq": 166,
+      "timestamp_ns": 89110219553,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 624.71,
+      "meta": {}
+    },
+    {
+      "seq": 167,
+      "timestamp_ns": 89110282868,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 60.71,
+      "meta": {}
+    },
+    {
+      "seq": 168,
+      "timestamp_ns": 89110289220,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 624.71,
+      "meta": {}
+    },
+    {
+      "seq": 169,
+      "timestamp_ns": 89110329397,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 87.63,
+      "meta": {}
+    },
+    {
+      "seq": 170,
+      "timestamp_ns": 89110335830,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 624.71,
+      "meta": {}
+    },
+    {
+      "seq": 171,
+      "timestamp_ns": 89110349396,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 98.83,
+      "meta": {}
+    },
+    {
+      "seq": 172,
+      "timestamp_ns": 89110358223,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 624.71,
+      "meta": {}
+    },
+    {
+      "seq": 173,
+      "timestamp_ns": 89110385897,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 96.63,
+      "meta": {}
+    },
+    {
+      "seq": 174,
+      "timestamp_ns": 89110388732,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 624.71,
+      "meta": {}
+    },
+    {
+      "seq": 175,
+      "timestamp_ns": 89110525189,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 591.46,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 33.25
+      }
+    },
+    {
+      "seq": 176,
+      "timestamp_ns": 89110532343,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 33.25,
+      "meta": {
+        "success": true,
+        "requested": 33.25
+      }
+    },
+    {
+      "seq": 177,
+      "timestamp_ns": 89110604402,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 685.4200000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 60.71
+      }
+    },
+    {
+      "seq": 178,
+      "timestamp_ns": 89110647826,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 60.71,
+      "meta": {
+        "new_balance": 685.4200000000001
+      }
+    },
+    {
+      "seq": 179,
+      "timestamp_ns": 89110700090,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 723.5400000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 98.83
+      }
+    },
+    {
+      "seq": 180,
+      "timestamp_ns": 89110706933,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 98.83,
+      "meta": {
+        "new_balance": 723.5400000000001
+      }
+    },
+    {
+      "seq": 181,
+      "timestamp_ns": 89110843197,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 721.34,
+      "meta": {
+        "operation": "deposit",
+        "amount": 96.63
+      }
+    },
+    {
+      "seq": 182,
+      "timestamp_ns": 89110851813,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 96.63,
+      "meta": {
+        "new_balance": 721.34
+      }
+    },
+    {
+      "seq": 183,
+      "timestamp_ns": 89110863576,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 712.34,
+      "meta": {
+        "operation": "deposit",
+        "amount": 87.63
+      }
+    },
+    {
+      "seq": 184,
+      "timestamp_ns": 89110870650,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 87.63,
+      "meta": {
+        "new_balance": 712.34
+      }
+    },
+    {
+      "seq": 185,
+      "timestamp_ns": 89110942139,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 6.09,
+      "meta": {}
+    },
+    {
+      "seq": 186,
+      "timestamp_ns": 89110949714,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 712.34,
+      "meta": {}
+    },
+    {
+      "seq": 187,
+      "timestamp_ns": 89111004971,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 41.74,
+      "meta": {}
+    },
+    {
+      "seq": 188,
+      "timestamp_ns": 89111012145,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 712.34,
+      "meta": {}
+    },
+    {
+      "seq": 189,
+      "timestamp_ns": 89111044398,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 94.23,
+      "meta": {}
+    },
+    {
+      "seq": 190,
+      "timestamp_ns": 89111051151,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 712.34,
+      "meta": {}
+    },
+    {
+      "seq": 191,
+      "timestamp_ns": 89111089205,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 69.38,
+      "meta": {}
+    },
+    {
+      "seq": 192,
+      "timestamp_ns": 89111095427,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 712.34,
+      "meta": {}
+    },
+    {
+      "seq": 193,
+      "timestamp_ns": 89111185022,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 90.48,
+      "meta": {}
+    },
+    {
+      "seq": 194,
+      "timestamp_ns": 89111190813,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 712.34,
+      "meta": {}
+    },
+    {
+      "seq": 195,
+      "timestamp_ns": 89111258895,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 718.4300000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 6.09
+      }
+    },
+    {
+      "seq": 196,
+      "timestamp_ns": 89111294244,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 6.09,
+      "meta": {
+        "new_balance": 718.4300000000001
+      }
+    },
+    {
+      "seq": 197,
+      "timestamp_ns": 89111345955,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 670.6,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 41.74
+      }
+    },
+    {
+      "seq": 198,
+      "timestamp_ns": 89111353329,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 41.74,
+      "meta": {
+        "success": true,
+        "requested": 41.74
+      }
+    },
+    {
+      "seq": 199,
+      "timestamp_ns": 89111380852,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 806.57,
+      "meta": {
+        "operation": "deposit",
+        "amount": 94.23
+      }
+    },
+    {
+      "seq": 200,
+      "timestamp_ns": 89111387826,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 94.23,
+      "meta": {
+        "new_balance": 806.57
+      }
+    },
+    {
+      "seq": 201,
+      "timestamp_ns": 89111412826,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 642.96,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 69.38
+      }
+    },
+    {
+      "seq": 202,
+      "timestamp_ns": 89111422425,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 69.38,
+      "meta": {
+        "success": true,
+        "requested": 69.38
+      }
+    },
+    {
+      "seq": 203,
+      "timestamp_ns": 89111508322,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 621.86,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 90.48
+      }
+    },
+    {
+      "seq": 204,
+      "timestamp_ns": 89111516788,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 90.48,
+      "meta": {
+        "success": true,
+        "requested": 90.48
+      }
+    },
+    {
+      "seq": 205,
+      "timestamp_ns": 89111676379,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 76.56,
+      "meta": {}
+    },
+    {
+      "seq": 206,
+      "timestamp_ns": 89111685066,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 621.86,
+      "meta": {}
+    },
+    {
+      "seq": 207,
+      "timestamp_ns": 89111696316,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 38.14,
+      "meta": {}
+    },
+    {
+      "seq": 208,
+      "timestamp_ns": 89111705394,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 621.86,
+      "meta": {}
+    },
+    {
+      "seq": 209,
+      "timestamp_ns": 89111718890,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 20.67,
+      "meta": {}
+    },
+    {
+      "seq": 210,
+      "timestamp_ns": 89111728058,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 621.86,
+      "meta": {}
+    },
+    {
+      "seq": 211,
+      "timestamp_ns": 89111825738,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 54.64,
+      "meta": {}
+    },
+    {
+      "seq": 212,
+      "timestamp_ns": 89111832792,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 621.86,
+      "meta": {}
+    },
+    {
+      "seq": 213,
+      "timestamp_ns": 89111979248,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 73.66,
+      "meta": {}
+    },
+    {
+      "seq": 214,
+      "timestamp_ns": 89111987925,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 621.86,
+      "meta": {}
+    },
+    {
+      "seq": 215,
+      "timestamp_ns": 89112037540,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 583.72,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 38.14
+      }
+    },
+    {
+      "seq": 216,
+      "timestamp_ns": 89112047790,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 38.14,
+      "meta": {
+        "success": true,
+        "requested": 38.14
+      }
+    },
+    {
+      "seq": 217,
+      "timestamp_ns": 89112082527,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 698.4200000000001,
+      "meta": {
+        "operation": "deposit",
+        "amount": 76.56
+      }
+    },
+    {
+      "seq": 218,
+      "timestamp_ns": 89112091154,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 76.56,
+      "meta": {
+        "new_balance": 698.4200000000001
+      }
+    },
+    {
+      "seq": 219,
+      "timestamp_ns": 89112103904,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 567.22,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 54.64
+      }
+    },
+    {
+      "seq": 220,
+      "timestamp_ns": 89112113021,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 54.64,
+      "meta": {
+        "success": true,
+        "requested": 54.64
+      }
+    },
+    {
+      "seq": 221,
+      "timestamp_ns": 89112224854,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 601.19,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 20.67
+      }
+    },
+    {
+      "seq": 222,
+      "timestamp_ns": 89112233601,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 20.67,
+      "meta": {
+        "success": true,
+        "requested": 20.67
+      }
+    },
+    {
+      "seq": 223,
+      "timestamp_ns": 89112289111,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 695.52,
+      "meta": {
+        "operation": "deposit",
+        "amount": 73.66
+      }
+    },
+    {
+      "seq": 224,
+      "timestamp_ns": 89112295764,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 73.66,
+      "meta": {
+        "new_balance": 695.52
+      }
+    },
+    {
+      "seq": 225,
+      "timestamp_ns": 89112343816,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 86.36,
+      "meta": {}
+    },
+    {
+      "seq": 226,
+      "timestamp_ns": 89112352533,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 695.52,
+      "meta": {}
+    },
+    {
+      "seq": 227,
+      "timestamp_ns": 89112495872,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 50.12,
+      "meta": {}
+    },
+    {
+      "seq": 228,
+      "timestamp_ns": 89112504027,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 695.52,
+      "meta": {}
+    },
+    {
+      "seq": 229,
+      "timestamp_ns": 89112585166,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 33.99,
+      "meta": {}
+    },
+    {
+      "seq": 230,
+      "timestamp_ns": 89112595085,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 695.52,
+      "meta": {}
+    },
+    {
+      "seq": 231,
+      "timestamp_ns": 89112626636,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 92.26,
+      "meta": {}
+    },
+    {
+      "seq": 232,
+      "timestamp_ns": 89112635403,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 695.52,
+      "meta": {}
+    },
+    {
+      "seq": 233,
+      "timestamp_ns": 89112675130,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 781.88,
+      "meta": {
+        "operation": "deposit",
+        "amount": 86.36
+      }
+    },
+    {
+      "seq": 234,
+      "timestamp_ns": 89112685480,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 86.36,
+      "meta": {
+        "new_balance": 781.88
+      }
+    },
+    {
+      "seq": 235,
+      "timestamp_ns": 89112822687,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 25.7,
+      "meta": {}
+    },
+    {
+      "seq": 236,
+      "timestamp_ns": 89112831735,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 781.88,
+      "meta": {}
+    },
+    {
+      "seq": 237,
+      "timestamp_ns": 89112922352,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 729.51,
+      "meta": {
+        "operation": "deposit",
+        "amount": 33.99
+      }
+    },
+    {
+      "seq": 238,
+      "timestamp_ns": 89112932622,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 33.99,
+      "meta": {
+        "new_balance": 729.51
+      }
+    },
+    {
+      "seq": 239,
+      "timestamp_ns": 89112949353,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 745.64,
+      "meta": {
+        "operation": "deposit",
+        "amount": 50.12
+      }
+    },
+    {
+      "seq": 240,
+      "timestamp_ns": 89112961577,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 50.12,
+      "meta": {
+        "new_balance": 745.64
+      }
+    },
+    {
+      "seq": 241,
+      "timestamp_ns": 89113053917,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 73.12,
+      "meta": {}
+    },
+    {
+      "seq": 242,
+      "timestamp_ns": 89113061021,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 745.64,
+      "meta": {}
+    },
+    {
+      "seq": 243,
+      "timestamp_ns": 89113081892,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 787.78,
+      "meta": {
+        "operation": "deposit",
+        "amount": 92.26
+      }
+    },
+    {
+      "seq": 244,
+      "timestamp_ns": 89113090619,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 92.26,
+      "meta": {
+        "new_balance": 787.78
+      }
+    },
+    {
+      "seq": 245,
+      "timestamp_ns": 89113150687,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 756.18,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 25.7
+      }
+    },
+    {
+      "seq": 246,
+      "timestamp_ns": 89113158202,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 25.7,
+      "meta": {
+        "success": true,
+        "requested": 25.7
+      }
+    },
+    {
+      "seq": 247,
+      "timestamp_ns": 89113262042,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 80.11,
+      "meta": {}
+    },
+    {
+      "seq": 248,
+      "timestamp_ns": 89113268204,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 756.18,
+      "meta": {}
+    },
+    {
+      "seq": 249,
+      "timestamp_ns": 89113366446,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 672.52,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 73.12
+      }
+    },
+    {
+      "seq": 250,
+      "timestamp_ns": 89113373780,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 73.12,
+      "meta": {
+        "success": true,
+        "requested": 73.12
+      }
+    },
+    {
+      "seq": 251,
+      "timestamp_ns": 89113534313,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 60.35,
+      "meta": {}
+    },
+    {
+      "seq": 252,
+      "timestamp_ns": 89113570283,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "READ_BALANCE",
+      "value": 672.52,
+      "meta": {}
+    },
+    {
+      "seq": 253,
+      "timestamp_ns": 89113589239,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 836.29,
+      "meta": {
+        "operation": "deposit",
+        "amount": 80.11
+      }
+    },
+    {
+      "seq": 254,
+      "timestamp_ns": 89113596473,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 80.11,
+      "meta": {
+        "new_balance": 836.29
+      }
+    },
+    {
+      "seq": 255,
+      "timestamp_ns": 89113659877,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 73.84,
+      "meta": {}
+    },
+    {
+      "seq": 256,
+      "timestamp_ns": 89113667492,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "READ_BALANCE",
+      "value": 836.29,
+      "meta": {}
+    },
+    {
+      "seq": 257,
+      "timestamp_ns": 89113725824,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 30.89,
+      "meta": {}
+    },
+    {
+      "seq": 258,
+      "timestamp_ns": 89113733449,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "READ_BALANCE",
+      "value": 836.29,
+      "meta": {}
+    },
+    {
+      "seq": 259,
+      "timestamp_ns": 89113869435,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 612.17,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 60.35
+      }
+    },
+    {
+      "seq": 260,
+      "timestamp_ns": 89113875958,
+      "thread_name": "Race-Run37-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 60.35,
+      "meta": {
+        "success": true,
+        "requested": 60.35
+      }
+    },
+    {
+      "seq": 261,
+      "timestamp_ns": 89113943919,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 61.83,
+      "meta": {}
+    },
+    {
+      "seq": 262,
+      "timestamp_ns": 89113950752,
+      "thread_name": "Race-Run37-T1",
+      "event_type": "READ_BALANCE",
+      "value": 612.17,
+      "meta": {}
+    },
+    {
+      "seq": 263,
+      "timestamp_ns": 89113963557,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 12.53,
+      "meta": {}
+    },
+    {
+      "seq": 264,
+      "timestamp_ns": 89113970901,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 612.17,
+      "meta": {}
+    },
+    {
+      "seq": 265,
+      "timestamp_ns": 89114032623,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 910.13,
+      "meta": {
+        "operation": "deposit",
+        "amount": 73.84
+      }
+    },
+    {
+      "seq": 266,
+      "timestamp_ns": 89114074905,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 73.84,
+      "meta": {
+        "new_balance": 910.13
+      }
+    },
+    {
+      "seq": 267,
+      "timestamp_ns": 89114134409,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 867.18,
+      "meta": {
+        "operation": "deposit",
+        "amount": 30.89
+      }
+    },
+    {
+      "seq": 268,
+      "timestamp_ns": 89114141513,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 30.89,
+      "meta": {
+        "new_balance": 867.18
+      }
+    },
+    {
+      "seq": 269,
+      "timestamp_ns": 89114199115,
       "thread_name": "Race-Run37-T5",
       "event_type": "DEPOSIT_START",
       "value": 72.74,
       "meta": {}
     },
     {
-      "seq": 68,
-      "timestamp_ns": 2264935019825,
+      "seq": 270,
+      "timestamp_ns": 89114207892,
       "thread_name": "Race-Run37-T5",
       "event_type": "READ_BALANCE",
-      "value": 821.11,
+      "value": 867.18,
       "meta": {}
     },
     {
-      "seq": 69,
-      "timestamp_ns": 2264935069331,
-      "thread_name": "Race-Run37-T3",
+      "seq": 271,
+      "timestamp_ns": 89114270173,
+      "thread_name": "Race-Run37-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 922.68,
+      "value": 550.3399999999999,
       "meta": {
         "operation": "withdraw",
-        "amount": 61.42
+        "amount": 61.83
       }
     },
     {
-      "seq": 70,
-      "timestamp_ns": 2264935077343,
-      "thread_name": "Race-Run37-T3",
+      "seq": 272,
+      "timestamp_ns": 89114306393,
+      "thread_name": "Race-Run37-T1",
       "event_type": "WITHDRAW_END",
-      "value": 61.42,
+      "value": 61.83,
       "meta": {
         "success": true,
-        "requested": 61.42
+        "requested": 61.83
       }
     },
     {
-      "seq": 71,
-      "timestamp_ns": 2264935300925,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 29.45,
-      "meta": {}
+      "seq": 273,
+      "timestamp_ns": 89114363637,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 624.6999999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 12.53
+      }
     },
     {
-      "seq": 72,
-      "timestamp_ns": 2264935310766,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 922.68,
-      "meta": {}
+      "seq": 274,
+      "timestamp_ns": 89114371001,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 12.53,
+      "meta": {
+        "new_balance": 624.6999999999999
+      }
     },
     {
-      "seq": 73,
-      "timestamp_ns": 2264935326147,
+      "seq": 275,
+      "timestamp_ns": 89114434082,
       "thread_name": "Race-Run37-T4",
       "event_type": "DEPOSIT_START",
-      "value": 20.25,
+      "value": 39.12,
       "meta": {}
     },
     {
-      "seq": 74,
-      "timestamp_ns": 2264935335389,
+      "seq": 276,
+      "timestamp_ns": 89114441496,
       "thread_name": "Race-Run37-T4",
       "event_type": "READ_BALANCE",
-      "value": 922.68,
+      "value": 624.6999999999999,
       "meta": {}
     },
     {
-      "seq": 75,
-      "timestamp_ns": 2264935408544,
-      "thread_name": "Race-Run37-T1",
+      "seq": 277,
+      "timestamp_ns": 89114461856,
+      "thread_name": "Race-Run37-T2",
       "event_type": "WITHDRAW_START",
-      "value": 95.85,
+      "value": 83.73,
       "meta": {}
     },
     {
-      "seq": 76,
-      "timestamp_ns": 2264935416860,
-      "thread_name": "Race-Run37-T1",
+      "seq": 278,
+      "timestamp_ns": 89114469411,
+      "thread_name": "Race-Run37-T2",
       "event_type": "READ_BALANCE",
-      "value": 922.68,
+      "value": 624.6999999999999,
       "meta": {}
     },
     {
-      "seq": 77,
-      "timestamp_ns": 2264935448056,
+      "seq": 279,
+      "timestamp_ns": 89114517225,
       "thread_name": "Race-Run37-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 893.85,
+      "value": 939.92,
       "meta": {
         "operation": "deposit",
         "amount": 72.74
       }
     },
     {
-      "seq": 78,
-      "timestamp_ns": 2264935459574,
+      "seq": 280,
+      "timestamp_ns": 89114524359,
       "thread_name": "Race-Run37-T5",
       "event_type": "DEPOSIT_END",
       "value": 72.74,
       "meta": {
-        "new_balance": 893.85
-      }
-    },
-    {
-      "seq": 79,
-      "timestamp_ns": 2264935485307,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 77.22,
-      "meta": {}
-    },
-    {
-      "seq": 80,
-      "timestamp_ns": 2264935492677,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 893.85,
-      "meta": {}
-    },
-    {
-      "seq": 81,
-      "timestamp_ns": 2264935673500,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 952.13,
-      "meta": {
-        "operation": "deposit",
-        "amount": 29.45
-      }
-    },
-    {
-      "seq": 82,
-      "timestamp_ns": 2264935682165,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 29.45,
-      "meta": {
-        "new_balance": 952.13
-      }
-    },
-    {
-      "seq": 83,
-      "timestamp_ns": 2264935769970,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 826.8299999999999,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 95.85
-      }
-    },
-    {
-      "seq": 84,
-      "timestamp_ns": 2264935780550,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 95.85,
-      "meta": {
-        "success": true,
-        "requested": 95.85
-      }
-    },
-    {
-      "seq": 85,
-      "timestamp_ns": 2264935826075,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 942.93,
-      "meta": {
-        "operation": "deposit",
-        "amount": 20.25
-      }
-    },
-    {
-      "seq": 86,
-      "timestamp_ns": 2264935835491,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 20.25,
-      "meta": {
-        "new_balance": 942.93
-      }
-    },
-    {
-      "seq": 87,
-      "timestamp_ns": 2264935850621,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 971.07,
-      "meta": {
-        "operation": "deposit",
-        "amount": 77.22
-      }
-    },
-    {
-      "seq": 88,
-      "timestamp_ns": 2264935860114,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 77.22,
-      "meta": {
-        "new_balance": 971.07
-      }
-    },
-    {
-      "seq": 89,
-      "timestamp_ns": 2264936113501,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 39.23,
-      "meta": {}
-    },
-    {
-      "seq": 90,
-      "timestamp_ns": 2264936123886,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 971.07,
-      "meta": {}
-    },
-    {
-      "seq": 91,
-      "timestamp_ns": 2264936255516,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 37.85,
-      "meta": {}
-    },
-    {
-      "seq": 92,
-      "timestamp_ns": 2264936263767,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 971.07,
-      "meta": {}
-    },
-    {
-      "seq": 93,
-      "timestamp_ns": 2264936336356,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 30.7,
-      "meta": {}
-    },
-    {
-      "seq": 94,
-      "timestamp_ns": 2264936348515,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 971.07,
-      "meta": {}
-    },
-    {
-      "seq": 95,
-      "timestamp_ns": 2264936438657,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 18.04,
-      "meta": {}
-    },
-    {
-      "seq": 96,
-      "timestamp_ns": 2264936448890,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 971.07,
-      "meta": {}
-    },
-    {
-      "seq": 97,
-      "timestamp_ns": 2264936524252,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 87.76,
-      "meta": {}
-    },
-    {
-      "seq": 98,
-      "timestamp_ns": 2264936532308,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 971.07,
-      "meta": {}
-    },
-    {
-      "seq": 99,
-      "timestamp_ns": 2264936560199,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 931.84,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 39.23
-      }
-    },
-    {
-      "seq": 100,
-      "timestamp_ns": 2264936568483,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 39.23,
-      "meta": {
-        "success": true,
-        "requested": 39.23
-      }
-    },
-    {
-      "seq": 101,
-      "timestamp_ns": 2264936622735,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1008.9200000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 37.85
-      }
-    },
-    {
-      "seq": 102,
-      "timestamp_ns": 2264936632663,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 37.85,
-      "meta": {
-        "new_balance": 1008.9200000000001
-      }
-    },
-    {
-      "seq": 103,
-      "timestamp_ns": 2264936699283,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1001.7700000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 30.7
-      }
-    },
-    {
-      "seq": 104,
-      "timestamp_ns": 2264936707306,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 30.7,
-      "meta": {
-        "new_balance": 1001.7700000000001
-      }
-    },
-    {
-      "seq": 105,
-      "timestamp_ns": 2264936792729,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 989.11,
-      "meta": {
-        "operation": "deposit",
-        "amount": 18.04
-      }
-    },
-    {
-      "seq": 106,
-      "timestamp_ns": 2264936800643,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 18.04,
-      "meta": {
-        "new_balance": 989.11
-      }
-    },
-    {
-      "seq": 107,
-      "timestamp_ns": 2264936933250,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 883.3100000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 87.76
-      }
-    },
-    {
-      "seq": 108,
-      "timestamp_ns": 2264936944386,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 87.76,
-      "meta": {
-        "success": true,
-        "requested": 87.76
-      }
-    },
-    {
-      "seq": 109,
-      "timestamp_ns": 2264936964318,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 39.16,
-      "meta": {}
-    },
-    {
-      "seq": 110,
-      "timestamp_ns": 2264936974148,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 883.3100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 111,
-      "timestamp_ns": 2264937126777,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 29.3,
-      "meta": {}
-    },
-    {
-      "seq": 112,
-      "timestamp_ns": 2264937134701,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 883.3100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 113,
-      "timestamp_ns": 2264937197403,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 92.18,
-      "meta": {}
-    },
-    {
-      "seq": 114,
-      "timestamp_ns": 2264937204991,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 883.3100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 115,
-      "timestamp_ns": 2264937300820,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 85.81,
-      "meta": {}
-    },
-    {
-      "seq": 116,
-      "timestamp_ns": 2264937341369,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 883.3100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 117,
-      "timestamp_ns": 2264937413822,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 844.1500000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 39.16
-      }
-    },
-    {
-      "seq": 118,
-      "timestamp_ns": 2264937424229,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 39.16,
-      "meta": {
-        "success": true,
-        "requested": 39.16
-      }
-    },
-    {
-      "seq": 119,
-      "timestamp_ns": 2264937460043,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 40.14,
-      "meta": {}
-    },
-    {
-      "seq": 120,
-      "timestamp_ns": 2264937469067,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 844.1500000000001,
-      "meta": {}
-    },
-    {
-      "seq": 121,
-      "timestamp_ns": 2264937541329,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 912.61,
-      "meta": {
-        "operation": "deposit",
-        "amount": 29.3
-      }
-    },
-    {
-      "seq": 122,
-      "timestamp_ns": 2264937549167,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 29.3,
-      "meta": {
-        "new_balance": 912.61
-      }
-    },
-    {
-      "seq": 123,
-      "timestamp_ns": 2264937570555,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 975.49,
-      "meta": {
-        "operation": "deposit",
-        "amount": 92.18
-      }
-    },
-    {
-      "seq": 124,
-      "timestamp_ns": 2264937578698,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 92.18,
-      "meta": {
-        "new_balance": 975.49
-      }
-    },
-    {
-      "seq": 125,
-      "timestamp_ns": 2264937662672,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 797.5,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 85.81
-      }
-    },
-    {
-      "seq": 126,
-      "timestamp_ns": 2264937670238,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 85.81,
-      "meta": {
-        "success": true,
-        "requested": 85.81
-      }
-    },
-    {
-      "seq": 127,
-      "timestamp_ns": 2264937802151,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 40.14
-      }
-    },
-    {
-      "seq": 128,
-      "timestamp_ns": 2264937810707,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 40.14,
-      "meta": {
-        "success": true,
-        "requested": 40.14
-      }
-    },
-    {
-      "seq": 129,
-      "timestamp_ns": 2264937944175,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 8.03,
-      "meta": {}
-    },
-    {
-      "seq": 130,
-      "timestamp_ns": 2264937954233,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 131,
-      "timestamp_ns": 2264938035757,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 76.09,
-      "meta": {}
-    },
-    {
-      "seq": 132,
-      "timestamp_ns": 2264938044062,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 133,
-      "timestamp_ns": 2264938061087,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 79.97,
-      "meta": {}
-    },
-    {
-      "seq": 134,
-      "timestamp_ns": 2264938069023,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 135,
-      "timestamp_ns": 2264938205139,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 47.39,
-      "meta": {}
-    },
-    {
-      "seq": 136,
-      "timestamp_ns": 2264938216808,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 137,
-      "timestamp_ns": 2264938293119,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 21.61,
-      "meta": {}
-    },
-    {
-      "seq": 138,
-      "timestamp_ns": 2264938303667,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 804.0100000000001,
-      "meta": {}
-    },
-    {
-      "seq": 139,
-      "timestamp_ns": 2264938315487,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 812.0400000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 8.03
-      }
-    },
-    {
-      "seq": 140,
-      "timestamp_ns": 2264938324980,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 8.03,
-      "meta": {
-        "new_balance": 812.0400000000001
-      }
-    },
-    {
-      "seq": 141,
-      "timestamp_ns": 2264938410217,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 880.1000000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 76.09
-      }
-    },
-    {
-      "seq": 142,
-      "timestamp_ns": 2264938420700,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 76.09,
-      "meta": {
-        "new_balance": 880.1000000000001
-      }
-    },
-    {
-      "seq": 143,
-      "timestamp_ns": 2264938441173,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 883.9800000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 79.97
-      }
-    },
-    {
-      "seq": 144,
-      "timestamp_ns": 2264938451188,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 79.97,
-      "meta": {
-        "new_balance": 883.9800000000001
-      }
-    },
-    {
-      "seq": 145,
-      "timestamp_ns": 2264938638183,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 42.04,
-      "meta": {}
-    },
-    {
-      "seq": 146,
-      "timestamp_ns": 2264938652596,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 883.9800000000001,
-      "meta": {}
-    },
-    {
-      "seq": 147,
-      "timestamp_ns": 2264938763859,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 98.78,
-      "meta": {}
-    },
-    {
-      "seq": 148,
-      "timestamp_ns": 2264938774549,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 883.9800000000001,
-      "meta": {}
-    },
-    {
-      "seq": 149,
-      "timestamp_ns": 2264938846299,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 825.6200000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 21.61
-      }
-    },
-    {
-      "seq": 150,
-      "timestamp_ns": 2264938858915,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 21.61,
-      "meta": {
-        "new_balance": 825.6200000000001
-      }
-    },
-    {
-      "seq": 151,
-      "timestamp_ns": 2264938937856,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 72.04,
-      "meta": {}
-    },
-    {
-      "seq": 152,
-      "timestamp_ns": 2264938946565,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 825.6200000000001,
-      "meta": {}
-    },
-    {
-      "seq": 153,
-      "timestamp_ns": 2264939007133,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 926.0200000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 42.04
-      }
-    },
-    {
-      "seq": 154,
-      "timestamp_ns": 2264939015787,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 42.04,
-      "meta": {
-        "new_balance": 926.0200000000001
-      }
-    },
-    {
-      "seq": 155,
-      "timestamp_ns": 2264939030178,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 851.4000000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 47.39
-      }
-    },
-    {
-      "seq": 156,
-      "timestamp_ns": 2264939040792,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 47.39,
-      "meta": {
-        "new_balance": 851.4000000000001
-      }
-    },
-    {
-      "seq": 157,
-      "timestamp_ns": 2264939138774,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 785.2000000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 98.78
-      }
-    },
-    {
-      "seq": 158,
-      "timestamp_ns": 2264939148560,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 98.78,
-      "meta": {
-        "success": true,
-        "requested": 98.78
-      }
-    },
-    {
-      "seq": 159,
-      "timestamp_ns": 2264939190973,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 71.58,
-      "meta": {}
-    },
-    {
-      "seq": 160,
-      "timestamp_ns": 2264939198942,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 785.2000000000002,
-      "meta": {}
-    },
-    {
-      "seq": 161,
-      "timestamp_ns": 2264939308330,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 753.5800000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 72.04
-      }
-    },
-    {
-      "seq": 162,
-      "timestamp_ns": 2264939318356,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 72.04,
-      "meta": {
-        "success": true,
-        "requested": 72.04
-      }
-    },
-    {
-      "seq": 163,
-      "timestamp_ns": 2264939342707,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 62.26,
-      "meta": {}
-    },
-    {
-      "seq": 164,
-      "timestamp_ns": 2264939353408,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 753.5800000000002,
-      "meta": {}
-    },
-    {
-      "seq": 165,
-      "timestamp_ns": 2264939600405,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 26.12,
-      "meta": {}
-    },
-    {
-      "seq": 166,
-      "timestamp_ns": 2264939616962,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 753.5800000000002,
-      "meta": {}
-    },
-    {
-      "seq": 167,
-      "timestamp_ns": 2264939637482,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 42.01,
-      "meta": {}
-    },
-    {
-      "seq": 168,
-      "timestamp_ns": 2264939648433,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 753.5800000000002,
-      "meta": {}
-    },
-    {
-      "seq": 169,
-      "timestamp_ns": 2264939698584,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 691.3200000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 62.26
-      }
-    },
-    {
-      "seq": 170,
-      "timestamp_ns": 2264939707249,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 62.26,
-      "meta": {
-        "success": true,
-        "requested": 62.26
-      }
-    },
-    {
-      "seq": 171,
-      "timestamp_ns": 2264939957631,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 20.85,
-      "meta": {}
-    },
-    {
-      "seq": 172,
-      "timestamp_ns": 2264939977486,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 691.3200000000002,
-      "meta": {}
-    },
-    {
-      "seq": 173,
-      "timestamp_ns": 2264940179754,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 713.6200000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 71.58
-      }
-    },
-    {
-      "seq": 174,
-      "timestamp_ns": 2264940199871,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 71.58,
-      "meta": {
-        "success": true,
-        "requested": 71.58
-      }
-    },
-    {
-      "seq": 175,
-      "timestamp_ns": 2264940283615,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 727.4600000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 26.12
-      }
-    },
-    {
-      "seq": 176,
-      "timestamp_ns": 2264940295861,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 26.12,
-      "meta": {
-        "success": true,
-        "requested": 26.12
-      }
-    },
-    {
-      "seq": 177,
-      "timestamp_ns": 2264940389490,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 795.5900000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 42.01
-      }
-    },
-    {
-      "seq": 178,
-      "timestamp_ns": 2264940400353,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 42.01,
-      "meta": {
-        "new_balance": 795.5900000000001
-      }
-    },
-    {
-      "seq": 179,
-      "timestamp_ns": 2264940501275,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 7.31,
-      "meta": {}
-    },
-    {
-      "seq": 180,
-      "timestamp_ns": 2264940510528,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 795.5900000000001,
-      "meta": {}
-    },
-    {
-      "seq": 181,
-      "timestamp_ns": 2264940590571,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 712.1700000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 20.85
-      }
-    },
-    {
-      "seq": 182,
-      "timestamp_ns": 2264940600956,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 20.85,
-      "meta": {
-        "new_balance": 712.1700000000002
-      }
-    },
-    {
-      "seq": 183,
-      "timestamp_ns": 2264940693157,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 80.94,
-      "meta": {}
-    },
-    {
-      "seq": 184,
-      "timestamp_ns": 2264940705981,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 712.1700000000002,
-      "meta": {}
-    },
-    {
-      "seq": 185,
-      "timestamp_ns": 2264940868069,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 83.41,
-      "meta": {}
-    },
-    {
-      "seq": 186,
-      "timestamp_ns": 2264940880316,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 712.1700000000002,
-      "meta": {}
-    },
-    {
-      "seq": 187,
-      "timestamp_ns": 2264940987116,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 802.9000000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 7.31
-      }
-    },
-    {
-      "seq": 188,
-      "timestamp_ns": 2264940998557,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 7.31,
-      "meta": {
-        "new_balance": 802.9000000000001
-      }
-    },
-    {
-      "seq": 189,
-      "timestamp_ns": 2264941090313,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 72.06,
-      "meta": {}
-    },
-    {
-      "seq": 190,
-      "timestamp_ns": 2264941101014,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 802.9000000000001,
-      "meta": {}
-    },
-    {
-      "seq": 191,
-      "timestamp_ns": 2264941118530,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 631.2300000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 80.94
-      }
-    },
-    {
-      "seq": 192,
-      "timestamp_ns": 2264941128208,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 80.94,
-      "meta": {
-        "success": true,
-        "requested": 80.94
-      }
-    },
-    {
-      "seq": 193,
-      "timestamp_ns": 2264941214257,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 11.93,
-      "meta": {}
-    },
-    {
-      "seq": 194,
-      "timestamp_ns": 2264941224304,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 631.2300000000002,
-      "meta": {}
-    },
-    {
-      "seq": 195,
-      "timestamp_ns": 2264941292179,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 795.5800000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 83.41
-      }
-    },
-    {
-      "seq": 196,
-      "timestamp_ns": 2264941299886,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 83.41,
-      "meta": {
-        "new_balance": 795.5800000000002
-      }
-    },
-    {
-      "seq": 197,
-      "timestamp_ns": 2264941443903,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 76.93,
-      "meta": {}
-    },
-    {
-      "seq": 198,
-      "timestamp_ns": 2264941452459,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 795.5800000000002,
-      "meta": {}
-    },
-    {
-      "seq": 199,
-      "timestamp_ns": 2264941530118,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 874.96,
-      "meta": {
-        "operation": "deposit",
-        "amount": 72.06
-      }
-    },
-    {
-      "seq": 200,
-      "timestamp_ns": 2264941539621,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 72.06,
-      "meta": {
-        "new_balance": 874.96
-      }
-    },
-    {
-      "seq": 201,
-      "timestamp_ns": 2264941557571,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 619.3000000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 11.93
-      }
-    },
-    {
-      "seq": 202,
-      "timestamp_ns": 2264941566530,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 11.93,
-      "meta": {
-        "success": true,
-        "requested": 11.93
-      }
-    },
-    {
-      "seq": 203,
-      "timestamp_ns": 2264941707633,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 82.28,
-      "meta": {}
-    },
-    {
-      "seq": 204,
-      "timestamp_ns": 2264941714926,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 619.3000000000003,
-      "meta": {}
-    },
-    {
-      "seq": 205,
-      "timestamp_ns": 2264941726790,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 61.92,
-      "meta": {}
-    },
-    {
-      "seq": 206,
-      "timestamp_ns": 2264941736347,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 619.3000000000003,
-      "meta": {}
-    },
-    {
-      "seq": 207,
-      "timestamp_ns": 2264941864712,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 872.5100000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 76.93
-      }
-    },
-    {
-      "seq": 208,
-      "timestamp_ns": 2264941877361,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 76.93,
-      "meta": {
-        "new_balance": 872.5100000000002
-      }
-    },
-    {
-      "seq": 209,
-      "timestamp_ns": 2264941921405,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 53.0,
-      "meta": {}
-    },
-    {
-      "seq": 210,
-      "timestamp_ns": 2264941931246,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 872.5100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 211,
-      "timestamp_ns": 2264942060646,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 50.4,
-      "meta": {}
-    },
-    {
-      "seq": 212,
-      "timestamp_ns": 2264942070160,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 872.5100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 213,
-      "timestamp_ns": 2264942082002,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 701.5800000000003,
-      "meta": {
-        "operation": "deposit",
-        "amount": 82.28
-      }
-    },
-    {
-      "seq": 214,
-      "timestamp_ns": 2264942090624,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 82.28,
-      "meta": {
-        "new_balance": 701.5800000000003
-      }
-    },
-    {
-      "seq": 215,
-      "timestamp_ns": 2264942189575,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 557.3800000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 61.92
-      }
-    },
-    {
-      "seq": 216,
-      "timestamp_ns": 2264942200700,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 61.92,
-      "meta": {
-        "success": true,
-        "requested": 61.92
-      }
-    },
-    {
-      "seq": 217,
-      "timestamp_ns": 2264942293827,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 819.5100000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 53.0
-      }
-    },
-    {
-      "seq": 218,
-      "timestamp_ns": 2264942303493,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 53.0,
-      "meta": {
-        "success": true,
-        "requested": 53.0
-      }
-    },
-    {
-      "seq": 219,
-      "timestamp_ns": 2264942411132,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 72.5,
-      "meta": {}
-    },
-    {
-      "seq": 220,
-      "timestamp_ns": 2264942423487,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 819.5100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 221,
-      "timestamp_ns": 2264942559626,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 922.9100000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 50.4
-      }
-    },
-    {
-      "seq": 222,
-      "timestamp_ns": 2264942573897,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 50.4,
-      "meta": {
-        "new_balance": 922.9100000000002
-      }
-    },
-    {
-      "seq": 223,
-      "timestamp_ns": 2264942649203,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 59.45,
-      "meta": {}
-    },
-    {
-      "seq": 224,
-      "timestamp_ns": 2264942660502,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 922.9100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 225,
-      "timestamp_ns": 2264942752399,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 28.51,
-      "meta": {}
-    },
-    {
-      "seq": 226,
-      "timestamp_ns": 2264942764950,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 922.9100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 227,
-      "timestamp_ns": 2264942860331,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 26.97,
-      "meta": {}
-    },
-    {
-      "seq": 228,
-      "timestamp_ns": 2264942871685,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 922.9100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 229,
-      "timestamp_ns": 2264942966075,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 747.0100000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 72.5
-      }
-    },
-    {
-      "seq": 230,
-      "timestamp_ns": 2264942978452,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 72.5,
-      "meta": {
-        "success": true,
-        "requested": 72.5
-      }
-    },
-    {
-      "seq": 231,
-      "timestamp_ns": 2264943001791,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 72.17,
-      "meta": {}
-    },
-    {
-      "seq": 232,
-      "timestamp_ns": 2264943012132,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 747.0100000000002,
-      "meta": {}
-    },
-    {
-      "seq": 233,
-      "timestamp_ns": 2264943109429,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 863.4600000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 59.45
-      }
-    },
-    {
-      "seq": 234,
-      "timestamp_ns": 2264943122916,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 59.45,
-      "meta": {
-        "success": true,
-        "requested": 59.45
-      }
-    },
-    {
-      "seq": 235,
-      "timestamp_ns": 2264943216806,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 894.4000000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 28.51
-      }
-    },
-    {
-      "seq": 236,
-      "timestamp_ns": 2264943228214,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 28.51,
-      "meta": {
-        "success": true,
-        "requested": 28.51
-      }
-    },
-    {
-      "seq": 237,
-      "timestamp_ns": 2264943244173,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 895.9400000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 26.97
-      }
-    },
-    {
-      "seq": 238,
-      "timestamp_ns": 2264943255864,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 26.97,
-      "meta": {
-        "success": true,
-        "requested": 26.97
-      }
-    },
-    {
-      "seq": 239,
-      "timestamp_ns": 2264943402288,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 72.17
-      }
-    },
-    {
-      "seq": 240,
-      "timestamp_ns": 2264943415470,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 72.17,
-      "meta": {
-        "success": true,
-        "requested": 72.17
-      }
-    },
-    {
-      "seq": 241,
-      "timestamp_ns": 2264943510547,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 48.89,
-      "meta": {}
-    },
-    {
-      "seq": 242,
-      "timestamp_ns": 2264943521727,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {}
-    },
-    {
-      "seq": 243,
-      "timestamp_ns": 2264943604991,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 28.56,
-      "meta": {}
-    },
-    {
-      "seq": 244,
-      "timestamp_ns": 2264943614962,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {}
-    },
-    {
-      "seq": 245,
-      "timestamp_ns": 2264943750370,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 38.3,
-      "meta": {}
-    },
-    {
-      "seq": 246,
-      "timestamp_ns": 2264943763367,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {}
-    },
-    {
-      "seq": 247,
-      "timestamp_ns": 2264943923888,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 45.89,
-      "meta": {}
-    },
-    {
-      "seq": 248,
-      "timestamp_ns": 2264943938421,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {}
-    },
-    {
-      "seq": 249,
-      "timestamp_ns": 2264944020847,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 93.11,
-      "meta": {}
-    },
-    {
-      "seq": 250,
-      "timestamp_ns": 2264944032114,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 674.8400000000003,
-      "meta": {}
-    },
-    {
-      "seq": 251,
-      "timestamp_ns": 2264944121486,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 625.9500000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 48.89
-      }
-    },
-    {
-      "seq": 252,
-      "timestamp_ns": 2264944133373,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 48.89,
-      "meta": {
-        "success": true,
-        "requested": 48.89
-      }
-    },
-    {
-      "seq": 253,
-      "timestamp_ns": 2264944266617,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 646.2800000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 28.56
-      }
-    },
-    {
-      "seq": 254,
-      "timestamp_ns": 2264944281007,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 28.56,
-      "meta": {
-        "success": true,
-        "requested": 28.56
-      }
-    },
-    {
-      "seq": 255,
-      "timestamp_ns": 2264944365587,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 636.5400000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 38.3
-      }
-    },
-    {
-      "seq": 256,
-      "timestamp_ns": 2264944377224,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 38.3,
-      "meta": {
-        "success": true,
-        "requested": 38.3
-      }
-    },
-    {
-      "seq": 257,
-      "timestamp_ns": 2264944465083,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 720.7300000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 45.89
-      }
-    },
-    {
-      "seq": 258,
-      "timestamp_ns": 2264944473704,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 45.89,
-      "meta": {
-        "new_balance": 720.7300000000002
-      }
-    },
-    {
-      "seq": 259,
-      "timestamp_ns": 2264944555173,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 767.9500000000003,
-      "meta": {
-        "operation": "deposit",
-        "amount": 93.11
-      }
-    },
-    {
-      "seq": 260,
-      "timestamp_ns": 2264944565417,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 93.11,
-      "meta": {
-        "new_balance": 767.9500000000003
-      }
-    },
-    {
-      "seq": 261,
-      "timestamp_ns": 2264944602798,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 16.19,
-      "meta": {}
-    },
-    {
-      "seq": 262,
-      "timestamp_ns": 2264944613499,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "READ_BALANCE",
-      "value": 767.9500000000003,
-      "meta": {}
-    },
-    {
-      "seq": 263,
-      "timestamp_ns": 2264944810836,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 12.27,
-      "meta": {}
-    },
-    {
-      "seq": 264,
-      "timestamp_ns": 2264944822178,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "READ_BALANCE",
-      "value": 767.9500000000003,
-      "meta": {}
-    },
-    {
-      "seq": 265,
-      "timestamp_ns": 2264944946156,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 56.85,
-      "meta": {}
-    },
-    {
-      "seq": 266,
-      "timestamp_ns": 2264944959654,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 767.9500000000003,
-      "meta": {}
-    },
-    {
-      "seq": 267,
-      "timestamp_ns": 2264944980142,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 751.7600000000002,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 16.19
-      }
-    },
-    {
-      "seq": 268,
-      "timestamp_ns": 2264944990929,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 16.19,
-      "meta": {
-        "success": true,
-        "requested": 16.19
-      }
-    },
-    {
-      "seq": 269,
-      "timestamp_ns": 2264945054512,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 17.16,
-      "meta": {}
-    },
-    {
-      "seq": 270,
-      "timestamp_ns": 2264945065594,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "READ_BALANCE",
-      "value": 751.7600000000002,
-      "meta": {}
-    },
-    {
-      "seq": 271,
-      "timestamp_ns": 2264945102562,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 58.09,
-      "meta": {}
-    },
-    {
-      "seq": 272,
-      "timestamp_ns": 2264945110867,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 751.7600000000002,
-      "meta": {}
-    },
-    {
-      "seq": 273,
-      "timestamp_ns": 2264945172405,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 780.2200000000003,
-      "meta": {
-        "operation": "deposit",
-        "amount": 12.27
-      }
-    },
-    {
-      "seq": 274,
-      "timestamp_ns": 2264945181788,
-      "thread_name": "Race-Run37-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 12.27,
-      "meta": {
-        "new_balance": 780.2200000000003
-      }
-    },
-    {
-      "seq": 275,
-      "timestamp_ns": 2264945323281,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 711.1000000000003,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 56.85
-      }
-    },
-    {
-      "seq": 276,
-      "timestamp_ns": 2264945335647,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 56.85,
-      "meta": {
-        "success": true,
-        "requested": 56.85
-      }
-    },
-    {
-      "seq": 277,
-      "timestamp_ns": 2264945425413,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 768.9200000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 17.16
-      }
-    },
-    {
-      "seq": 278,
-      "timestamp_ns": 2264945434404,
-      "thread_name": "Race-Run37-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 17.16,
-      "meta": {
-        "new_balance": 768.9200000000002
-      }
-    },
-    {
-      "seq": 279,
-      "timestamp_ns": 2264945479208,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 809.8500000000003,
-      "meta": {
-        "operation": "deposit",
-        "amount": 58.09
-      }
-    },
-    {
-      "seq": 280,
-      "timestamp_ns": 2264945490420,
-      "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 58.09,
-      "meta": {
-        "new_balance": 809.8500000000003
+        "new_balance": 939.92
       }
     },
     {
       "seq": 281,
-      "timestamp_ns": 2264945595448,
+      "timestamp_ns": 89114731662,
       "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 62.55,
+      "event_type": "WITHDRAW_START",
+      "value": 9.62,
       "meta": {}
     },
     {
       "seq": 282,
-      "timestamp_ns": 2264945815013,
+      "timestamp_ns": 89114737394,
       "thread_name": "Race-Run37-T5",
       "event_type": "READ_BALANCE",
-      "value": 809.8500000000003,
+      "value": 939.92,
       "meta": {}
     },
     {
       "seq": 283,
-      "timestamp_ns": 2264946224850,
+      "timestamp_ns": 89114771699,
       "thread_name": "Race-Run37-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 86.03,
-      "meta": {}
+      "event_type": "WRITE_BALANCE",
+      "value": 663.8199999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 39.12
+      }
     },
     {
       "seq": 284,
-      "timestamp_ns": 2264946236432,
+      "timestamp_ns": 89114778923,
       "thread_name": "Race-Run37-T4",
-      "event_type": "READ_BALANCE",
-      "value": 809.8500000000003,
-      "meta": {}
+      "event_type": "DEPOSIT_END",
+      "value": 39.12,
+      "meta": {
+        "new_balance": 663.8199999999999
+      }
     },
     {
       "seq": 285,
-      "timestamp_ns": 2264946329285,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 49.51,
-      "meta": {}
+      "timestamp_ns": 89114848338,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 540.9699999999999,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 83.73
+      }
     },
     {
       "seq": 286,
-      "timestamp_ns": 2264946337885,
-      "thread_name": "Race-Run37-T1",
-      "event_type": "READ_BALANCE",
-      "value": 809.8500000000003,
-      "meta": {}
+      "timestamp_ns": 89114855993,
+      "thread_name": "Race-Run37-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 83.73,
+      "meta": {
+        "success": true,
+        "requested": 83.73
+      }
     },
     {
       "seq": 287,
-      "timestamp_ns": 2264946362879,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 872.4000000000002,
-      "meta": {
-        "operation": "deposit",
-        "amount": 62.55
-      }
+      "timestamp_ns": 89115106630,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 82.27,
+      "meta": {}
     },
     {
       "seq": 288,
-      "timestamp_ns": 2264946373536,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 62.55,
-      "meta": {
-        "new_balance": 872.4000000000002
-      }
+      "timestamp_ns": 89115115407,
+      "thread_name": "Race-Run37-T3",
+      "event_type": "READ_BALANCE",
+      "value": 540.9699999999999,
+      "meta": {}
     },
     {
       "seq": 289,
-      "timestamp_ns": 2264946569500,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89115417996,
+      "thread_name": "Race-Run37-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 895.8800000000002,
+      "value": 623.2399999999999,
       "meta": {
         "operation": "deposit",
-        "amount": 86.03
+        "amount": 82.27
       }
     },
     {
       "seq": 290,
-      "timestamp_ns": 2264946577218,
-      "thread_name": "Race-Run37-T4",
+      "timestamp_ns": 89115425330,
+      "thread_name": "Race-Run37-T3",
       "event_type": "DEPOSIT_END",
-      "value": 86.03,
+      "value": 82.27,
       "meta": {
-        "new_balance": 895.8800000000002
+        "new_balance": 623.2399999999999
       }
     },
     {
       "seq": 291,
-      "timestamp_ns": 2264946698518,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89115492702,
+      "thread_name": "Race-Run37-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 760.3400000000003,
+      "value": 930.3,
       "meta": {
         "operation": "withdraw",
-        "amount": 49.51
+        "amount": 9.62
       }
     },
     {
       "seq": 292,
-      "timestamp_ns": 2264946707096,
-      "thread_name": "Race-Run37-T1",
+      "timestamp_ns": 89115501819,
+      "thread_name": "Race-Run37-T5",
       "event_type": "WITHDRAW_END",
-      "value": 49.51,
+      "value": 9.62,
       "meta": {
         "success": true,
-        "requested": 49.51
+        "requested": 9.62
       }
     },
     {
       "seq": 293,
-      "timestamp_ns": 2264946979784,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 10.17,
+      "timestamp_ns": 89115631641,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 93.8,
       "meta": {}
     },
     {
       "seq": 294,
-      "timestamp_ns": 2264946989919,
-      "thread_name": "Race-Run37-T5",
+      "timestamp_ns": 89115638936,
+      "thread_name": "Race-Run37-T4",
       "event_type": "READ_BALANCE",
-      "value": 760.3400000000003,
+      "value": 930.3,
       "meta": {}
     },
     {
       "seq": 295,
-      "timestamp_ns": 2264947341170,
-      "thread_name": "Race-Run37-T5",
+      "timestamp_ns": 89115948358,
+      "thread_name": "Race-Run37-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 750.1700000000003,
+      "value": 1024.1,
       "meta": {
-        "operation": "withdraw",
-        "amount": 10.17
+        "operation": "deposit",
+        "amount": 93.8
       }
     },
     {
       "seq": 296,
-      "timestamp_ns": 2264947351707,
-      "thread_name": "Race-Run37-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 10.17,
+      "timestamp_ns": 89115954059,
+      "thread_name": "Race-Run37-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 93.8,
       "meta": {
-        "success": true,
-        "requested": 10.17
+        "new_balance": 1024.1
       }
     },
     {
       "seq": 297,
-      "timestamp_ns": 2264947949518,
+      "timestamp_ns": 89116202763,
       "thread_name": "Race-Run37-T5",
       "event_type": "WITHDRAW_START",
-      "value": 36.29,
+      "value": 40.37,
       "meta": {}
     },
     {
       "seq": 298,
-      "timestamp_ns": 2264947957759,
+      "timestamp_ns": 89116210387,
       "thread_name": "Race-Run37-T5",
       "event_type": "READ_BALANCE",
-      "value": 750.1700000000003,
+      "value": 1024.1,
       "meta": {}
     },
     {
       "seq": 299,
-      "timestamp_ns": 2264948333358,
+      "timestamp_ns": 89116522977,
       "thread_name": "Race-Run37-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 713.8800000000003,
+      "value": 983.7299999999999,
       "meta": {
         "operation": "withdraw",
-        "amount": 36.29
+        "amount": 40.37
       }
     },
     {
       "seq": 300,
-      "timestamp_ns": 2264948351930,
+      "timestamp_ns": 89116530552,
       "thread_name": "Race-Run37-T5",
       "event_type": "WITHDRAW_END",
-      "value": 36.29,
+      "value": 40.37,
       "meta": {
         "success": true,
-        "requested": 36.29
+        "requested": 40.37
       }
     },
     {
       "seq": 301,
-      "timestamp_ns": 2264948868032,
+      "timestamp_ns": 89117112066,
       "thread_name": "MainThread",
       "event_type": "READ_BALANCE",
-      "value": 713.8800000000003,
+      "value": 983.7299999999999,
       "meta": {
         "context": "get_balance"
       }

@@ -60,10 +60,13 @@ class TraceLogger:
     account's critical sections.
     """
 
-    def __init__(self):
+    def __init__(self, controller=None):
         self._events: list = []
         self._seq: int = 0
         self._log_lock = threading.Lock()   # separate from any account lock
+        # When set (see scheduler/controller.py), every logged event doubles as
+        # a scheduling point and the interleaving stops being the OS's choice.
+        self.controller = controller
 
     def log(self, event_type: str, value=None, meta: dict = None):
         ts = time.perf_counter_ns()
@@ -79,6 +82,11 @@ class TraceLogger:
                 "meta":         meta or {},
             })
 
+        # Outside the log lock on purpose: a thread parked at a yield point
+        # must not be holding a lock every other thread needs to reach theirs.
+        if self.controller is not None:
+            self.controller.yield_point()
+
     def get_trace(self) -> list:
         with self._log_lock:
             return list(self._events)
@@ -88,6 +96,17 @@ class TraceLogger:
             self._events = []
             self._seq = 0
 # ──────────────────────────────────────────────────────────────────────────────
+
+
+def _pace(logger: TraceLogger, seconds: float):
+    """
+    Widen a race window by sleeping — but only when the OS is choosing the
+    interleaving. Under a controller the schedule decides the ordering
+    outright, so a sleep would only slow the search down, and in the deadlock
+    scenario it would force the very outcome the search is meant to discover.
+    """
+    if logger.controller is None:
+        time.sleep(seconds)
 
 
 # ── InstrumentedLock ──────────────────────────────────────────────────────────
@@ -107,7 +126,16 @@ class InstrumentedLock:
 
     def acquire(self):
         self._logger.log("LOCK_ACQUIRE_ATTEMPT")
-        self._lock.acquire()
+        controller = self._logger.controller
+        if controller is None:
+            self._lock.acquire()
+        else:
+            # Blocking here would strand the thread outside the scheduler,
+            # which waits for every thread to park before it decides anything.
+            # Spinning through yield points keeps it visible — and lets the
+            # controller recognise a deadlock instead of hanging on one.
+            while not self._lock.acquire(blocking=False):
+                controller.yield_point(blocked=True)
         self._logger.log("LOCK_ACQUIRED")
 
     def release(self):
@@ -163,7 +191,7 @@ class InstrumentedSafeAccount:
         with self._real._lock:                            # instrumented lock
             self._logger.log("READ_BALANCE", value=self._real._balance)
             current_balance = self._real._balance
-            time.sleep(0.0002)                            # same delay as original
+            _pace(self._logger, 0.0002)                   # same delay as original
             new_balance = current_balance + amount
             self._logger.log("WRITE_BALANCE", value=new_balance,
                               meta={"operation": "deposit", "amount": amount})
@@ -184,7 +212,7 @@ class InstrumentedSafeAccount:
             self._logger.log("READ_BALANCE", value=self._real._balance)
             if self._real._balance >= amount:
                 current_balance = self._real._balance
-                time.sleep(0.0002)
+                _pace(self._logger, 0.0002)
                 new_balance = current_balance - amount
                 self._logger.log("WRITE_BALANCE", value=new_balance,
                                   meta={"operation": "withdraw", "amount": amount})
@@ -217,7 +245,7 @@ class InstrumentedRaceAccount:
         # No lock — mirrors the original buggy code.
         self._logger.log("READ_BALANCE", value=self._real._balance)
         current_balance = self._real._balance
-        time.sleep(0.0002)
+        _pace(self._logger, 0.0002)
         new_balance = current_balance + amount
         self._logger.log("WRITE_BALANCE", value=new_balance,
                           meta={"operation": "deposit", "amount": amount})
@@ -233,7 +261,7 @@ class InstrumentedRaceAccount:
         self._logger.log("READ_BALANCE", value=self._real._balance)
         if self._real._balance >= amount:
             current_balance = self._real._balance
-            time.sleep(0.0002)
+            _pace(self._logger, 0.0002)
             new_balance = current_balance - amount
             self._logger.log("WRITE_BALANCE", value=new_balance,
                               meta={"operation": "withdraw", "amount": amount})
@@ -280,7 +308,7 @@ class InstrumentedDeadlockScenario:
         self._logger.log("DEPOSIT_START", value=amount,
                           meta={"from": account_from.name, "to": account_to.name})
         with account_from.lock:                          # instrumented
-            time.sleep(0.1)                              # same delay as original
+            _pace(self._logger, 0.1)                     # same delay as original
             with account_to.lock:                        # instrumented
                 if account_from.balance >= amount:
                     self._logger.log("READ_BALANCE", value=account_from.balance,

@@ -1,10 +1,10 @@
 {
   "run_id": 94,
   "variant": "safe",
-  "timestamp_utc": "2026-07-28T05:10:47.414498+00:00",
+  "timestamp_utc": "2026-09-19T10:15:58.719172+00:00",
   "initial_balance": 1000.0,
-  "expected_balance": 1359.45,
-  "actual_balance": 1359.45,
+  "expected_balance": 1392.57,
+  "actual_balance": 1392.57,
   "correct": true,
   "num_threads": 5,
   "ops_per_thread": 15,
@@ -12,15 +12,15 @@
   "events": [
     {
       "seq": 1,
-      "timestamp_ns": 2262267385243,
+      "timestamp_ns": 87144897626,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 83.29,
+      "event_type": "WITHDRAW_START",
+      "value": 27.23,
       "meta": {}
     },
     {
       "seq": 2,
-      "timestamp_ns": 2262267399808,
+      "timestamp_ns": 87144912364,
       "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -28,7 +28,7 @@
     },
     {
       "seq": 3,
-      "timestamp_ns": 2262267405795,
+      "timestamp_ns": 87144917494,
       "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -36,7 +36,7 @@
     },
     {
       "seq": 4,
-      "timestamp_ns": 2262267408756,
+      "timestamp_ns": 87144920410,
       "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
       "value": 1000.0,
@@ -44,52 +44,53 @@
     },
     {
       "seq": 5,
-      "timestamp_ns": 2262267860067,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 97.25,
-      "meta": {}
-    },
-    {
-      "seq": 6,
-      "timestamp_ns": 2262267872891,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 7,
-      "timestamp_ns": 2262267948002,
+      "timestamp_ns": 87145273831,
       "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1083.29,
+      "value": 972.77,
       "meta": {
-        "operation": "deposit",
-        "amount": 83.29
+        "operation": "withdraw",
+        "amount": 27.23
       }
     },
     {
-      "seq": 8,
-      "timestamp_ns": 2262267957200,
+      "seq": 6,
+      "timestamp_ns": 87145291585,
       "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 9,
-      "timestamp_ns": 2262267998468,
+      "seq": 7,
+      "timestamp_ns": 87145297707,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 83.29,
+      "event_type": "WITHDRAW_END",
+      "value": 27.23,
       "meta": {
-        "new_balance": 1083.29
+        "success": true,
+        "requested": 27.23
       }
     },
     {
+      "seq": 8,
+      "timestamp_ns": 87145503974,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 26.0,
+      "meta": {}
+    },
+    {
+      "seq": 9,
+      "timestamp_ns": 87145513813,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 10,
-      "timestamp_ns": 2262268215149,
+      "timestamp_ns": 87145519214,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -97,231 +98,233 @@
     },
     {
       "seq": 11,
-      "timestamp_ns": 2262268228669,
+      "timestamp_ns": 87145522410,
       "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1083.29,
+      "value": 972.77,
       "meta": {}
     },
     {
       "seq": 12,
-      "timestamp_ns": 2262268570112,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 986.04,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 97.25
-      }
+      "timestamp_ns": 87145937066,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 72.56,
+      "meta": {}
     },
     {
       "seq": 13,
-      "timestamp_ns": 2262268580040,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87145946675,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 14,
-      "timestamp_ns": 2262268584590,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 97.25,
-      "meta": {
-        "success": true,
-        "requested": 97.25
-      }
+      "timestamp_ns": 87146011586,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 96.58,
+      "meta": {}
     },
     {
       "seq": 15,
-      "timestamp_ns": 2262268601875,
+      "timestamp_ns": 87146023980,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 84.66,
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 16,
-      "timestamp_ns": 2262268617050,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 17,
-      "timestamp_ns": 2262268621480,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 18,
-      "timestamp_ns": 2262268625388,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "READ_BALANCE",
-      "value": 986.04,
-      "meta": {}
-    },
-    {
-      "seq": 19,
-      "timestamp_ns": 2262268757508,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 90.7,
-      "meta": {}
-    },
-    {
-      "seq": 20,
-      "timestamp_ns": 2262268765063,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 21,
-      "timestamp_ns": 2262268977106,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87146116395,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1070.7,
+      "value": 946.77,
       "meta": {
-        "operation": "deposit",
-        "amount": 84.66
+        "operation": "withdraw",
+        "amount": 26.0
       }
     },
     {
-      "seq": 22,
-      "timestamp_ns": 2262268988079,
-      "thread_name": "Safe-Run94-T1",
+      "seq": 17,
+      "timestamp_ns": 87146126485,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 23,
-      "timestamp_ns": 2262269034256,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 84.66,
+      "seq": 18,
+      "timestamp_ns": 87146174649,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 26.0,
       "meta": {
-        "new_balance": 1070.7
+        "success": true,
+        "requested": 26.0
       }
     },
     {
-      "seq": 24,
-      "timestamp_ns": 2262269279294,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 63.18,
-      "meta": {}
-    },
-    {
-      "seq": 25,
-      "timestamp_ns": 2262269286424,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 26,
-      "timestamp_ns": 2262269355461,
+      "seq": 19,
+      "timestamp_ns": 87146593935,
       "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 27,
-      "timestamp_ns": 2262269368545,
+      "seq": 20,
+      "timestamp_ns": 87146610206,
       "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1070.7,
+      "value": 946.77,
       "meta": {}
     },
     {
-      "seq": 28,
-      "timestamp_ns": 2262269454859,
+      "seq": 21,
+      "timestamp_ns": 87146759511,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 38.41,
+      "meta": {}
+    },
+    {
+      "seq": 22,
+      "timestamp_ns": 87146768198,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 23,
+      "timestamp_ns": 87146827869,
       "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 26.92,
+      "meta": {}
+    },
+    {
+      "seq": 24,
+      "timestamp_ns": 87146837919,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 25,
+      "timestamp_ns": 87147252330,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "DEPOSIT_START",
-      "value": 24.67,
+      "value": 17.76,
+      "meta": {}
+    },
+    {
+      "seq": 26,
+      "timestamp_ns": 87147259133,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 27,
+      "timestamp_ns": 87147318624,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 874.21,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 72.56
+      }
+    },
+    {
+      "seq": 28,
+      "timestamp_ns": 87147326610,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 29,
-      "timestamp_ns": 2262269467889,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
+      "timestamp_ns": 87147365365,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 72.56,
+      "meta": {
+        "success": true,
+        "requested": 72.56
+      }
     },
     {
       "seq": 30,
-      "timestamp_ns": 2262269751811,
+      "timestamp_ns": 87147454603,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 74.94,
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 31,
-      "timestamp_ns": 2262269772287,
+      "timestamp_ns": 87147462970,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
+      "event_type": "READ_BALANCE",
+      "value": 874.21,
       "meta": {}
     },
     {
       "seq": 32,
-      "timestamp_ns": 2262269957803,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 80.61,
+      "timestamp_ns": 87147632990,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 37.9,
       "meta": {}
     },
     {
       "seq": 33,
-      "timestamp_ns": 2262269964302,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87147641787,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 34,
-      "timestamp_ns": 2262270032879,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87147774731,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1161.4,
+      "value": 777.63,
       "meta": {
-        "operation": "deposit",
-        "amount": 90.7
+        "operation": "withdraw",
+        "amount": 96.58
       }
     },
     {
       "seq": 35,
-      "timestamp_ns": 2262270042285,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87147782456,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 36,
-      "timestamp_ns": 2262270083824,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 90.7,
+      "timestamp_ns": 87147821452,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 96.58,
       "meta": {
-        "new_balance": 1161.4
+        "success": true,
+        "requested": 96.58
       }
     },
     {
       "seq": 37,
-      "timestamp_ns": 2262270199910,
+      "timestamp_ns": 87147859307,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -329,61 +332,61 @@
     },
     {
       "seq": 38,
-      "timestamp_ns": 2262270211122,
+      "timestamp_ns": 87147869116,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1161.4,
+      "value": 777.63,
       "meta": {}
     },
     {
       "seq": 39,
-      "timestamp_ns": 2262270408502,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 48.89,
-      "meta": {}
-    },
-    {
-      "seq": 40,
-      "timestamp_ns": 2262270417069,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 41,
-      "timestamp_ns": 2262270572485,
+      "timestamp_ns": 87148119246,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1098.22,
+      "value": 739.22,
       "meta": {
         "operation": "withdraw",
-        "amount": 63.18
+        "amount": 38.41
       }
     },
     {
-      "seq": 42,
-      "timestamp_ns": 2262270582293,
+      "seq": 40,
+      "timestamp_ns": 87148131430,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 43,
-      "timestamp_ns": 2262270628622,
+      "seq": 41,
+      "timestamp_ns": 87148187259,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WITHDRAW_END",
-      "value": 63.18,
+      "value": 38.41,
       "meta": {
         "success": true,
-        "requested": 63.18
+        "requested": 38.41
       }
     },
     {
+      "seq": 42,
+      "timestamp_ns": 87148274726,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 18.44,
+      "meta": {}
+    },
+    {
+      "seq": 43,
+      "timestamp_ns": 87148288532,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 44,
-      "timestamp_ns": 2262270655183,
+      "timestamp_ns": 87148303129,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -391,129 +394,130 @@
     },
     {
       "seq": 45,
-      "timestamp_ns": 2262270664719,
+      "timestamp_ns": 87148311916,
       "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1098.22,
+      "value": 739.22,
       "meta": {}
     },
     {
       "seq": 46,
-      "timestamp_ns": 2262271099084,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1122.89,
-      "meta": {
-        "operation": "deposit",
-        "amount": 24.67
-      }
+      "timestamp_ns": 87148450057,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 48.0,
+      "meta": {}
     },
     {
       "seq": 47,
-      "timestamp_ns": 2262271116262,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 48,
-      "timestamp_ns": 2262271183220,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 24.67,
-      "meta": {
-        "new_balance": 1122.89
-      }
-    },
-    {
-      "seq": 49,
-      "timestamp_ns": 2262271272959,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 12.89,
-      "meta": {}
-    },
-    {
-      "seq": 50,
-      "timestamp_ns": 2262271284966,
+      "timestamp_ns": 87148461198,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 48,
+      "timestamp_ns": 87148626289,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 712.3000000000001,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 26.92
+      }
+    },
+    {
+      "seq": 49,
+      "timestamp_ns": 87148635287,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 50,
+      "timestamp_ns": 87148679643,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 26.92,
+      "meta": {
+        "success": true,
+        "requested": 26.92
+      }
+    },
+    {
       "seq": 51,
-      "timestamp_ns": 2262271305574,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87148692196,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 52,
-      "timestamp_ns": 2262271317646,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87148700563,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1122.89,
+      "value": 712.3000000000001,
       "meta": {}
     },
     {
       "seq": 53,
-      "timestamp_ns": 2262271682437,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87149015079,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1197.8300000000002,
+      "value": 730.0600000000001,
       "meta": {
         "operation": "deposit",
-        "amount": 74.94
+        "amount": 17.76
       }
     },
     {
       "seq": 54,
-      "timestamp_ns": 2262271694879,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87149023105,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 55,
-      "timestamp_ns": 2262271740283,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87149059836,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "DEPOSIT_END",
-      "value": 74.94,
+      "value": 17.76,
       "meta": {
-        "new_balance": 1197.8300000000002
+        "new_balance": 730.0600000000001
       }
     },
     {
       "seq": 56,
-      "timestamp_ns": 2262271780933,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87149074620,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 57,
-      "timestamp_ns": 2262271793114,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87149083037,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1197.8300000000002,
+      "value": 730.0600000000001,
       "meta": {}
     },
     {
       "seq": 58,
-      "timestamp_ns": 2262271803595,
+      "timestamp_ns": 87149232357,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 56.65,
+      "event_type": "WITHDRAW_START",
+      "value": 43.62,
       "meta": {}
     },
     {
       "seq": 59,
-      "timestamp_ns": 2262271817714,
+      "timestamp_ns": 87149240072,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -521,403 +525,406 @@
     },
     {
       "seq": 60,
-      "timestamp_ns": 2262272130264,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 26.63,
-      "meta": {}
+      "timestamp_ns": 87149406416,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 767.96,
+      "meta": {
+        "operation": "deposit",
+        "amount": 37.9
+      }
     },
     {
       "seq": 61,
-      "timestamp_ns": 2262272181895,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87149413660,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 62,
-      "timestamp_ns": 2262272256204,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 1117.2200000000003,
+      "timestamp_ns": 87149453337,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 37.9,
       "meta": {
-        "operation": "withdraw",
-        "amount": 80.61
+        "new_balance": 767.96
       }
     },
     {
       "seq": 63,
-      "timestamp_ns": 2262272266251,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87149478917,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 64,
-      "timestamp_ns": 2262272363483,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 80.61,
-      "meta": {
-        "success": true,
-        "requested": 80.61
-      }
+      "timestamp_ns": 87149487203,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "READ_BALANCE",
+      "value": 767.96,
+      "meta": {}
     },
     {
       "seq": 65,
-      "timestamp_ns": 2262272457174,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87149509872,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 41.14,
       "meta": {}
     },
     {
       "seq": 66,
-      "timestamp_ns": 2262272475625,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "READ_BALANCE",
-      "value": 1117.2200000000003,
+      "timestamp_ns": 87149522606,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 67,
-      "timestamp_ns": 2262272832155,
+      "timestamp_ns": 87149611445,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1166.1100000000004,
-      "meta": {
-        "operation": "deposit",
-        "amount": 48.89
-      }
+      "event_type": "DEPOSIT_START",
+      "value": 12.51,
+      "meta": {}
     },
     {
       "seq": 68,
-      "timestamp_ns": 2262272844096,
+      "timestamp_ns": 87149618879,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_RELEASED",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 69,
-      "timestamp_ns": 2262272898557,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 48.89,
+      "timestamp_ns": 87149798388,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 749.52,
       "meta": {
-        "new_balance": 1166.1100000000004
+        "operation": "withdraw",
+        "amount": 18.44
       }
     },
     {
       "seq": 70,
-      "timestamp_ns": 2262273035796,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRED",
+      "timestamp_ns": 87149805722,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 71,
-      "timestamp_ns": 2262273052418,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "READ_BALANCE",
-      "value": 1166.1100000000004,
-      "meta": {}
+      "timestamp_ns": 87149841582,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 18.44,
+      "meta": {
+        "success": true,
+        "requested": 18.44
+      }
     },
     {
       "seq": 72,
-      "timestamp_ns": 2262273155014,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 62.64,
-      "meta": {}
-    },
-    {
-      "seq": 73,
-      "timestamp_ns": 2262273169437,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87149859918,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 74,
-      "timestamp_ns": 2262273209314,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 9.42,
+      "seq": 73,
+      "timestamp_ns": 87149868174,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "READ_BALANCE",
+      "value": 749.52,
       "meta": {}
     },
     {
+      "seq": 74,
+      "timestamp_ns": 87150172035,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 701.52,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 48.0
+      }
+    },
+    {
       "seq": 75,
-      "timestamp_ns": 2262273221495,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87150179209,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 76,
-      "timestamp_ns": 2262273397907,
+      "timestamp_ns": 87150215580,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1179.0000000000005,
+      "event_type": "WITHDRAW_END",
+      "value": 48.0,
       "meta": {
-        "operation": "deposit",
-        "amount": 12.89
+        "success": true,
+        "requested": 48.0
       }
     },
     {
       "seq": 77,
-      "timestamp_ns": 2262273407084,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87150232914,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 78,
-      "timestamp_ns": 2262273457963,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 12.89,
-      "meta": {
-        "new_balance": 1179.0000000000005
-      }
+      "timestamp_ns": 87150242482,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "READ_BALANCE",
+      "value": 701.52,
+      "meta": {}
     },
     {
       "seq": 79,
-      "timestamp_ns": 2262273484906,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87150400730,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 78.34,
       "meta": {}
     },
     {
       "seq": 80,
-      "timestamp_ns": 2262273495400,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1179.0000000000005,
+      "timestamp_ns": 87150408956,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 81,
-      "timestamp_ns": 2262273717882,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 92.61,
-      "meta": {}
+      "timestamp_ns": 87150538268,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 657.9,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 43.62
+      }
     },
     {
       "seq": 82,
-      "timestamp_ns": 2262273729105,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87150544410,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 83,
-      "timestamp_ns": 2262273842295,
+      "timestamp_ns": 87150579979,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1235.6500000000005,
+      "event_type": "WITHDRAW_END",
+      "value": 43.62,
       "meta": {
-        "operation": "deposit",
-        "amount": 56.65
+        "success": true,
+        "requested": 43.62
       }
     },
     {
       "seq": 84,
-      "timestamp_ns": 2262273850492,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 85,
-      "timestamp_ns": 2262273896778,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 56.65,
-      "meta": {
-        "new_balance": 1235.6500000000005
-      }
-    },
-    {
-      "seq": 86,
-      "timestamp_ns": 2262273947473,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87150635296,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 87,
-      "timestamp_ns": 2262273959709,
-      "thread_name": "Safe-Run94-T1",
+      "seq": 85,
+      "timestamp_ns": 87150642160,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1235.6500000000005,
+      "value": 657.9,
+      "meta": {}
+    },
+    {
+      "seq": 86,
+      "timestamp_ns": 87150654854,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 90.71,
+      "meta": {}
+    },
+    {
+      "seq": 87,
+      "timestamp_ns": 87150664132,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 88,
-      "timestamp_ns": 2262274114460,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 37.61,
-      "meta": {}
+      "timestamp_ns": 87150937063,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 699.04,
+      "meta": {
+        "operation": "deposit",
+        "amount": 41.14
+      }
     },
     {
       "seq": 89,
-      "timestamp_ns": 2262274125389,
+      "timestamp_ns": 87150943285,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 90,
+      "timestamp_ns": 87150976620,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 41.14,
+      "meta": {
+        "new_balance": 699.04
+      }
+    },
+    {
+      "seq": 91,
+      "timestamp_ns": 87150995156,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 92,
+      "timestamp_ns": 87151002571,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "READ_BALANCE",
+      "value": 699.04,
+      "meta": {}
+    },
+    {
+      "seq": 93,
+      "timestamp_ns": 87151157091,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 16.34,
+      "meta": {}
+    },
+    {
+      "seq": 94,
+      "timestamp_ns": 87151166760,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 90,
-      "timestamp_ns": 2262274316031,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 1262.2800000000007,
-      "meta": {
-        "operation": "deposit",
-        "amount": 26.63
-      }
-    },
-    {
-      "seq": 91,
-      "timestamp_ns": 2262274324619,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 92,
-      "timestamp_ns": 2262274372647,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 26.63,
-      "meta": {
-        "new_balance": 1262.2800000000007
-      }
-    },
-    {
-      "seq": 93,
-      "timestamp_ns": 2262274414046,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 94,
-      "timestamp_ns": 2262274427740,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1262.2800000000007,
-      "meta": {}
-    },
-    {
       "seq": 95,
-      "timestamp_ns": 2262274806857,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87151298527,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1324.9200000000008,
+      "value": 711.55,
       "meta": {
         "operation": "deposit",
-        "amount": 62.64
+        "amount": 12.51
       }
     },
     {
       "seq": 96,
-      "timestamp_ns": 2262274818135,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87151304799,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 97,
-      "timestamp_ns": 2262274864344,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87151339476,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "DEPOSIT_END",
-      "value": 62.64,
+      "value": 12.51,
       "meta": {
-        "new_balance": 1324.9200000000008
+        "new_balance": 711.55
       }
     },
     {
       "seq": 98,
-      "timestamp_ns": 2262274927340,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87151359074,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 99,
-      "timestamp_ns": 2262274939815,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87151367340,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1324.9200000000008,
+      "value": 711.55,
       "meta": {}
     },
     {
       "seq": 100,
-      "timestamp_ns": 2262274958017,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87151497934,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WITHDRAW_START",
-      "value": 48.88,
+      "value": 75.83,
       "meta": {}
     },
     {
       "seq": 101,
-      "timestamp_ns": 2262274972049,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87151505820,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 102,
-      "timestamp_ns": 2262275279112,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87151679277,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1334.3400000000008,
+      "value": 633.2099999999999,
       "meta": {
-        "operation": "deposit",
-        "amount": 9.42
+        "operation": "withdraw",
+        "amount": 78.34
       }
     },
     {
       "seq": 103,
-      "timestamp_ns": 2262275288191,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87151685439,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 104,
-      "timestamp_ns": 2262275386990,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 9.42,
+      "timestamp_ns": 87151721279,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 78.34,
       "meta": {
-        "new_balance": 1334.3400000000008
+        "success": true,
+        "requested": 78.34
       }
     },
     {
       "seq": 105,
-      "timestamp_ns": 2262275420172,
+      "timestamp_ns": 87151753452,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -925,42 +932,42 @@
     },
     {
       "seq": 106,
-      "timestamp_ns": 2262275430187,
+      "timestamp_ns": 87151761537,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1334.3400000000008,
+      "value": 633.2099999999999,
       "meta": {}
     },
     {
       "seq": 107,
-      "timestamp_ns": 2262275438839,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87151942589,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "DEPOSIT_START",
-      "value": 45.27,
+      "value": 81.53,
       "meta": {}
     },
     {
       "seq": 108,
-      "timestamp_ns": 2262275452435,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87151952539,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 109,
-      "timestamp_ns": 2262275763758,
+      "timestamp_ns": 87152093132,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1241.730000000001,
+      "value": 723.92,
       "meta": {
-        "operation": "withdraw",
-        "amount": 92.61
+        "operation": "deposit",
+        "amount": 90.71
       }
     },
     {
       "seq": 110,
-      "timestamp_ns": 2262275773990,
+      "timestamp_ns": 87152103843,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -968,61 +975,60 @@
     },
     {
       "seq": 111,
-      "timestamp_ns": 2262275819210,
+      "timestamp_ns": 87152158259,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 92.61,
+      "event_type": "DEPOSIT_END",
+      "value": 90.71,
       "meta": {
-        "success": true,
-        "requested": 92.61
+        "new_balance": 723.92
       }
     },
     {
       "seq": 112,
-      "timestamp_ns": 2262275869282,
+      "timestamp_ns": 87152241391,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 43.03,
+      "meta": {}
+    },
+    {
+      "seq": 113,
+      "timestamp_ns": 87152254516,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 114,
+      "timestamp_ns": 87152291343,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 113,
-      "timestamp_ns": 2262275883477,
+      "seq": 115,
+      "timestamp_ns": 87152303887,
       "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1241.730000000001,
-      "meta": {}
-    },
-    {
-      "seq": 114,
-      "timestamp_ns": 2262275898368,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 65.89,
-      "meta": {}
-    },
-    {
-      "seq": 115,
-      "timestamp_ns": 2262275912531,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
+      "value": 723.92,
       "meta": {}
     },
     {
       "seq": 116,
-      "timestamp_ns": 2262276266938,
+      "timestamp_ns": 87152635588,
       "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1279.3400000000008,
+      "value": 740.26,
       "meta": {
         "operation": "deposit",
-        "amount": 37.61
+        "amount": 16.34
       }
     },
     {
       "seq": 117,
-      "timestamp_ns": 2262276288480,
+      "timestamp_ns": 87152644295,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -1030,41 +1036,41 @@
     },
     {
       "seq": 118,
-      "timestamp_ns": 2262276351781,
+      "timestamp_ns": 87152684473,
       "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_END",
-      "value": 37.61,
+      "value": 16.34,
       "meta": {
-        "new_balance": 1279.3400000000008
+        "new_balance": 740.26
       }
     },
     {
       "seq": 119,
-      "timestamp_ns": 2262276404663,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87152740807,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 120,
-      "timestamp_ns": 2262276417324,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87152753552,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1279.3400000000008,
+      "value": 740.26,
       "meta": {}
     },
     {
       "seq": 121,
-      "timestamp_ns": 2262276445768,
+      "timestamp_ns": 87152825517,
       "thread_name": "Safe-Run94-T4",
       "event_type": "DEPOSIT_START",
-      "value": 55.24,
+      "value": 46.64,
       "meta": {}
     },
     {
       "seq": 122,
-      "timestamp_ns": 2262276460889,
+      "timestamp_ns": 87152836118,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -1072,202 +1078,202 @@
     },
     {
       "seq": 123,
-      "timestamp_ns": 2262276806741,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87153066957,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1230.4600000000007,
+      "value": 664.43,
       "meta": {
         "operation": "withdraw",
-        "amount": 48.88
+        "amount": 75.83
       }
     },
     {
       "seq": 124,
-      "timestamp_ns": 2262276825813,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87153075734,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 125,
-      "timestamp_ns": 2262276877150,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87153114620,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WITHDRAW_END",
-      "value": 48.88,
+      "value": 75.83,
       "meta": {
         "success": true,
-        "requested": 48.88
+        "requested": 75.83
       }
     },
     {
       "seq": 126,
-      "timestamp_ns": 2262276964843,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 97.48,
+      "timestamp_ns": 87153136672,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 127,
-      "timestamp_ns": 2262276981999,
+      "timestamp_ns": 87153144177,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "READ_BALANCE",
+      "value": 664.43,
+      "meta": {}
+    },
+    {
+      "seq": 128,
+      "timestamp_ns": 87153264451,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 76.57,
+      "meta": {}
+    },
+    {
+      "seq": 129,
+      "timestamp_ns": 87153273559,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 128,
-      "timestamp_ns": 2262277001179,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 129,
-      "timestamp_ns": 2262277013687,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1230.4600000000007,
-      "meta": {}
-    },
-    {
       "seq": 130,
-      "timestamp_ns": 2262277420269,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87153453278,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1275.7300000000007,
+      "value": 745.9599999999999,
       "meta": {
         "operation": "deposit",
-        "amount": 45.27
+        "amount": 81.53
       }
     },
     {
       "seq": 131,
-      "timestamp_ns": 2262277439526,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87153460693,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 132,
-      "timestamp_ns": 2262277504775,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87153498957,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "DEPOSIT_END",
-      "value": 45.27,
+      "value": 81.53,
       "meta": {
-        "new_balance": 1275.7300000000007
+        "new_balance": 745.9599999999999
       }
     },
     {
       "seq": 133,
-      "timestamp_ns": 2262277592536,
+      "timestamp_ns": 87153545638,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 85.38,
-      "meta": {}
-    },
-    {
-      "seq": 134,
-      "timestamp_ns": 2262277608233,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 135,
-      "timestamp_ns": 2262277632443,
-      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 136,
-      "timestamp_ns": 2262277646061,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 134,
+      "timestamp_ns": 87153553553,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1275.7300000000007,
+      "value": 745.9599999999999,
       "meta": {}
     },
     {
-      "seq": 137,
-      "timestamp_ns": 2262277844791,
+      "seq": 135,
+      "timestamp_ns": 87153574945,
       "thread_name": "Safe-Run94-T5",
       "event_type": "WITHDRAW_START",
-      "value": 74.05,
+      "value": 67.13,
       "meta": {}
     },
     {
-      "seq": 138,
-      "timestamp_ns": 2262277859084,
+      "seq": 136,
+      "timestamp_ns": 87153584133,
       "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 139,
-      "timestamp_ns": 2262278033551,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 137,
+      "timestamp_ns": 87153852645,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1341.6200000000008,
+      "value": 788.9899999999999,
       "meta": {
         "operation": "deposit",
-        "amount": 65.89
+        "amount": 43.03
       }
     },
     {
-      "seq": 140,
-      "timestamp_ns": 2262278053842,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 138,
+      "timestamp_ns": 87153858667,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 141,
-      "timestamp_ns": 2262278121345,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 139,
+      "timestamp_ns": 87153895268,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "DEPOSIT_END",
-      "value": 65.89,
+      "value": 43.03,
       "meta": {
-        "new_balance": 1341.6200000000008
+        "new_balance": 788.9899999999999
       }
     },
     {
-      "seq": 142,
-      "timestamp_ns": 2262278168815,
+      "seq": 140,
+      "timestamp_ns": 87153919115,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 143,
-      "timestamp_ns": 2262278179995,
+      "seq": 141,
+      "timestamp_ns": 87153927341,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1341.6200000000008,
+      "value": 788.9899999999999,
+      "meta": {}
+    },
+    {
+      "seq": 142,
+      "timestamp_ns": 87154017045,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 79.83,
+      "meta": {}
+    },
+    {
+      "seq": 143,
+      "timestamp_ns": 87154025512,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 144,
-      "timestamp_ns": 2262278529189,
+      "timestamp_ns": 87154295026,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1396.8600000000008,
+      "value": 835.6299999999999,
       "meta": {
         "operation": "deposit",
-        "amount": 55.24
+        "amount": 46.64
       }
     },
     {
       "seq": 145,
-      "timestamp_ns": 2262278538518,
+      "timestamp_ns": 87154305035,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -1275,57 +1281,57 @@
     },
     {
       "seq": 146,
-      "timestamp_ns": 2262278613118,
+      "timestamp_ns": 87154353189,
       "thread_name": "Safe-Run94-T4",
       "event_type": "DEPOSIT_END",
-      "value": 55.24,
+      "value": 46.64,
       "meta": {
-        "new_balance": 1396.8600000000008
+        "new_balance": 835.6299999999999
       }
     },
     {
       "seq": 147,
-      "timestamp_ns": 2262278631165,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87154451831,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 96.69,
       "meta": {}
     },
     {
       "seq": 148,
-      "timestamp_ns": 2262278644228,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1396.8600000000008,
-      "meta": {}
-    },
-    {
-      "seq": 149,
-      "timestamp_ns": 2262278655058,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 98.44,
-      "meta": {}
-    },
-    {
-      "seq": 150,
-      "timestamp_ns": 2262278668339,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87154463153,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 149,
+      "timestamp_ns": 87154466770,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 150,
+      "timestamp_ns": 87154470888,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "READ_BALANCE",
+      "value": 835.6299999999999,
+      "meta": {}
+    },
+    {
       "seq": 151,
-      "timestamp_ns": 2262278981807,
+      "timestamp_ns": 87154793676,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 58.28,
+      "event_type": "WITHDRAW_START",
+      "value": 50.39,
       "meta": {}
     },
     {
       "seq": 152,
-      "timestamp_ns": 2262278991560,
+      "timestamp_ns": 87154809677,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -1333,221 +1339,221 @@
     },
     {
       "seq": 153,
-      "timestamp_ns": 2262279001562,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87154894712,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1299.3800000000008,
+      "value": 738.9399999999998,
       "meta": {
         "operation": "withdraw",
-        "amount": 97.48
+        "amount": 96.69
       }
     },
     {
       "seq": 154,
-      "timestamp_ns": 2262279010575,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87154905353,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 155,
-      "timestamp_ns": 2262279058658,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87154958086,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WITHDRAW_END",
-      "value": 97.48,
+      "value": 96.69,
       "meta": {
         "success": true,
-        "requested": 97.48
+        "requested": 96.69
       }
     },
     {
       "seq": 156,
-      "timestamp_ns": 2262279087681,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87154981251,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 157,
-      "timestamp_ns": 2262279097195,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87154990850,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1299.3800000000008,
+      "value": 738.9399999999998,
       "meta": {}
     },
     {
       "seq": 158,
-      "timestamp_ns": 2262279242855,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87155281204,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WITHDRAW_START",
-      "value": 49.91,
+      "value": 14.47,
       "meta": {}
     },
     {
       "seq": 159,
-      "timestamp_ns": 2262279251803,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87155293108,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 160,
-      "timestamp_ns": 2262279423517,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87155343230,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1384.7600000000007,
+      "value": 671.8099999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 85.38
+        "operation": "withdraw",
+        "amount": 67.13
       }
     },
     {
       "seq": 161,
-      "timestamp_ns": 2262279430364,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87155352999,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 162,
-      "timestamp_ns": 2262279473352,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 85.38,
+      "timestamp_ns": 87155407665,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 67.13,
       "meta": {
-        "new_balance": 1384.7600000000007
+        "success": true,
+        "requested": 67.13
       }
     },
     {
       "seq": 163,
-      "timestamp_ns": 2262279498506,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87155435484,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 164,
-      "timestamp_ns": 2262279508151,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87155444352,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1384.7600000000007,
+      "value": 671.8099999999998,
       "meta": {}
     },
     {
       "seq": 165,
-      "timestamp_ns": 2262279852338,
+      "timestamp_ns": 87155750577,
       "thread_name": "Safe-Run94-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 1310.7100000000007,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 74.05
-      }
+      "event_type": "WITHDRAW_START",
+      "value": 22.15,
+      "meta": {}
     },
     {
       "seq": 166,
-      "timestamp_ns": 2262279861297,
+      "timestamp_ns": 87155764535,
       "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 167,
-      "timestamp_ns": 2262279902815,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 74.05,
-      "meta": {
-        "success": true,
-        "requested": 74.05
-      }
-    },
-    {
-      "seq": 168,
-      "timestamp_ns": 2262279996964,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 40.16,
-      "meta": {}
-    },
-    {
-      "seq": 169,
-      "timestamp_ns": 2262280074362,
-      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 170,
-      "timestamp_ns": 2262280206385,
+      "seq": 167,
+      "timestamp_ns": 87155846113,
       "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 751.6399999999999,
+      "meta": {
+        "operation": "deposit",
+        "amount": 79.83
+      }
+    },
+    {
+      "seq": 168,
+      "timestamp_ns": 87155854880,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 169,
+      "timestamp_ns": 87155903555,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 79.83,
+      "meta": {
+        "new_balance": 751.6399999999999
+      }
+    },
+    {
+      "seq": 170,
+      "timestamp_ns": 87155936459,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 171,
-      "timestamp_ns": 2262280219231,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87155946018,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1310.7100000000007,
+      "value": 751.6399999999999,
       "meta": {}
     },
     {
       "seq": 172,
-      "timestamp_ns": 2262280558003,
+      "timestamp_ns": 87156247264,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1409.1500000000008,
-      "meta": {
-        "operation": "deposit",
-        "amount": 98.44
-      }
+      "event_type": "WITHDRAW_START",
+      "value": 13.03,
+      "meta": {}
     },
     {
       "seq": 173,
-      "timestamp_ns": 2262280566799,
+      "timestamp_ns": 87156259658,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 174,
-      "timestamp_ns": 2262280609884,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 98.44,
-      "meta": {
-        "new_balance": 1409.1500000000008
-      }
-    },
-    {
-      "seq": 175,
-      "timestamp_ns": 2262280687556,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 83.74,
-      "meta": {}
-    },
-    {
-      "seq": 176,
-      "timestamp_ns": 2262280702002,
-      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 174,
+      "timestamp_ns": 87156278314,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 828.2099999999998,
+      "meta": {
+        "operation": "deposit",
+        "amount": 76.57
+      }
+    },
+    {
+      "seq": 175,
+      "timestamp_ns": 87156288073,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 176,
+      "timestamp_ns": 87156331097,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 76.57,
+      "meta": {
+        "new_balance": 828.2099999999998
+      }
+    },
+    {
       "seq": 177,
-      "timestamp_ns": 2262280730781,
+      "timestamp_ns": 87156350845,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -1555,26 +1561,26 @@
     },
     {
       "seq": 178,
-      "timestamp_ns": 2262280742179,
+      "timestamp_ns": 87156359362,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1409.1500000000008,
+      "value": 828.2099999999998,
       "meta": {}
     },
     {
       "seq": 179,
-      "timestamp_ns": 2262281103837,
+      "timestamp_ns": 87156658654,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1467.4300000000007,
+      "value": 777.8199999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 58.28
+        "operation": "withdraw",
+        "amount": 50.39
       }
     },
     {
       "seq": 180,
-      "timestamp_ns": 2262281113515,
+      "timestamp_ns": 87156665658,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -1582,566 +1588,570 @@
     },
     {
       "seq": 181,
-      "timestamp_ns": 2262281157515,
+      "timestamp_ns": 87156705034,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 58.28,
+      "event_type": "WITHDRAW_END",
+      "value": 50.39,
       "meta": {
-        "new_balance": 1467.4300000000007
+        "success": true,
+        "requested": 50.39
       }
     },
     {
       "seq": 182,
-      "timestamp_ns": 2262281174124,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 65.1,
-      "meta": {}
-    },
-    {
-      "seq": 183,
-      "timestamp_ns": 2262281183791,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 184,
-      "timestamp_ns": 2262281187078,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87156751940,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 185,
-      "timestamp_ns": 2262281189233,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 183,
+      "timestamp_ns": 87156766448,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1467.4300000000007,
+      "value": 777.8199999999998,
+      "meta": {}
+    },
+    {
+      "seq": 184,
+      "timestamp_ns": 87156936705,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 82.87,
+      "meta": {}
+    },
+    {
+      "seq": 185,
+      "timestamp_ns": 87156947195,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 186,
-      "timestamp_ns": 2262281508305,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1532.5300000000007,
-      "meta": {
-        "operation": "deposit",
-        "amount": 65.1
-      }
+      "timestamp_ns": 87157049625,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 59.36,
+      "meta": {}
     },
     {
       "seq": 187,
-      "timestamp_ns": 2262281515696,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87157058051,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 188,
-      "timestamp_ns": 2262281557857,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 65.1,
+      "timestamp_ns": 87157089242,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 763.3499999999998,
       "meta": {
-        "new_balance": 1532.5300000000007
+        "operation": "withdraw",
+        "amount": 14.47
       }
     },
     {
       "seq": 189,
-      "timestamp_ns": 2262281614650,
+      "timestamp_ns": 87157098840,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRED",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 190,
-      "timestamp_ns": 2262281627397,
+      "timestamp_ns": 87157150952,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "READ_BALANCE",
-      "value": 1532.5300000000007,
-      "meta": {}
+      "event_type": "WITHDRAW_END",
+      "value": 14.47,
+      "meta": {
+        "success": true,
+        "requested": 14.47
+      }
     },
     {
       "seq": 191,
-      "timestamp_ns": 2262281701516,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 40.34,
-      "meta": {}
-    },
-    {
-      "seq": 192,
-      "timestamp_ns": 2262281711933,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87157187463,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 192,
+      "timestamp_ns": 87157198013,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "READ_BALANCE",
+      "value": 763.3499999999998,
+      "meta": {}
+    },
+    {
       "seq": 193,
-      "timestamp_ns": 2262281947590,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87157555489,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1572.6900000000007,
+      "value": 741.1999999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 40.16
+        "operation": "withdraw",
+        "amount": 22.15
       }
     },
     {
       "seq": 194,
-      "timestamp_ns": 2262281954818,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87157573213,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 195,
-      "timestamp_ns": 2262281997577,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 40.16,
+      "timestamp_ns": 87157630194,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 22.15,
       "meta": {
-        "new_balance": 1572.6900000000007
+        "success": true,
+        "requested": 22.15
       }
     },
     {
       "seq": 196,
-      "timestamp_ns": 2262282043861,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87157663810,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 197,
-      "timestamp_ns": 2262282053930,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87157676104,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1572.6900000000007,
+      "value": 741.1999999999998,
       "meta": {}
     },
     {
       "seq": 198,
-      "timestamp_ns": 2262282084715,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 42.95,
+      "timestamp_ns": 87157761489,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 13.19,
       "meta": {}
     },
     {
       "seq": 199,
-      "timestamp_ns": 2262282097397,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87157773002,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 200,
-      "timestamp_ns": 2262282306612,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 30.17,
-      "meta": {}
+      "timestamp_ns": 87158002148,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 728.1699999999998,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 13.03
+      }
     },
     {
       "seq": 201,
-      "timestamp_ns": 2262282315037,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87158010123,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 202,
-      "timestamp_ns": 2262282400444,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 1656.4300000000007,
+      "timestamp_ns": 87158057485,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 13.03,
       "meta": {
-        "operation": "deposit",
-        "amount": 83.74
+        "success": true,
+        "requested": 13.03
       }
     },
     {
       "seq": 203,
-      "timestamp_ns": 2262282409077,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87158085470,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 204,
-      "timestamp_ns": 2262282452293,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 83.74,
-      "meta": {
-        "new_balance": 1656.4300000000007
-      }
+      "timestamp_ns": 87158097173,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "READ_BALANCE",
+      "value": 728.1699999999998,
+      "meta": {}
     },
     {
       "seq": 205,
-      "timestamp_ns": 2262282476331,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87158142963,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 5.38,
       "meta": {}
     },
     {
       "seq": 206,
-      "timestamp_ns": 2262282486411,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1656.4300000000007,
+      "timestamp_ns": 87158152822,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 207,
-      "timestamp_ns": 2262282823583,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1606.5200000000007,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 49.91
-      }
+      "timestamp_ns": 87158418579,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 95.78,
+      "meta": {}
     },
     {
       "seq": 208,
-      "timestamp_ns": 2262282831987,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87158430472,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 209,
-      "timestamp_ns": 2262282873897,
+      "timestamp_ns": 87158503773,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 49.91,
+      "event_type": "WRITE_BALANCE",
+      "value": 811.0399999999998,
       "meta": {
-        "success": true,
-        "requested": 49.91
+        "operation": "deposit",
+        "amount": 82.87
       }
     },
     {
       "seq": 210,
-      "timestamp_ns": 2262282897337,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRED",
+      "timestamp_ns": 87158512931,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 211,
-      "timestamp_ns": 2262282906851,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "READ_BALANCE",
-      "value": 1606.5200000000007,
-      "meta": {}
+      "timestamp_ns": 87158558049,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 82.87,
+      "meta": {
+        "new_balance": 811.0399999999998
+      }
     },
     {
       "seq": 212,
-      "timestamp_ns": 2262282995012,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 86.44,
-      "meta": {}
-    },
-    {
-      "seq": 213,
-      "timestamp_ns": 2262283006420,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87158590021,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 214,
-      "timestamp_ns": 2262283249760,
+      "seq": 213,
+      "timestamp_ns": 87158600041,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1646.8600000000006,
-      "meta": {
-        "operation": "deposit",
-        "amount": 40.34
-      }
+      "event_type": "READ_BALANCE",
+      "value": 811.0399999999998,
+      "meta": {}
+    },
+    {
+      "seq": 214,
+      "timestamp_ns": 87158914854,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 38.64,
+      "meta": {}
     },
     {
       "seq": 215,
-      "timestamp_ns": 2262283258904,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87158927097,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 216,
-      "timestamp_ns": 2262283303176,
+      "timestamp_ns": 87158987985,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 40.34,
+      "event_type": "WRITE_BALANCE",
+      "value": 870.3999999999999,
       "meta": {
-        "new_balance": 1646.8600000000006
+        "operation": "deposit",
+        "amount": 59.36
       }
     },
     {
       "seq": 217,
-      "timestamp_ns": 2262283330129,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 218,
-      "timestamp_ns": 2262283339578,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "READ_BALANCE",
-      "value": 1646.8600000000006,
-      "meta": {}
-    },
-    {
-      "seq": 219,
-      "timestamp_ns": 2262283442220,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 33.57,
-      "meta": {}
-    },
-    {
-      "seq": 220,
-      "timestamp_ns": 2262283452866,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 221,
-      "timestamp_ns": 2262283654700,
+      "timestamp_ns": 87158996783,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 27.15,
-      "meta": {}
-    },
-    {
-      "seq": 222,
-      "timestamp_ns": 2262283665716,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 223,
-      "timestamp_ns": 2262283728993,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1689.8100000000006,
-      "meta": {
-        "operation": "deposit",
-        "amount": 42.95
-      }
-    },
-    {
-      "seq": 224,
-      "timestamp_ns": 2262283736406,
-      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 225,
-      "timestamp_ns": 2262283779742,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 218,
+      "timestamp_ns": 87159035428,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "DEPOSIT_END",
-      "value": 42.95,
+      "value": 59.36,
       "meta": {
-        "new_balance": 1689.8100000000006
+        "new_balance": 870.3999999999999
       }
     },
     {
-      "seq": 226,
-      "timestamp_ns": 2262283808167,
+      "seq": 219,
+      "timestamp_ns": 87159063734,
       "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 227,
-      "timestamp_ns": 2262283817997,
+      "seq": 220,
+      "timestamp_ns": 87159073924,
       "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1689.8100000000006,
+      "value": 870.3999999999999,
+      "meta": {}
+    },
+    {
+      "seq": 221,
+      "timestamp_ns": 87159386150,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 857.2099999999998,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 13.19
+      }
+    },
+    {
+      "seq": 222,
+      "timestamp_ns": 87159394015,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 223,
+      "timestamp_ns": 87159438482,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 13.19,
+      "meta": {
+        "success": true,
+        "requested": 13.19
+      }
+    },
+    {
+      "seq": 224,
+      "timestamp_ns": 87159466097,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 225,
+      "timestamp_ns": 87159476277,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "READ_BALANCE",
+      "value": 857.2099999999998,
+      "meta": {}
+    },
+    {
+      "seq": 226,
+      "timestamp_ns": 87159583273,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 29.64,
+      "meta": {}
+    },
+    {
+      "seq": 227,
+      "timestamp_ns": 87159592742,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 228,
-      "timestamp_ns": 2262284134181,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 17.31,
+      "timestamp_ns": 87159927433,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 72.03,
       "meta": {}
     },
     {
       "seq": 229,
-      "timestamp_ns": 2262284153264,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87159937042,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 230,
-      "timestamp_ns": 2262284223042,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87159956815,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1719.9800000000007,
+      "value": 851.8299999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 30.17
+        "operation": "withdraw",
+        "amount": 5.38
       }
     },
     {
       "seq": 231,
-      "timestamp_ns": 2262284231685,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87159965882,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 232,
-      "timestamp_ns": 2262284274248,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 30.17,
+      "timestamp_ns": 87160052230,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 5.38,
       "meta": {
-        "new_balance": 1719.9800000000007
+        "success": true,
+        "requested": 5.38
       }
     },
     {
       "seq": 233,
-      "timestamp_ns": 2262284311022,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87160161659,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 234,
-      "timestamp_ns": 2262284324357,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87160175145,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1719.9800000000007,
+      "value": 851.8299999999998,
       "meta": {}
     },
     {
       "seq": 235,
-      "timestamp_ns": 2262284668692,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87160513327,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1633.5400000000006,
+      "value": 947.6099999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 86.44
+        "operation": "deposit",
+        "amount": 95.78
       }
     },
     {
       "seq": 236,
-      "timestamp_ns": 2262284676976,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87160520882,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 237,
-      "timestamp_ns": 2262284721836,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 86.44,
+      "timestamp_ns": 87160557794,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 95.78,
       "meta": {
-        "success": true,
-        "requested": 86.44
+        "new_balance": 947.6099999999998
       }
     },
     {
       "seq": 238,
-      "timestamp_ns": 2262284757476,
+      "timestamp_ns": 87160622896,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 60.16,
+      "meta": {}
+    },
+    {
+      "seq": 239,
+      "timestamp_ns": 87160634058,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 240,
+      "timestamp_ns": 87160650580,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 239,
-      "timestamp_ns": 2262284768460,
+      "seq": 241,
+      "timestamp_ns": 87160659217,
       "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1633.5400000000006,
-      "meta": {}
-    },
-    {
-      "seq": 240,
-      "timestamp_ns": 2262284847131,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 61.83,
-      "meta": {}
-    },
-    {
-      "seq": 241,
-      "timestamp_ns": 2262284857396,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
+      "value": 947.6099999999998,
       "meta": {}
     },
     {
       "seq": 242,
-      "timestamp_ns": 2262285012158,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 26.89,
+      "timestamp_ns": 87160942673,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 81.8,
       "meta": {}
     },
     {
       "seq": 243,
-      "timestamp_ns": 2262285022293,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87160950478,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 244,
-      "timestamp_ns": 2262285118599,
+      "timestamp_ns": 87160993106,
       "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1599.9700000000007,
+      "value": 908.9699999999998,
       "meta": {
         "operation": "withdraw",
-        "amount": 33.57
+        "amount": 38.64
       }
     },
     {
       "seq": 245,
-      "timestamp_ns": 2262285127003,
+      "timestamp_ns": 87161002094,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -2149,18 +2159,18 @@
     },
     {
       "seq": 246,
-      "timestamp_ns": 2262285168369,
+      "timestamp_ns": 87161045588,
       "thread_name": "Safe-Run94-T2",
       "event_type": "WITHDRAW_END",
-      "value": 33.57,
+      "value": 38.64,
       "meta": {
         "success": true,
-        "requested": 33.57
+        "requested": 38.64
       }
     },
     {
       "seq": 247,
-      "timestamp_ns": 2262285198992,
+      "timestamp_ns": 87161070036,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -2168,23 +2178,23 @@
     },
     {
       "seq": 248,
-      "timestamp_ns": 2262285207309,
+      "timestamp_ns": 87161078322,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1599.9700000000007,
+      "value": 908.9699999999998,
       "meta": {}
     },
     {
       "seq": 249,
-      "timestamp_ns": 2262285464472,
+      "timestamp_ns": 87161390600,
       "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_START",
-      "value": 94.54,
+      "value": 99.61,
       "meta": {}
     },
     {
       "seq": 250,
-      "timestamp_ns": 2262285474933,
+      "timestamp_ns": 87161402002,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -2192,18 +2202,18 @@
     },
     {
       "seq": 251,
-      "timestamp_ns": 2262285533543,
+      "timestamp_ns": 87161458804,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1572.8200000000006,
+      "value": 938.6099999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 27.15
+        "operation": "deposit",
+        "amount": 29.64
       }
     },
     {
       "seq": 252,
-      "timestamp_ns": 2262285540325,
+      "timestamp_ns": 87161466809,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -2211,42 +2221,41 @@
     },
     {
       "seq": 253,
-      "timestamp_ns": 2262285581288,
+      "timestamp_ns": 87161502789,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 27.15,
+      "event_type": "DEPOSIT_END",
+      "value": 29.64,
       "meta": {
-        "success": true,
-        "requested": 27.15
+        "new_balance": 938.6099999999998
       }
     },
     {
       "seq": 254,
-      "timestamp_ns": 2262285613660,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87161527897,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 255,
-      "timestamp_ns": 2262285622728,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87161536343,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1572.8200000000006,
+      "value": 938.6099999999998,
       "meta": {}
     },
     {
       "seq": 256,
-      "timestamp_ns": 2262285886655,
+      "timestamp_ns": 87161717856,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 29.96,
+      "event_type": "WITHDRAW_START",
+      "value": 88.59,
       "meta": {}
     },
     {
       "seq": 257,
-      "timestamp_ns": 2262285894895,
+      "timestamp_ns": 87161727164,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -2254,159 +2263,160 @@
     },
     {
       "seq": 258,
-      "timestamp_ns": 2262285959685,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87161836827,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1590.1300000000006,
+      "value": 866.5799999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 17.31
+        "operation": "withdraw",
+        "amount": 72.03
       }
     },
     {
       "seq": 259,
-      "timestamp_ns": 2262285968197,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87161843591,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 260,
-      "timestamp_ns": 2262286008268,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 17.31,
+      "timestamp_ns": 87161881875,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 72.03,
       "meta": {
-        "new_balance": 1590.1300000000006
+        "success": true,
+        "requested": 72.03
       }
     },
     {
       "seq": 261,
-      "timestamp_ns": 2262286029168,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87161903368,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 262,
-      "timestamp_ns": 2262286037213,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87161911965,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1590.1300000000006,
+      "value": 866.5799999999998,
       "meta": {}
     },
     {
       "seq": 263,
-      "timestamp_ns": 2262286250050,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 74.22,
-      "meta": {}
-    },
-    {
-      "seq": 264,
-      "timestamp_ns": 2262286258443,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 265,
-      "timestamp_ns": 2262286362511,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87162257466,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1528.3000000000006,
+      "value": 926.7399999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 61.83
+        "operation": "deposit",
+        "amount": 60.16
       }
     },
     {
-      "seq": 266,
-      "timestamp_ns": 2262286369086,
-      "thread_name": "Safe-Run94-T1",
+      "seq": 264,
+      "timestamp_ns": 87162274249,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 267,
-      "timestamp_ns": 2262286409091,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 61.83,
+      "seq": 265,
+      "timestamp_ns": 87162332733,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 60.16,
       "meta": {
-        "success": true,
-        "requested": 61.83
+        "new_balance": 926.7399999999998
       }
     },
     {
+      "seq": 266,
+      "timestamp_ns": 87162413139,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 94.45,
+      "meta": {}
+    },
+    {
+      "seq": 267,
+      "timestamp_ns": 87162428649,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 268,
-      "timestamp_ns": 2262286433333,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87162440356,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 269,
-      "timestamp_ns": 2262286442695,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87162452099,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1528.3000000000006,
+      "value": 926.7399999999998,
       "meta": {}
     },
     {
       "seq": 270,
-      "timestamp_ns": 2262286607614,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 85.39,
-      "meta": {}
-    },
-    {
-      "seq": 271,
-      "timestamp_ns": 2262286615452,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 272,
-      "timestamp_ns": 2262286781840,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87162834239,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1555.1900000000007,
+      "value": 844.9399999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 26.89
+        "operation": "withdraw",
+        "amount": 81.8
       }
     },
     {
-      "seq": 273,
-      "timestamp_ns": 2262286790015,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 271,
+      "timestamp_ns": 87162859007,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 274,
-      "timestamp_ns": 2262286829323,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 26.89,
+      "seq": 272,
+      "timestamp_ns": 87162923272,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 81.8,
       "meta": {
-        "new_balance": 1555.1900000000007
+        "success": true,
+        "requested": 81.8
       }
     },
     {
+      "seq": 273,
+      "timestamp_ns": 87162952698,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 6.08,
+      "meta": {}
+    },
+    {
+      "seq": 274,
+      "timestamp_ns": 87162967768,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 275,
-      "timestamp_ns": 2262286856276,
+      "timestamp_ns": 87163054988,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -2414,42 +2424,42 @@
     },
     {
       "seq": 276,
-      "timestamp_ns": 2262286865464,
+      "timestamp_ns": 87163066430,
       "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1555.1900000000007,
+      "value": 844.9399999999998,
       "meta": {}
     },
     {
       "seq": 277,
-      "timestamp_ns": 2262287034008,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 29.88,
+      "timestamp_ns": 87163165352,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 99.29,
       "meta": {}
     },
     {
       "seq": 278,
-      "timestamp_ns": 2262287044023,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87163177085,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 279,
-      "timestamp_ns": 2262287199036,
+      "timestamp_ns": 87163376263,
       "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1649.7300000000007,
+      "value": 944.5499999999998,
       "meta": {
         "operation": "deposit",
-        "amount": 94.54
+        "amount": 99.61
       }
     },
     {
       "seq": 280,
-      "timestamp_ns": 2262287207341,
+      "timestamp_ns": 87163385050,
       "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -2457,17 +2467,17 @@
     },
     {
       "seq": 281,
-      "timestamp_ns": 2262287249077,
+      "timestamp_ns": 87163428624,
       "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_END",
-      "value": 94.54,
+      "value": 99.61,
       "meta": {
-        "new_balance": 1649.7300000000007
+        "new_balance": 944.5499999999998
       }
     },
     {
       "seq": 282,
-      "timestamp_ns": 2262287271319,
+      "timestamp_ns": 87163464023,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -2475,26 +2485,26 @@
     },
     {
       "seq": 283,
-      "timestamp_ns": 2262287279342,
+      "timestamp_ns": 87163476868,
       "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1649.7300000000007,
+      "value": 944.5499999999998,
       "meta": {}
     },
     {
       "seq": 284,
-      "timestamp_ns": 2262287604944,
+      "timestamp_ns": 87163803634,
       "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1679.6900000000007,
+      "value": 855.9599999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 29.96
+        "operation": "withdraw",
+        "amount": 88.59
       }
     },
     {
       "seq": 285,
-      "timestamp_ns": 2262287611683,
+      "timestamp_ns": 87163812711,
       "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
@@ -2502,2124 +2512,2120 @@
     },
     {
       "seq": 286,
-      "timestamp_ns": 2262287650567,
+      "timestamp_ns": 87163856406,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 29.96,
+      "event_type": "WITHDRAW_END",
+      "value": 88.59,
       "meta": {
-        "new_balance": 1679.6900000000007
+        "success": true,
+        "requested": 88.59
       }
     },
     {
       "seq": 287,
-      "timestamp_ns": 2262287683319,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87163940740,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 288,
-      "timestamp_ns": 2262287692344,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87163951842,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1679.6900000000007,
+      "value": 855.9599999999998,
       "meta": {}
     },
     {
       "seq": 289,
-      "timestamp_ns": 2262287768958,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 38.16,
+      "timestamp_ns": 87164066486,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 31.72,
       "meta": {}
     },
     {
       "seq": 290,
-      "timestamp_ns": 2262287778189,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87164079742,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 291,
-      "timestamp_ns": 2262287913936,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 33.98,
+      "timestamp_ns": 87164113206,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 63.82,
       "meta": {}
     },
     {
       "seq": 292,
-      "timestamp_ns": 2262287922361,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87164124708,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 293,
-      "timestamp_ns": 2262288052324,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87164260402,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1605.4700000000007,
+      "value": 950.4099999999999,
       "meta": {
-        "operation": "withdraw",
-        "amount": 74.22
+        "operation": "deposit",
+        "amount": 94.45
       }
     },
     {
       "seq": 294,
-      "timestamp_ns": 2262288061936,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87164268398,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 295,
-      "timestamp_ns": 2262288105522,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 74.22,
+      "timestamp_ns": 87164307875,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 94.45,
       "meta": {
-        "success": true,
-        "requested": 74.22
+        "new_balance": 950.4099999999999
       }
     },
     {
       "seq": 296,
-      "timestamp_ns": 2262288147217,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87164336325,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 297,
-      "timestamp_ns": 2262288156339,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87164347877,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1605.4700000000007,
+      "value": 950.4099999999999,
       "meta": {}
     },
     {
       "seq": 298,
-      "timestamp_ns": 2262288528291,
+      "timestamp_ns": 87164819049,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 1690.8600000000008,
-      "meta": {
-        "operation": "deposit",
-        "amount": 85.39
-      }
+      "event_type": "WITHDRAW_START",
+      "value": 63.51,
+      "meta": {}
     },
     {
       "seq": 299,
-      "timestamp_ns": 2262288545524,
+      "timestamp_ns": 87164827075,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 300,
-      "timestamp_ns": 2262288606592,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_END",
-      "value": 85.39,
-      "meta": {
-        "new_balance": 1690.8600000000008
-      }
-    },
-    {
-      "seq": 301,
-      "timestamp_ns": 2262288710029,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 51.51,
-      "meta": {}
-    },
-    {
-      "seq": 302,
-      "timestamp_ns": 2262288723723,
-      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 303,
-      "timestamp_ns": 2262288733411,
+      "seq": 300,
+      "timestamp_ns": 87164892203,
       "thread_name": "Safe-Run94-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 944.3299999999998,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 6.08
+      }
+    },
+    {
+      "seq": 301,
+      "timestamp_ns": 87164900178,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 302,
+      "timestamp_ns": 87164941198,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 6.08,
+      "meta": {
+        "success": true,
+        "requested": 6.08
+      }
+    },
+    {
+      "seq": 303,
+      "timestamp_ns": 87164969482,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 304,
-      "timestamp_ns": 2262288746321,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87164978179,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1690.8600000000008,
+      "value": 944.3299999999998,
       "meta": {}
     },
     {
       "seq": 305,
-      "timestamp_ns": 2262289114346,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87165209278,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "DEPOSIT_START",
-      "value": 8.29,
+      "value": 48.92,
       "meta": {}
     },
     {
       "seq": 306,
-      "timestamp_ns": 2262289130642,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87165218656,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 307,
-      "timestamp_ns": 2262289214952,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87165282861,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1720.740000000001,
+      "value": 845.0399999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 29.88
+        "operation": "withdraw",
+        "amount": 99.29
       }
     },
     {
       "seq": 308,
-      "timestamp_ns": 2262289227394,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87165289534,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 309,
-      "timestamp_ns": 2262289287005,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 29.88,
+      "timestamp_ns": 87165326466,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 99.29,
       "meta": {
-        "new_balance": 1720.740000000001
+        "success": true,
+        "requested": 99.29
       }
     },
     {
       "seq": 310,
-      "timestamp_ns": 2262289321371,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87165351264,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 311,
-      "timestamp_ns": 2262289333399,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87165359951,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1720.740000000001,
+      "value": 845.0399999999998,
       "meta": {}
     },
     {
       "seq": 312,
-      "timestamp_ns": 2262289707760,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87165657510,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1682.5800000000008,
+      "value": 876.7599999999999,
       "meta": {
-        "operation": "withdraw",
-        "amount": 38.16
+        "operation": "deposit",
+        "amount": 31.72
       }
     },
     {
       "seq": 313,
-      "timestamp_ns": 2262289725993,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87165663522,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 314,
-      "timestamp_ns": 2262289781325,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 38.16,
+      "timestamp_ns": 87165701917,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 31.72,
       "meta": {
-        "success": true,
-        "requested": 38.16
+        "new_balance": 876.7599999999999
       }
     },
     {
       "seq": 315,
-      "timestamp_ns": 2262289822266,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87165728079,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 316,
-      "timestamp_ns": 2262289834262,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87165736595,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1682.5800000000008,
+      "value": 876.7599999999999,
       "meta": {}
     },
     {
       "seq": 317,
-      "timestamp_ns": 2262289928783,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87165864484,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "DEPOSIT_START",
-      "value": 75.15,
+      "value": 83.25,
       "meta": {}
     },
     {
       "seq": 318,
-      "timestamp_ns": 2262289940877,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87165873231,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 319,
-      "timestamp_ns": 2262290036247,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_START",
-      "value": 32.82,
+      "timestamp_ns": 87165895413,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_START",
+      "value": 68.98,
       "meta": {}
     },
     {
       "seq": 320,
-      "timestamp_ns": 2262290046926,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87165902938,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 321,
-      "timestamp_ns": 2262290318897,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87166097107,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1716.5600000000009,
+      "value": 812.9399999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 33.98
+        "operation": "withdraw",
+        "amount": 63.82
       }
     },
     {
       "seq": 322,
-      "timestamp_ns": 2262290327965,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87166104100,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 323,
-      "timestamp_ns": 2262290373641,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 33.98,
+      "timestamp_ns": 87166139780,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_END",
+      "value": 63.82,
       "meta": {
-        "new_balance": 1716.5600000000009
+        "success": true,
+        "requested": 63.82
       }
     },
     {
       "seq": 324,
-      "timestamp_ns": 2262290400320,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87166161681,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 325,
-      "timestamp_ns": 2262290409551,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87166169937,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1716.5600000000009,
+      "value": 812.9399999999998,
       "meta": {}
     },
     {
       "seq": 326,
-      "timestamp_ns": 2262290732988,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87166475132,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1768.0700000000008,
+      "value": 749.4299999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 51.51
+        "operation": "withdraw",
+        "amount": 63.51
       }
     },
     {
       "seq": 327,
-      "timestamp_ns": 2262290739737,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87166482356,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 328,
-      "timestamp_ns": 2262290782627,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 51.51,
+      "timestamp_ns": 87166517645,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 63.51,
       "meta": {
-        "new_balance": 1768.0700000000008
+        "success": true,
+        "requested": 63.51
       }
     },
     {
       "seq": 329,
-      "timestamp_ns": 2262290856987,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 48.51,
-      "meta": {}
-    },
-    {
-      "seq": 330,
-      "timestamp_ns": 2262290867372,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 331,
-      "timestamp_ns": 2262290890276,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87166542442,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 332,
-      "timestamp_ns": 2262290901934,
-      "thread_name": "Safe-Run94-T1",
+      "seq": 330,
+      "timestamp_ns": 87166551078,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1768.0700000000008,
+      "value": 749.4299999999998,
+      "meta": {}
+    },
+    {
+      "seq": 331,
+      "timestamp_ns": 87166646526,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 29.68,
+      "meta": {}
+    },
+    {
+      "seq": 332,
+      "timestamp_ns": 87166654571,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 333,
-      "timestamp_ns": 2262291250277,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87166855621,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1776.3600000000008,
+      "value": 798.3499999999998,
       "meta": {
         "operation": "deposit",
-        "amount": 8.29
+        "amount": 48.92
       }
     },
     {
       "seq": 334,
-      "timestamp_ns": 2262291259226,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87166863436,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 335,
-      "timestamp_ns": 2262291303552,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87166894456,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "DEPOSIT_END",
-      "value": 8.29,
+      "value": 48.92,
       "meta": {
-        "new_balance": 1776.3600000000008
+        "new_balance": 798.3499999999998
       }
     },
     {
       "seq": 336,
-      "timestamp_ns": 2262291355880,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87166955487,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 40.79,
       "meta": {}
     },
     {
       "seq": 337,
-      "timestamp_ns": 2262291364959,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1776.3600000000008,
-      "meta": {}
-    },
-    {
-      "seq": 338,
-      "timestamp_ns": 2262291374690,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 17.09,
-      "meta": {}
-    },
-    {
-      "seq": 339,
-      "timestamp_ns": 2262291385043,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87166964294,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 338,
+      "timestamp_ns": 87166988479,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 339,
+      "timestamp_ns": 87166998599,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "READ_BALANCE",
+      "value": 798.3499999999998,
+      "meta": {}
+    },
+    {
       "seq": 340,
-      "timestamp_ns": 2262291685140,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87167312431,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1851.510000000001,
+      "value": 881.5999999999998,
       "meta": {
         "operation": "deposit",
-        "amount": 75.15
+        "amount": 83.25
       }
     },
     {
       "seq": 341,
-      "timestamp_ns": 2262291692064,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87167319635,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 342,
-      "timestamp_ns": 2262291731807,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87167354403,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "DEPOSIT_END",
-      "value": 75.15,
+      "value": 83.25,
       "meta": {
-        "new_balance": 1851.510000000001
+        "new_balance": 881.5999999999998
       }
     },
     {
       "seq": 343,
-      "timestamp_ns": 2262291756660,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87167412124,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 93.92,
       "meta": {}
     },
     {
       "seq": 344,
-      "timestamp_ns": 2262291765945,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1851.510000000001,
-      "meta": {}
-    },
-    {
-      "seq": 345,
-      "timestamp_ns": 2262291883707,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 20.69,
-      "meta": {}
-    },
-    {
-      "seq": 346,
-      "timestamp_ns": 2262291892622,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87167419668,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 345,
+      "timestamp_ns": 87167453935,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 346,
+      "timestamp_ns": 87167463023,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "READ_BALANCE",
+      "value": 881.5999999999998,
+      "meta": {}
+    },
+    {
       "seq": 347,
-      "timestamp_ns": 2262292071137,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 81.54,
+      "timestamp_ns": 87167752487,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 15.45,
       "meta": {}
     },
     {
       "seq": 348,
-      "timestamp_ns": 2262292081555,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87167760032,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 349,
-      "timestamp_ns": 2262292235708,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87167768787,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1884.3300000000008,
+      "value": 812.6199999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 32.82
+        "operation": "withdraw",
+        "amount": 68.98
       }
     },
     {
       "seq": 350,
-      "timestamp_ns": 2262292243110,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87167776603,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 351,
-      "timestamp_ns": 2262292281613,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "DEPOSIT_END",
-      "value": 32.82,
+      "timestamp_ns": 87167817703,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 68.98,
       "meta": {
-        "new_balance": 1884.3300000000008
+        "success": true,
+        "requested": 68.98
       }
     },
     {
       "seq": 352,
-      "timestamp_ns": 2262292313369,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87167832773,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 353,
-      "timestamp_ns": 2262292322828,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87167840619,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1884.3300000000008,
+      "value": 812.6199999999998,
       "meta": {}
     },
     {
       "seq": 354,
-      "timestamp_ns": 2262292630685,
+      "timestamp_ns": 87168108303,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 24.41,
-      "meta": {}
-    },
-    {
-      "seq": 355,
-      "timestamp_ns": 2262292641125,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 356,
-      "timestamp_ns": 2262292649378,
-      "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1835.8200000000008,
+      "value": 782.9399999999998,
       "meta": {
         "operation": "withdraw",
-        "amount": 48.51
+        "amount": 29.68
       }
     },
     {
-      "seq": 357,
-      "timestamp_ns": 2262292656323,
-      "thread_name": "Safe-Run94-T4",
+      "seq": 355,
+      "timestamp_ns": 87168115797,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 358,
-      "timestamp_ns": 2262292693324,
-      "thread_name": "Safe-Run94-T4",
+      "seq": 356,
+      "timestamp_ns": 87168158290,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WITHDRAW_END",
-      "value": 48.51,
+      "value": 29.68,
       "meta": {
         "success": true,
-        "requested": 48.51
+        "requested": 29.68
       }
     },
     {
+      "seq": 357,
+      "timestamp_ns": 87168211439,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 67.93,
+      "meta": {}
+    },
+    {
+      "seq": 358,
+      "timestamp_ns": 87168218903,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 359,
-      "timestamp_ns": 2262292716149,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87168253721,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 360,
-      "timestamp_ns": 2262292725337,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87168263750,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1835.8200000000008,
+      "value": 782.9399999999998,
       "meta": {}
     },
     {
       "seq": 361,
-      "timestamp_ns": 2262292884891,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 94.54,
+      "timestamp_ns": 87168420256,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 45.31,
       "meta": {}
     },
     {
       "seq": 362,
-      "timestamp_ns": 2262292892925,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87168429314,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 363,
-      "timestamp_ns": 2262293050156,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87168569245,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1818.730000000001,
+      "value": 823.7299999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 17.09
+        "operation": "deposit",
+        "amount": 40.79
       }
     },
     {
       "seq": 364,
-      "timestamp_ns": 2262293057079,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87168576719,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 365,
-      "timestamp_ns": 2262293096823,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 17.09,
+      "timestamp_ns": 87168617829,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 40.79,
       "meta": {
-        "success": true,
-        "requested": 17.09
+        "new_balance": 823.7299999999998
       }
     },
     {
       "seq": 366,
-      "timestamp_ns": 2262293128827,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87168639182,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 367,
-      "timestamp_ns": 2262293138570,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87168647508,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1818.730000000001,
+      "value": 823.7299999999998,
       "meta": {}
     },
     {
       "seq": 368,
-      "timestamp_ns": 2262293464575,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87168941991,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1798.0400000000009,
+      "value": 729.8099999999998,
       "meta": {
         "operation": "withdraw",
-        "amount": 20.69
+        "amount": 93.92
       }
     },
     {
       "seq": 369,
-      "timestamp_ns": 2262293471651,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87168948003,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 370,
-      "timestamp_ns": 2262293513093,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87168982079,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WITHDRAW_END",
-      "value": 20.69,
+      "value": 93.92,
       "meta": {
         "success": true,
-        "requested": 20.69
+        "requested": 93.92
       }
     },
     {
       "seq": 371,
-      "timestamp_ns": 2262293546046,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169006856,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 372,
-      "timestamp_ns": 2262293556214,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169015042,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1798.0400000000009,
+      "value": 729.8099999999998,
       "meta": {}
     },
     {
       "seq": 373,
-      "timestamp_ns": 2262293742128,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 80.13,
+      "timestamp_ns": 87169206835,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_START",
+      "value": 52.84,
       "meta": {}
     },
     {
       "seq": 374,
-      "timestamp_ns": 2262293753003,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87169215041,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 375,
-      "timestamp_ns": 2262293895323,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169311579,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1879.5800000000008,
+      "value": 714.3599999999998,
       "meta": {
-        "operation": "deposit",
-        "amount": 81.54
+        "operation": "withdraw",
+        "amount": 15.45
       }
     },
     {
       "seq": 376,
-      "timestamp_ns": 2262293904021,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169318101,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 377,
-      "timestamp_ns": 2262293942731,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 81.54,
+      "timestamp_ns": 87169352568,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 15.45,
       "meta": {
-        "new_balance": 1879.5800000000008
+        "success": true,
+        "requested": 15.45
       }
     },
     {
       "seq": 378,
-      "timestamp_ns": 2262293976313,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87169365485,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 49.37,
+      "meta": {}
+    },
+    {
+      "seq": 379,
+      "timestamp_ns": 87169372960,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 380,
+      "timestamp_ns": 87169435089,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 379,
-      "timestamp_ns": 2262293985381,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1879.5800000000008,
-      "meta": {}
-    },
-    {
-      "seq": 380,
-      "timestamp_ns": 2262294068308,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 68.9,
-      "meta": {}
-    },
-    {
       "seq": 381,
-      "timestamp_ns": 2262294077518,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
+      "timestamp_ns": 87169443355,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "READ_BALANCE",
+      "value": 714.3599999999998,
       "meta": {}
     },
     {
       "seq": 382,
-      "timestamp_ns": 2262294314739,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_START",
-      "value": 74.79,
-      "meta": {}
-    },
-    {
-      "seq": 383,
-      "timestamp_ns": 2262294325124,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 384,
-      "timestamp_ns": 2262294336881,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87169769299,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1855.1700000000008,
+      "value": 782.2899999999997,
       "meta": {
-        "operation": "withdraw",
-        "amount": 24.41
+        "operation": "deposit",
+        "amount": 67.93
       }
     },
     {
-      "seq": 385,
-      "timestamp_ns": 2262294346319,
-      "thread_name": "Safe-Run94-T2",
+      "seq": 383,
+      "timestamp_ns": 87169785691,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 386,
-      "timestamp_ns": 2262294403262,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 24.41,
+      "seq": 384,
+      "timestamp_ns": 87169840067,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 67.93,
       "meta": {
-        "success": true,
-        "requested": 24.41
+        "new_balance": 782.2899999999997
       }
     },
     {
+      "seq": 385,
+      "timestamp_ns": 87169919556,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_START",
+      "value": 79.05,
+      "meta": {}
+    },
+    {
+      "seq": 386,
+      "timestamp_ns": 87169930197,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
       "seq": 387,
-      "timestamp_ns": 2262294486799,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169942857,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 388,
-      "timestamp_ns": 2262294497086,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87169952125,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1855.1700000000008,
+      "value": 782.2899999999997,
       "meta": {}
     },
     {
       "seq": 389,
-      "timestamp_ns": 2262294766758,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87170009396,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WITHDRAW_START",
-      "value": 68.5,
+      "value": 41.76,
       "meta": {}
     },
     {
       "seq": 390,
-      "timestamp_ns": 2262294784306,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87170017482,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 391,
-      "timestamp_ns": 2262294853659,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87170261218,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1780.3800000000008,
+      "value": 827.5999999999997,
       "meta": {
-        "operation": "withdraw",
-        "amount": 74.79
+        "operation": "deposit",
+        "amount": 45.31
       }
     },
     {
       "seq": 392,
-      "timestamp_ns": 2262294865873,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87170268812,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 393,
-      "timestamp_ns": 2262294921782,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WITHDRAW_END",
-      "value": 74.79,
+      "timestamp_ns": 87170309161,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 45.31,
       "meta": {
-        "success": true,
-        "requested": 74.79
+        "new_balance": 827.5999999999997
       }
     },
     {
       "seq": 394,
-      "timestamp_ns": 2262294949118,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87170332134,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 395,
-      "timestamp_ns": 2262294959830,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87170340661,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1780.3800000000008,
+      "value": 827.5999999999997,
       "meta": {}
     },
     {
       "seq": 396,
-      "timestamp_ns": 2262295216014,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87170546402,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_START",
-      "value": 75.7,
+      "value": 88.19,
       "meta": {}
     },
     {
       "seq": 397,
-      "timestamp_ns": 2262295233725,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87170554057,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 398,
-      "timestamp_ns": 2262295312220,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87170647900,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1860.5100000000007,
+      "value": 774.7599999999996,
       "meta": {
-        "operation": "deposit",
-        "amount": 80.13
+        "operation": "withdraw",
+        "amount": 52.84
       }
     },
     {
       "seq": 399,
-      "timestamp_ns": 2262295322594,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87170655204,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 400,
-      "timestamp_ns": 2262295373311,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 80.13,
+      "timestamp_ns": 87170694510,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WITHDRAW_END",
+      "value": 52.84,
       "meta": {
-        "new_balance": 1860.5100000000007
+        "success": true,
+        "requested": 52.84
       }
     },
     {
       "seq": 401,
-      "timestamp_ns": 2262295423473,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87170726642,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 402,
-      "timestamp_ns": 2262295438593,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87170736992,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1860.5100000000007,
+      "value": 774.7599999999996,
       "meta": {}
     },
     {
       "seq": 403,
-      "timestamp_ns": 2262295807390,
+      "timestamp_ns": 87170935788,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 1791.6100000000006,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 68.9
-      }
+      "event_type": "DEPOSIT_START",
+      "value": 91.03,
+      "meta": {}
     },
     {
       "seq": 404,
-      "timestamp_ns": 2262295822217,
+      "timestamp_ns": 87170944495,
       "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_RELEASED",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 405,
-      "timestamp_ns": 2262295873434,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 68.9,
+      "timestamp_ns": 87171044441,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 725.3899999999996,
       "meta": {
-        "success": true,
-        "requested": 68.9
+        "operation": "withdraw",
+        "amount": 49.37
       }
     },
     {
       "seq": 406,
-      "timestamp_ns": 2262295970210,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRED",
+      "timestamp_ns": 87171051876,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 407,
-      "timestamp_ns": 2262295989924,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "READ_BALANCE",
-      "value": 1791.6100000000006,
-      "meta": {}
+      "timestamp_ns": 87171088106,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 49.37,
+      "meta": {
+        "success": true,
+        "requested": 49.37
+      }
     },
     {
       "seq": 408,
-      "timestamp_ns": 2262296078597,
+      "timestamp_ns": 87171107252,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 96.34,
-      "meta": {}
-    },
-    {
-      "seq": 409,
-      "timestamp_ns": 2262296095709,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 410,
-      "timestamp_ns": 2262296123762,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "DEPOSIT_START",
-      "value": 97.65,
+      "seq": 409,
+      "timestamp_ns": 87171115648,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "READ_BALANCE",
+      "value": 725.3899999999996,
       "meta": {}
     },
     {
+      "seq": 410,
+      "timestamp_ns": 87171424350,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 646.3399999999997,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 79.05
+      }
+    },
+    {
       "seq": 411,
-      "timestamp_ns": 2262296134267,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87171431614,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 412,
-      "timestamp_ns": 2262296353842,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1697.0700000000006,
+      "timestamp_ns": 87171469067,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WITHDRAW_END",
+      "value": 79.05,
       "meta": {
-        "operation": "withdraw",
-        "amount": 94.54
+        "success": true,
+        "requested": 79.05
       }
     },
     {
       "seq": 413,
-      "timestamp_ns": 2262296363324,
+      "timestamp_ns": 87171485939,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_RELEASED",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 414,
-      "timestamp_ns": 2262296407443,
+      "timestamp_ns": 87171494215,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 94.54,
-      "meta": {
-        "success": true,
-        "requested": 94.54
-      }
+      "event_type": "READ_BALANCE",
+      "value": 646.3399999999997,
+      "meta": {}
     },
     {
       "seq": 415,
-      "timestamp_ns": 2262296442397,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87171567098,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 81.12,
       "meta": {}
     },
     {
       "seq": 416,
-      "timestamp_ns": 2262296452303,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1697.0700000000006,
+      "timestamp_ns": 87171575334,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 417,
-      "timestamp_ns": 2262296779605,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1628.5700000000006,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 68.5
-      }
+      "timestamp_ns": 87171712750,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 17.79,
+      "meta": {}
     },
     {
       "seq": 418,
-      "timestamp_ns": 2262296787595,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87171721858,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 419,
-      "timestamp_ns": 2262296830495,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 68.5,
+      "timestamp_ns": 87171827814,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 604.5799999999997,
       "meta": {
-        "success": true,
-        "requested": 68.5
+        "operation": "withdraw",
+        "amount": 41.76
       }
     },
     {
       "seq": 420,
-      "timestamp_ns": 2262296888777,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
+      "timestamp_ns": 87171835208,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 421,
-      "timestamp_ns": 2262296899565,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1628.5700000000006,
-      "meta": {}
+      "timestamp_ns": 87171871849,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 41.76,
+      "meta": {
+        "success": true,
+        "requested": 41.76
+      }
     },
     {
       "seq": 422,
-      "timestamp_ns": 2262296956957,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 66.79,
-      "meta": {}
-    },
-    {
-      "seq": 423,
-      "timestamp_ns": 2262296970445,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "timestamp_ns": 87171891930,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 424,
-      "timestamp_ns": 2262297105774,
+      "seq": 423,
+      "timestamp_ns": 87171899945,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 16.12,
+      "event_type": "READ_BALANCE",
+      "value": 604.5799999999997,
       "meta": {}
     },
     {
-      "seq": 425,
-      "timestamp_ns": 2262297114101,
+      "seq": 424,
+      "timestamp_ns": 87172211932,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "event_type": "WRITE_BALANCE",
+      "value": 692.7699999999998,
+      "meta": {
+        "operation": "deposit",
+        "amount": 88.19
+      }
+    },
+    {
+      "seq": 425,
+      "timestamp_ns": 87172219377,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 426,
-      "timestamp_ns": 2262297237763,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "WRITE_BALANCE",
-      "value": 1704.2700000000007,
+      "timestamp_ns": 87172254545,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_END",
+      "value": 88.19,
       "meta": {
-        "operation": "deposit",
-        "amount": 75.7
+        "new_balance": 692.7699999999998
       }
     },
     {
       "seq": 427,
-      "timestamp_ns": 2262297246341,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87172277278,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 428,
-      "timestamp_ns": 2262297290330,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_END",
-      "value": 75.7,
-      "meta": {
-        "new_balance": 1704.2700000000007
-      }
+      "timestamp_ns": 87172285584,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "READ_BALANCE",
+      "value": 692.7699999999998,
+      "meta": {}
     },
     {
       "seq": 429,
-      "timestamp_ns": 2262297316772,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87172352975,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 38.28,
       "meta": {}
     },
     {
       "seq": 430,
-      "timestamp_ns": 2262297325687,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "READ_BALANCE",
-      "value": 1704.2700000000007,
+      "timestamp_ns": 87172361031,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 431,
-      "timestamp_ns": 2262297670329,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1607.9300000000007,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 96.34
-      }
+      "timestamp_ns": 87172458141,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "DEPOSIT_START",
+      "value": 72.6,
+      "meta": {}
     },
     {
       "seq": 432,
-      "timestamp_ns": 2262297680093,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_RELEASED",
+      "timestamp_ns": 87172465997,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 433,
-      "timestamp_ns": 2262297725291,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 96.34,
+      "timestamp_ns": 87172585768,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "WRITE_BALANCE",
+      "value": 783.7999999999997,
       "meta": {
-        "success": true,
-        "requested": 96.34
+        "operation": "deposit",
+        "amount": 91.03
       }
     },
     {
       "seq": 434,
-      "timestamp_ns": 2262297762226,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 435,
-      "timestamp_ns": 2262297774538,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "READ_BALANCE",
-      "value": 1607.9300000000007,
-      "meta": {}
-    },
-    {
-      "seq": 436,
-      "timestamp_ns": 2262297850771,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "DEPOSIT_START",
-      "value": 14.63,
-      "meta": {}
-    },
-    {
-      "seq": 437,
-      "timestamp_ns": 2262297861548,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 438,
-      "timestamp_ns": 2262298129881,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WRITE_BALANCE",
-      "value": 1705.5800000000008,
-      "meta": {
-        "operation": "deposit",
-        "amount": 97.65
-      }
-    },
-    {
-      "seq": 439,
-      "timestamp_ns": 2262298138774,
+      "timestamp_ns": 87172592151,
       "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 440,
-      "timestamp_ns": 2262298179628,
+      "seq": 435,
+      "timestamp_ns": 87172627189,
       "thread_name": "Safe-Run94-T1",
       "event_type": "DEPOSIT_END",
-      "value": 97.65,
+      "value": 91.03,
       "meta": {
-        "new_balance": 1705.5800000000008
+        "new_balance": 783.7999999999997
       }
     },
     {
-      "seq": 441,
-      "timestamp_ns": 2262298249635,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_START",
-      "value": 98.4,
+      "seq": 436,
+      "timestamp_ns": 87172657603,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
       "meta": {}
     },
     {
-      "seq": 442,
-      "timestamp_ns": 2262298260509,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 437,
+      "timestamp_ns": 87172668263,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "READ_BALANCE",
+      "value": 783.7999999999997,
+      "meta": {}
+    },
+    {
+      "seq": 438,
+      "timestamp_ns": 87172800726,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_START",
+      "value": 98.99,
+      "meta": {}
+    },
+    {
+      "seq": 439,
+      "timestamp_ns": 87172807970,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 440,
+      "timestamp_ns": 87172978226,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 864.9199999999997,
+      "meta": {
+        "operation": "deposit",
+        "amount": 81.12
+      }
+    },
+    {
+      "seq": 441,
+      "timestamp_ns": 87172986132,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 442,
+      "timestamp_ns": 87173026280,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 81.12,
+      "meta": {
+        "new_balance": 864.9199999999997
+      }
+    },
+    {
       "seq": 443,
-      "timestamp_ns": 2262298298884,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87173053318,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 444,
-      "timestamp_ns": 2262298311370,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87173061945,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1705.5800000000008,
+      "value": 864.9199999999997,
       "meta": {}
     },
     {
       "seq": 445,
-      "timestamp_ns": 2262298663434,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87173384697,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1638.7900000000009,
+      "value": 882.7099999999997,
       "meta": {
-        "operation": "withdraw",
-        "amount": 66.79
+        "operation": "deposit",
+        "amount": 17.79
       }
     },
     {
       "seq": 446,
-      "timestamp_ns": 2262298672697,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87173394125,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 447,
-      "timestamp_ns": 2262298757541,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 66.79,
+      "timestamp_ns": 87173446337,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 17.79,
       "meta": {
-        "success": true,
-        "requested": 66.79
+        "new_balance": 882.7099999999997
       }
     },
     {
       "seq": 448,
-      "timestamp_ns": 2262298843332,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_START",
-      "value": 5.21,
-      "meta": {}
-    },
-    {
-      "seq": 449,
-      "timestamp_ns": 2262298858223,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 450,
-      "timestamp_ns": 2262298869936,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87173464728,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 451,
-      "timestamp_ns": 2262298879581,
-      "thread_name": "Safe-Run94-T2",
+      "seq": 449,
+      "timestamp_ns": 87173473074,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "READ_BALANCE",
-      "value": 1638.7900000000009,
+      "value": 882.7099999999997,
+      "meta": {}
+    },
+    {
+      "seq": 450,
+      "timestamp_ns": 87173534709,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 96.94,
+      "meta": {}
+    },
+    {
+      "seq": 451,
+      "timestamp_ns": 87173543476,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 452,
-      "timestamp_ns": 2262299147010,
+      "timestamp_ns": 87173769291,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_START",
-      "value": 40.29,
-      "meta": {}
+      "event_type": "WRITE_BALANCE",
+      "value": 920.9899999999997,
+      "meta": {
+        "operation": "deposit",
+        "amount": 38.28
+      }
     },
     {
       "seq": 453,
-      "timestamp_ns": 2262299160443,
+      "timestamp_ns": 87173775523,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 454,
-      "timestamp_ns": 2262299217887,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1622.670000000001,
+      "timestamp_ns": 87173812915,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 38.28,
       "meta": {
-        "operation": "withdraw",
-        "amount": 16.12
+        "new_balance": 920.9899999999997
       }
     },
     {
       "seq": 455,
-      "timestamp_ns": 2262299225899,
+      "timestamp_ns": 87173836145,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 456,
-      "timestamp_ns": 2262299269714,
+      "timestamp_ns": 87173844792,
       "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 16.12,
-      "meta": {
-        "success": true,
-        "requested": 16.12
-      }
+      "event_type": "READ_BALANCE",
+      "value": 920.9899999999997,
+      "meta": {}
     },
     {
       "seq": 457,
-      "timestamp_ns": 2262299299312,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87173973202,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 34.94,
       "meta": {}
     },
     {
       "seq": 458,
-      "timestamp_ns": 2262299311112,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1622.670000000001,
-      "meta": {}
-    },
-    {
-      "seq": 459,
-      "timestamp_ns": 2262299630489,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 25.72,
-      "meta": {}
-    },
-    {
-      "seq": 460,
-      "timestamp_ns": 2262299644227,
-      "thread_name": "Safe-Run94-T2",
+      "timestamp_ns": 87173982440,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 461,
-      "timestamp_ns": 2262299676797,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 459,
+      "timestamp_ns": 87174141179,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1637.300000000001,
+      "value": 993.5899999999997,
       "meta": {
         "operation": "deposit",
-        "amount": 14.63
+        "amount": 72.6
       }
     },
     {
-      "seq": 462,
-      "timestamp_ns": 2262299688042,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 460,
+      "timestamp_ns": 87174147651,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 463,
-      "timestamp_ns": 2262299738193,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 461,
+      "timestamp_ns": 87174183972,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_END",
-      "value": 14.63,
+      "value": 72.6,
       "meta": {
-        "new_balance": 1637.300000000001
+        "new_balance": 993.5899999999997
       }
     },
     {
-      "seq": 464,
-      "timestamp_ns": 2262299768563,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 462,
+      "timestamp_ns": 87174231560,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 465,
-      "timestamp_ns": 2262299778110,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 463,
+      "timestamp_ns": 87174239235,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "READ_BALANCE",
-      "value": 1637.300000000001,
+      "value": 993.5899999999997,
+      "meta": {}
+    },
+    {
+      "seq": 464,
+      "timestamp_ns": 87174251689,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_START",
+      "value": 43.57,
+      "meta": {}
+    },
+    {
+      "seq": 465,
+      "timestamp_ns": 87174263001,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 466,
-      "timestamp_ns": 2262300254230,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87174558967,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "WRITE_BALANCE",
-      "value": 1538.900000000001,
+      "value": 1092.5799999999997,
       "meta": {
-        "operation": "withdraw",
-        "amount": 98.4
+        "operation": "deposit",
+        "amount": 98.99
       }
     },
     {
       "seq": 467,
-      "timestamp_ns": 2262300270809,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87174567704,
+      "thread_name": "Safe-Run94-T1",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 468,
-      "timestamp_ns": 2262300330310,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WITHDRAW_END",
-      "value": 98.4,
+      "timestamp_ns": 87174611008,
+      "thread_name": "Safe-Run94-T1",
+      "event_type": "DEPOSIT_END",
+      "value": 98.99,
       "meta": {
-        "success": true,
-        "requested": 98.4
+        "new_balance": 1092.5799999999997
       }
     },
     {
       "seq": 469,
-      "timestamp_ns": 2262300423242,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87174638532,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_START",
-      "value": 31.91,
+      "value": 28.39,
       "meta": {}
     },
     {
       "seq": 470,
-      "timestamp_ns": 2262300440594,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87174647719,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
       "seq": 471,
-      "timestamp_ns": 2262300472021,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87174659364,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 472,
-      "timestamp_ns": 2262300483114,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87174667660,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1538.900000000001,
+      "value": 1092.5799999999997,
       "meta": {}
     },
     {
       "seq": 473,
-      "timestamp_ns": 2262300875337,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87174963726,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1533.690000000001,
+      "value": 1189.5199999999998,
       "meta": {
-        "operation": "withdraw",
-        "amount": 5.21
+        "operation": "deposit",
+        "amount": 96.94
       }
     },
     {
       "seq": 474,
-      "timestamp_ns": 2262300896989,
-      "thread_name": "Safe-Run94-T1",
+      "timestamp_ns": 87174969757,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 475,
-      "timestamp_ns": 2262300950079,
-      "thread_name": "Safe-Run94-T1",
-      "event_type": "WITHDRAW_END",
-      "value": 5.21,
+      "timestamp_ns": 87175004074,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 96.94,
       "meta": {
-        "success": true,
-        "requested": 5.21
+        "new_balance": 1189.5199999999998
       }
     },
     {
       "seq": 476,
-      "timestamp_ns": 2262301013098,
+      "timestamp_ns": 87175024052,
       "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_START",
-      "value": 49.99,
-      "meta": {}
-    },
-    {
-      "seq": 477,
-      "timestamp_ns": 2262301034151,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 478,
-      "timestamp_ns": 2262301120103,
-      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 479,
-      "timestamp_ns": 2262301133666,
-      "thread_name": "Safe-Run94-T4",
+      "seq": 477,
+      "timestamp_ns": 87175032288,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1533.690000000001,
+      "value": 1189.5199999999998,
+      "meta": {}
+    },
+    {
+      "seq": 478,
+      "timestamp_ns": 87175356108,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "WRITE_BALANCE",
+      "value": 1224.4599999999998,
+      "meta": {
+        "operation": "deposit",
+        "amount": 34.94
+      }
+    },
+    {
+      "seq": 479,
+      "timestamp_ns": 87175363592,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 480,
-      "timestamp_ns": 2262301587459,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1573.980000000001,
+      "timestamp_ns": 87175414952,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 34.94,
       "meta": {
-        "operation": "deposit",
-        "amount": 40.29
+        "new_balance": 1224.4599999999998
       }
     },
     {
       "seq": 481,
-      "timestamp_ns": 2262301603026,
+      "timestamp_ns": 87175472564,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_RELEASED",
+      "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 482,
-      "timestamp_ns": 2262301660775,
+      "timestamp_ns": 87175480830,
       "thread_name": "Safe-Run94-T4",
-      "event_type": "DEPOSIT_END",
-      "value": 40.29,
-      "meta": {
-        "new_balance": 1573.980000000001
-      }
+      "event_type": "READ_BALANCE",
+      "value": 1224.4599999999998,
+      "meta": {}
     },
     {
       "seq": 483,
-      "timestamp_ns": 2262301701095,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
+      "timestamp_ns": 87175590715,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_START",
+      "value": 38.22,
       "meta": {}
     },
     {
       "seq": 484,
-      "timestamp_ns": 2262301715029,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1573.980000000001,
-      "meta": {}
-    },
-    {
-      "seq": 485,
-      "timestamp_ns": 2262301919149,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 54.71,
-      "meta": {}
-    },
-    {
-      "seq": 486,
-      "timestamp_ns": 2262301932702,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87175600234,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 487,
-      "timestamp_ns": 2262302063873,
-      "thread_name": "Safe-Run94-T2",
+      "seq": 485,
+      "timestamp_ns": 87175787377,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WRITE_BALANCE",
-      "value": 1548.260000000001,
+      "value": 1268.0299999999997,
       "meta": {
-        "operation": "withdraw",
-        "amount": 25.72
+        "operation": "deposit",
+        "amount": 43.57
       }
     },
     {
-      "seq": 488,
-      "timestamp_ns": 2262302072604,
-      "thread_name": "Safe-Run94-T2",
+      "seq": 486,
+      "timestamp_ns": 87175795292,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 489,
-      "timestamp_ns": 2262302119020,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 25.72,
+      "seq": 487,
+      "timestamp_ns": 87175831412,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "DEPOSIT_END",
+      "value": 43.57,
       "meta": {
-        "success": true,
-        "requested": 25.72
+        "new_balance": 1268.0299999999997
       }
     },
     {
-      "seq": 490,
-      "timestamp_ns": 2262302142217,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 488,
+      "timestamp_ns": 87175863566,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 491,
-      "timestamp_ns": 2262302151862,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 489,
+      "timestamp_ns": 87175873546,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "READ_BALANCE",
-      "value": 1548.260000000001,
+      "value": 1268.0299999999997,
+      "meta": {}
+    },
+    {
+      "seq": 490,
+      "timestamp_ns": 87175923261,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_START",
+      "value": 76.65,
+      "meta": {}
+    },
+    {
+      "seq": 491,
+      "timestamp_ns": 87175931808,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
       "meta": {}
     },
     {
       "seq": 492,
-      "timestamp_ns": 2262302478586,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87176202105,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WRITE_BALANCE",
-      "value": 1580.170000000001,
+      "value": 1296.4199999999998,
       "meta": {
         "operation": "deposit",
-        "amount": 31.91
+        "amount": 28.39
       }
     },
     {
       "seq": 493,
-      "timestamp_ns": 2262302485422,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87176211112,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 494,
-      "timestamp_ns": 2262302527833,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87176253896,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "DEPOSIT_END",
-      "value": 31.91,
+      "value": 28.39,
       "meta": {
-        "new_balance": 1580.170000000001
+        "new_balance": 1296.4199999999998
       }
     },
     {
       "seq": 495,
-      "timestamp_ns": 2262302601510,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_START",
-      "value": 58.82,
-      "meta": {}
-    },
-    {
-      "seq": 496,
-      "timestamp_ns": 2262302611754,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRE_ATTEMPT",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 497,
-      "timestamp_ns": 2262302642090,
-      "thread_name": "Safe-Run94-T3",
+      "timestamp_ns": 87176286057,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 498,
-      "timestamp_ns": 2262302654783,
-      "thread_name": "Safe-Run94-T3",
+      "seq": 496,
+      "timestamp_ns": 87176295966,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1580.170000000001,
+      "value": 1296.4199999999998,
       "meta": {}
     },
     {
-      "seq": 499,
-      "timestamp_ns": 2262302990509,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "WRITE_BALANCE",
-      "value": 1630.160000000001,
-      "meta": {
-        "operation": "deposit",
-        "amount": 49.99
-      }
-    },
-    {
-      "seq": 500,
-      "timestamp_ns": 2262302998826,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 501,
-      "timestamp_ns": 2262303054713,
-      "thread_name": "Safe-Run94-T3",
-      "event_type": "DEPOSIT_END",
-      "value": 49.99,
-      "meta": {
-        "new_balance": 1630.160000000001
-      }
-    },
-    {
-      "seq": 502,
-      "timestamp_ns": 2262303120531,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 497,
+      "timestamp_ns": 87176400529,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "WITHDRAW_START",
-      "value": 75.56,
+      "value": 14.61,
       "meta": {}
     },
     {
-      "seq": 503,
-      "timestamp_ns": 2262303130916,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 498,
+      "timestamp_ns": 87176411571,
+      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
+      "seq": 499,
+      "timestamp_ns": 87176435719,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WITHDRAW_START",
+      "value": 21.91,
+      "meta": {}
+    },
+    {
+      "seq": 500,
+      "timestamp_ns": 87176445047,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRE_ATTEMPT",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 501,
+      "timestamp_ns": 87176617844,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WRITE_BALANCE",
+      "value": 1258.1999999999998,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 38.22
+      }
+    },
+    {
+      "seq": 502,
+      "timestamp_ns": 87176626761,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 503,
+      "timestamp_ns": 87176669374,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "WITHDRAW_END",
+      "value": 38.22,
+      "meta": {
+        "success": true,
+        "requested": 38.22
+      }
+    },
+    {
       "seq": 504,
-      "timestamp_ns": 2262303152576,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87176696034,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 505,
-      "timestamp_ns": 2262303162003,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87176706605,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "READ_BALANCE",
-      "value": 1630.160000000001,
+      "value": 1258.1999999999998,
       "meta": {}
     },
     {
       "seq": 506,
-      "timestamp_ns": 2262303498320,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WRITE_BALANCE",
-      "value": 1575.450000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 54.71
-      }
+      "timestamp_ns": 87176897327,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_START",
+      "value": 94.24,
+      "meta": {}
     },
     {
       "seq": 507,
-      "timestamp_ns": 2262303506724,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 508,
-      "timestamp_ns": 2262303548503,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 54.71,
-      "meta": {
-        "success": true,
-        "requested": 54.71
-      }
-    },
-    {
-      "seq": 509,
-      "timestamp_ns": 2262303579939,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 510,
-      "timestamp_ns": 2262303589203,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "READ_BALANCE",
-      "value": 1575.450000000001,
-      "meta": {}
-    },
-    {
-      "seq": 511,
-      "timestamp_ns": 2262303913271,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WRITE_BALANCE",
-      "value": 1516.630000000001,
-      "meta": {
-        "operation": "withdraw",
-        "amount": 58.82
-      }
-    },
-    {
-      "seq": 512,
-      "timestamp_ns": 2262303920836,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "LOCK_RELEASED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 513,
-      "timestamp_ns": 2262303962191,
-      "thread_name": "Safe-Run94-T2",
-      "event_type": "WITHDRAW_END",
-      "value": 58.82,
-      "meta": {
-        "success": true,
-        "requested": 58.82
-      }
-    },
-    {
-      "seq": 514,
-      "timestamp_ns": 2262303990733,
+      "timestamp_ns": 87176927536,
       "thread_name": "Safe-Run94-T5",
-      "event_type": "LOCK_ACQUIRED",
-      "value": null,
-      "meta": {}
-    },
-    {
-      "seq": 515,
-      "timestamp_ns": 2262303999757,
-      "thread_name": "Safe-Run94-T5",
-      "event_type": "READ_BALANCE",
-      "value": 1516.630000000001,
-      "meta": {}
-    },
-    {
-      "seq": 516,
-      "timestamp_ns": 2262304100246,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_START",
-      "value": 81.62,
-      "meta": {}
-    },
-    {
-      "seq": 517,
-      "timestamp_ns": 2262304109140,
-      "thread_name": "Safe-Run94-T4",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
       "meta": {}
     },
     {
-      "seq": 518,
-      "timestamp_ns": 2262304333144,
-      "thread_name": "Safe-Run94-T5",
+      "seq": 508,
+      "timestamp_ns": 87177021011,
+      "thread_name": "Safe-Run94-T3",
       "event_type": "WRITE_BALANCE",
-      "value": 1441.070000000001,
+      "value": 1334.85,
+      "meta": {
+        "operation": "deposit",
+        "amount": 76.65
+      }
+    },
+    {
+      "seq": 509,
+      "timestamp_ns": 87177028776,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 510,
+      "timestamp_ns": 87177064315,
+      "thread_name": "Safe-Run94-T3",
+      "event_type": "DEPOSIT_END",
+      "value": 76.65,
+      "meta": {
+        "new_balance": 1334.85
+      }
+    },
+    {
+      "seq": 511,
+      "timestamp_ns": 87177078869,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 512,
+      "timestamp_ns": 87177086183,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "READ_BALANCE",
+      "value": 1334.85,
+      "meta": {}
+    },
+    {
+      "seq": 513,
+      "timestamp_ns": 87177410204,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WRITE_BALANCE",
+      "value": 1320.24,
       "meta": {
         "operation": "withdraw",
-        "amount": 75.56
+        "amount": 14.61
+      }
+    },
+    {
+      "seq": 514,
+      "timestamp_ns": 87177417618,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "LOCK_RELEASED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 515,
+      "timestamp_ns": 87177454830,
+      "thread_name": "Safe-Run94-T4",
+      "event_type": "WITHDRAW_END",
+      "value": 14.61,
+      "meta": {
+        "success": true,
+        "requested": 14.61
+      }
+    },
+    {
+      "seq": 516,
+      "timestamp_ns": 87177479680,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "LOCK_ACQUIRED",
+      "value": null,
+      "meta": {}
+    },
+    {
+      "seq": 517,
+      "timestamp_ns": 87177487245,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "READ_BALANCE",
+      "value": 1320.24,
+      "meta": {}
+    },
+    {
+      "seq": 518,
+      "timestamp_ns": 87177979135,
+      "thread_name": "Safe-Run94-T2",
+      "event_type": "WRITE_BALANCE",
+      "value": 1298.33,
+      "meta": {
+        "operation": "withdraw",
+        "amount": 21.91
       }
     },
     {
       "seq": 519,
-      "timestamp_ns": 2262304340829,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87177989425,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 520,
-      "timestamp_ns": 2262304380736,
-      "thread_name": "Safe-Run94-T5",
+      "timestamp_ns": 87178036026,
+      "thread_name": "Safe-Run94-T2",
       "event_type": "WITHDRAW_END",
-      "value": 75.56,
+      "value": 21.91,
       "meta": {
         "success": true,
-        "requested": 75.56
+        "requested": 21.91
       }
     },
     {
       "seq": 521,
-      "timestamp_ns": 2262304401650,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87178050209,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 522,
-      "timestamp_ns": 2262304411229,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87178060038,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "READ_BALANCE",
-      "value": 1441.070000000001,
+      "value": 1298.33,
       "meta": {}
     },
     {
       "seq": 523,
-      "timestamp_ns": 2262304741774,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87178375854,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "WRITE_BALANCE",
-      "value": 1359.4500000000012,
+      "value": 1392.57,
       "meta": {
-        "operation": "withdraw",
-        "amount": 81.62
+        "operation": "deposit",
+        "amount": 94.24
       }
     },
     {
       "seq": 524,
-      "timestamp_ns": 2262304750330,
-      "thread_name": "Safe-Run94-T4",
+      "timestamp_ns": 87178385903,
+      "thread_name": "Safe-Run94-T5",
       "event_type": "LOCK_RELEASED",
       "value": null,
       "meta": {}
     },
     {
       "seq": 525,
-      "timestamp_ns": 2262304753749,
-      "thread_name": "Safe-Run94-T4",
-      "event_type": "WITHDRAW_END",
-      "value": 81.62,
+      "timestamp_ns": 87178390632,
+      "thread_name": "Safe-Run94-T5",
+      "event_type": "DEPOSIT_END",
+      "value": 94.24,
       "meta": {
-        "success": true,
-        "requested": 81.62
+        "new_balance": 1392.57
       }
     },
     {
       "seq": 526,
-      "timestamp_ns": 2262305585187,
+      "timestamp_ns": 87179028382,
       "thread_name": "MainThread",
       "event_type": "LOCK_ACQUIRE_ATTEMPT",
       "value": null,
@@ -4627,7 +4633,7 @@
     },
     {
       "seq": 527,
-      "timestamp_ns": 2262305595093,
+      "timestamp_ns": 87179034864,
       "thread_name": "MainThread",
       "event_type": "LOCK_ACQUIRED",
       "value": null,
@@ -4635,17 +4641,17 @@
     },
     {
       "seq": 528,
-      "timestamp_ns": 2262305599458,
+      "timestamp_ns": 87179038030,
       "thread_name": "MainThread",
       "event_type": "READ_BALANCE",
-      "value": 1359.4500000000012,
+      "value": 1392.57,
       "meta": {
         "context": "get_balance"
       }
     },
     {
       "seq": 529,
-      "timestamp_ns": 2262305602528,
+      "timestamp_ns": 87179040245,
       "thread_name": "MainThread",
       "event_type": "LOCK_RELEASED",
       "value": null,

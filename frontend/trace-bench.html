@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Trace Bench — LatentSched</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="wrap">
+
+    <aside class="rail">
+      <div class="brand"><span class="mark"></span><span class="name">LATENTSCHED</span></div>
+      <div>
+        <h1>Trace<br><span>Bench</span></h1>
+        <p class="tagline">Load a concurrency execution trace, watch the thread timeline, and see exactly the feature
+          rows the VAE encoder would read.</p>
+      </div>
+
+      <div class="rail-section">
+        <div class="rail-label">CORPUS TRACES</div>
+        <div class="sample-row">
+          <button class="sample-btn" data-kind="safe" data-variant="safe" data-sample="safe">
+            <span class="dot"></span> Safe (locked)<small>~529 ev</small>
+          </button>
+          <button class="sample-btn" data-kind="race_condition" data-variant="race_condition" data-sample="race">
+            <span class="dot"></span> Race condition<small>~301 ev</small>
+          </button>
+          <button class="sample-btn" data-kind="deadlock" data-variant="deadlock" data-sample="deadlock">
+            <span class="dot"></span> Deadlock<small>9 ev</small>
+          </button>
+        </div>
+        <div class="run-pick">
+          <label for="runNum">Run</label>
+          <input type="number" id="runNum" min="1" max="100" value="1">
+          <span class="of">of 100</span>
+        </div>
+        <div class="corpus-state" id="corpusState">Served from trace_harness/traces/ &mdash; run serve.py first.</div>
+      </div>
+
+      <div class="rail-section">
+        <div class="rail-label">YOUR OWN TRACE</div>
+        <button class="file-btn" id="fileBtn">Upload a trace .json file&hellip;</button>
+        <input type="file" id="fileInput" accept="application/json,.json">
+        <details class="paste">
+          <summary>or paste raw JSON</summary>
+          <textarea id="pasteArea" placeholder='{ "run_id": 1, "variant": "safe", "events": [ ... ] }'></textarea>
+        </details>
+        <button class="run-btn" id="runBtn">Run analysis</button>
+        <div class="err" id="errMsg"></div>
+      </div>
+
+      <div class="rail-section leds">
+        <div class="rail-label">STATUS</div>
+        <div class="led-row"><span class="led" id="ledVariant"></span> Variant: <b id="ledVariantText">&mdash;</b></div>
+        <div class="led-row"><span class="led" id="ledCorrect"></span> Balance check: <b id="ledCorrectText">&mdash;</b>
+        </div>
+        <div class="led-row"><span class="led" id="ledDeadlock"></span> Deadlock flag: <b
+            id="ledDeadlockText">&mdash;</b></div>
+      </div>
+
+      <div class="rail-foot">Mirrors the encoding rules in vae/trace_encoder.py &mdash; event&#8209;type vocabulary,
+        per&#8209;trace thread indexing, log&#8209;scaled values, normalized inter&#8209;event deltas.</div>
+    </aside>
+
+    <main>
+      <div id="emptyState" class="empty">Load a sample from the left rail, or drop in your own trace, to see the
+        timeline, lock health, and encoded feature rows &mdash; <b>nothing leaves your browser</b>, the analysis below
+        runs entirely client-side.</div>
+
+      <div id="results" style="display:none;">
+        <div class="stats" id="statsGrid"></div>
+
+        <section class="block">
+          <h2>Thread timeline</h2>
+          <p class="h2-sub">Each lane is one thread. A dot marks an event, positioned by its timestamp; hover a dot for
+            its exact type and value.</p>
+          <div class="scope"><svg id="scopeSvg"></svg>
+            <div class="legend" id="legend"></div>
+          </div>
+        </section>
+
+        <section class="block">
+          <h2>Lock health</h2>
+          <p class="h2-sub">Counts of LOCK_ACQUIRE_ATTEMPT vs LOCK_ACQUIRED per thread. An unmatched attempt &mdash; an
+            attempt with no acquisition &mdash; is the exact signature the deadlock variant always leaves behind.</p>
+          <table class="lockgrid" id="lockTable"></table>
+        </section>
+
+        <section class="block">
+          <h2>Encoded feature rows</h2>
+          <p class="h2-sub" id="encSub"></p>
+          <div class="tablewrap">
+            <table class="enc" id="encTable"></table>
+          </div>
+          <p class="foot-note">The full training pipeline pads or truncates every trace to a fixed <code>SEQ_LEN</code>
+            of 300 timesteps before these rows reach the BiLSTM encoder; the table above shows only the real, unpadded
+            events.</p>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+
+</html>
